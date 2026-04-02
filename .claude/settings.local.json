@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node parsers/parse-pokemon.js)",
+      "Bash(node parsers/parse-moves.js)",
+      "Bash(node parsers/parse-rules.js)",
+      "Bash(node -e ':*)",
+      "Read(//c/Users/filip/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python scripts/search.py \"pokemon rpg tabletop dark fantasy game companion\" --design-system -p \"Pokemon 5e Companion\" -f markdown)",
+      "Bash(py --version)",
+      "Bash(where python:*)",
+      "Bash(node server.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(node \"C:/Users/filip/Downloads/pokemon/server.js\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/data/pokemon.json)",
+      "Bash(curl -s -o /dev/null -w \"root: %{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"pokemon.json: %{http_code}\\\\n\" http://localhost:3001/data/pokemon.json)",
+      "Bash(curl -s -o /dev/null -w \"moves.json: %{http_code}\\\\n\" http://localhost:3001/data/moves.json)",
+      "Bash(curl -s -o /dev/null -w \"app.js: %{http_code}\\\\n\" http://localhost:3001/app.js)",
+      "Bash(node --check \"C:/Users/filip/Downloads/pokemon/public/app.js\")",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"styles.css: %{http_code}\\\\n\" http://localhost:3001/styles.css)",
+      "Bash(curl -s -o /dev/null -w \"rules.json: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3001/data/rules.json)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/app.js)"
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon 5e — Companheiro de Aventura</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── Loading Overlay ────────────────────────────────────────── -->
+<div id="loading-overlay" class="loading-overlay">
+  <div class="pokeball-loader"></div>
+  <div class="loading-text">Carregando Pokédex...</div>
+</div>
+
+<!-- ── App Wrapper ─────────────────────────────────────────────── -->
+<div class="app-wrapper">
+
+  <!-- Sidebar (Desktop) -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <h1>Pokémon<br>5ª Edição</h1>
+      <span>Companheiro de Aventura</span>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="nav-item" data-page="pokedex">
+        <span class="nav-icon">🎴</span>
+        <span>Pokédex</span>
+      </li>
+      <li class="nav-item" data-page="regras">
+        <span class="nav-icon">📖</span>
+        <span>Regras</span>
+      </li>
+      <li class="nav-item" data-page="fichas">
+        <span class="nav-icon">📋</span>
+        <span>Fichas</span>
+      </li>
+      <li class="nav-item" data-page="movimentos">
+        <span class="nav-icon">⚡</span>
+        <span>Movimentos</span>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      Baseado em Pokémon in 5th Edition<br>
+      por Erudite Factotum<br>
+      <span style="color:var(--text-dim)">Geração 1 • 164 Pokémon • 624 Movimentos</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: POKÉDEX
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-pokedex" class="page">
+      <div class="page-header">
+        <h1 class="page-title">Pokédex — Geração 1</h1>
+        <p class="page-subtitle">Consulte as fichas de todos os 164 Pokémon da primeira geração</p>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" id="search-pokemon" class="search-input" placeholder="🔍  Buscar Pokémon..." autocomplete="off">
+        <select id="filter-type" class="filter-select">
+          <option value="">Todos os tipos</option>
+        </select>
+        <select id="filter-cr" class="filter-select">
+          <option value="">Qualquer CR</option>
+          <option value="1/8">CR 1/8</option>
+          <option value="1/4">CR 1/4</option>
+          <option value="1/2">CR 1/2</option>
+          <option value="1">CR 1</option>
+          <option value="2">CR 2</option>
+          <option value="3">CR 3</option>
+          <option value="4">CR 4</option>
+          <option value="5">CR 5</option>
+          <option value="6">CR 6</option>
+          <option value="7">CR 7</option>
+          <option value="8">CR 8</option>
+          <option value="9">CR 9</option>
+          <option value="10">CR 10</option>
+          <option value="11">CR 11</option>
+          <option value="12">CR 12</option>
+          <option value="13">CR 13</option>
+        </select>
+        <select id="filter-size" class="filter-select">
+          <option value="">Qualquer tamanho</option>
+          <option value="Minúsculo">Minúsculo</option>
+          <option value="Pequeno">Pequeno</option>
+          <option value="Médio">Médio</option>
+          <option value="Grande">Grande</option>
+          <option value="Enorme">Enorme</option>
+          <option value="Colossal">Colossal</option>
+        </select>
+        <span id="poke-count" class="result-count">164 Pokémon</span>
+      </div>
+
+      <div id="pokemon-grid" class="pokemon-grid">
+        <!-- Cards rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: REGRAS
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-regras" class="page">
+      <div class="page-header">
+        <h1 class="page-title">Regras do Jogo</h1>
+        <p class="page-subtitle">Pokémon em 5ª Edição — Guia completo de regras</p>
+      </div>
+
+      <div class="rules-search-wrap">
+        <input type="text" id="search-rules" class="search-input" placeholder="🔍  Buscar nas regras..." style="max-width:400px">
+      </div>
+
+      <div class="rules-layout">
+        <!-- Chapter Tree -->
+        <div class="rules-nav" id="rules-nav-tree">
+          <!-- Rendered by JS -->
+        </div>
+        <!-- Content Area -->
+        <div class="rules-content" id="rules-content-area">
+          <div class="empty-state">
+            <div class="empty-state-icon">📖</div>
+            <div class="empty-state-title">Selecione um capítulo</div>
+            <div class="empty-state-text">Use o menu à esquerda para navegar pelas regras</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: FICHAS
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-fichas" class="page">
+
+      <!-- List View -->
+      <div id="sheets-list-view">
+        <div class="sheets-header">
+          <div>
+            <h1 class="page-title">Fichas de Treinador</h1>
+            <p class="page-subtitle">Crie e gerencie seus personagens e times Pokémon</p>
+          </div>
+          <button class="btn btn-primary" onclick="newSheet()">+ Nova Ficha</button>
+        </div>
+        <div id="sheets-grid" class="sheets-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Editor View -->
+      <div id="sheet-editor-view" class="sheet-editor">
+        <!-- Rendered by JS -->
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: MOVIMENTOS
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-movimentos" class="page">
+      <div class="page-header">
+        <h1 class="page-title">Lista de Movimentos</h1>
+        <p class="page-subtitle">Todos os 624 movimentos disponíveis</p>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" id="search-moves" class="search-input" placeholder="🔍  Buscar movimento...">
+        <select id="filter-move-type" class="filter-select">
+          <option value="">Todos os tipos</option>
+        </select>
+        <span id="move-count" class="result-count">624 movimentos</span>
+      </div>
+
+      <div class="moves-table-wrap">
+        <table class="moves-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Poder</th>
+              <th>PP</th>
+              <th>Tempo</th>
+              <th>Alcance</th>
+            </tr>
+          </thead>
+          <tbody id="moves-tbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+        <div id="moves-pagination" class="moves-pagination"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Nav (Mobile) -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-item" data-page="pokedex">
+      <span class="nav-icon">🎴</span>
+      <span>Pokédex</span>
+    </div>
+    <div class="bottom-nav-item" data-page="regras">
+      <span class="nav-icon">📖</span>
+      <span>Regras</span>
+    </div>
+    <div class="bottom-nav-item" data-page="fichas">
+      <span class="nav-icon">📋</span>
+      <span>Fichas</span>
+    </div>
+    <div class="bottom-nav-item" data-page="movimentos">
+      <span class="nav-icon">⚡</span>
+      <span>Movimentos</span>
+    </div>
+  </nav>
+
+</div><!-- /.app-wrapper -->
+
+<!-- ── Pokemon Detail Modal ────────────────────────────────────── -->
+<div id="pokemon-modal" class="modal-overlay" onclick="if(event.target===this)closePokemonDetail()">
+  <div class="pokemon-detail">
+    <div id="pokemon-detail-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ── Move Detail Panel ───────────────────────────────────────── -->
+<div id="panel-backdrop" class="panel-backdrop" onclick="closeMovePanel()"></div>
+<aside id="move-panel" class="slide-panel">
+  <div class="panel-header">
+    <h2 class="panel-title" id="move-panel-title">Movimento</h2>
+    <button class="btn-close" onclick="closeMovePanel()">✕</button>
+  </div>
+  <div class="panel-body" id="move-panel-body">
+    <!-- Rendered by JS -->
+  </div>
+</aside>
+
+<!-- ── Add to Sheet Modal ──────────────────────────────────────── -->
+<div id="add-to-sheet-modal" class="modal-overlay" onclick="if(event.target===this)closeAddToSheetModal()">
+  <div class="mini-modal">
+    <div class="mini-modal-header">
+      <h3 class="mini-modal-title">Adicionar à Ficha</h3>
+      <button class="btn-close" onclick="closeAddToSheetModal()">✕</button>
+    </div>
+    <div class="mini-modal-body">
+      <div id="sheet-options-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+    <div class="mini-modal-footer">
+      <button class="btn btn-outline btn-sm" onclick="newSheetAndAddPokemon()">+ Nova Ficha</button>
+      <button class="btn btn-outline btn-sm" onclick="closeAddToSheetModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast Container ─────────────────────────────────────────── -->
+<div id="toast-container" class="toast-container"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

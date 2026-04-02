@@ -1,0 +1,1495 @@
+```metadata
+title: Pokémon in 5th Edition
+description: ''
+tags:
+  - ''
+systems: []
+renderer: legacy
+theme: 5ePHB
+
+```
+
+<style>
+  .phb#p1{ text-align:center; }
+  .phb#p1:after{ display:none; }
+</style>
+
+<div style='margin-top:80px;'></div>
+
+# Pokémon in 5th Edition
+
+<div style='margin-top:0px'></div>
+<div class='wide'>
+##### How to run your own Pokémon role-playing game using existing 5e rules.
+<div style='margin-top:610px'></div>
+### Credits
+Writer: Erudite Factotum (denverdungeonmaster.com), Editor: floraltattoo
+	
+	
+Based on the original game by Satoshi Taijiri 
+
+© Game Freak © Nintendo Company Inc.
+
+We do not claim ownership of anything related to Pokémon or Dungeons and Dragons. 
+
+No profits are made from the release of this supplement.
+
+Inspiration and Ideas from: Pokémon Tabletop United, Pokérole, Sakutian from trulyoutofcharacter.wordpress.com
+
+### Special Thanks
+To JaggedSun for his original draft of this document
+</div>
+
+<img src='https://i.imgur.com/B3C3HJ5.png' style='position:absolute;bottom:260px;left:2px;width:850px' />
+<div class='pageNumber auto'></div>
+
+
+\page
+
+# Pokémon 5e
+
+Pokémon 5e plays differently than other D&D games you may have played before. No longer is your PC a powerhouse with a slew of dangerous spells and deadly weapons. You are now a Pokémon Trainer – a mortal in control of your Pokémon with an iron fist or a gentle heart. As such, though player characters have normal abilities and skills, your focus is not in hand-to-hand combat. Your ability to stay in the fight is dependent on the status of the Pokémon in your control. Although the threat of death is still very real, the battling and utility in the game is mostly transferred to your Pokémon.
+___
+
+This guide is an overview of special rules/changes in order to run an effective Pokémon role-playing game using existing 5e D&D rules. It is intended as a supplement to the core rulebooks of 5e Dungeons and Dragons.
+<img src='https://i.pinimg.com/originals/98/9b/6a/989b6a6829e2d131db5f67bead853b8d.png' style='position:absolute;bottom:90px;left:35px;width:500px' />
+
+<div class='pageNumber auto'></div>
+
+ 
+```
+```
+
+
+<div class='toc' style='position:absolute;top:100px;left:510px;width:350px'>
+##### Table Of Contents
+- 
+- **1. Creating a Pokémon Trainer**
+    - a. Pokémon Trainer Class
+    - b. Starter Pokémon
+    - c. Pokémon Control
+    - d. Specializations
+    - e. Trainer Paths
+- **2. Catching Pokémon**
+- **3. Pokémon Care**
+	- a. Active Pokémon
+    - b. Healing
+    - c. Nature
+- **4. Battling Pokémon**
+	- a. Combat
+    - b. Switching Pokémon
+    - c. Attacks of Opportunity
+    - d. Moves and Move Power
+- **5. Types**
+	- a. Dual Typing
+    - b. Multiple Resistances and Vulnerabilities
+- **6. Bond System**
+	- a. Pokémon and Death
+    - b. Manipulating Bond Levels
+    - c. Benefits and Detriments of Bond Levels
+- **7. Pokémon and Character Advancement**
+	- a. Pokémon Experience
+    - b. Pokémon Advancement
+    - c. Evolution
+    - d. Character Advancement
+- **8. Other Changes**
+	- a. New Status Effects
+    - b. Trainer Death Saving Throws
+    - c. Challenge Rating
+    - d. Pokémon Armor Class
+- **9. Running a Game**
+	- a. Building Encounters
+    - b. Starting Past Level 1
+- **10. Additional Items**
+	- a. Pokéballs
+    - b. Key Items
+    - c. X-Items
+    - d. Vitamins
+    - e. Evolutionary Stones
+    - f. TMs/HMs
+    - g. Berries
+    - h. Held Items
+    - i. Basic Restoratives
+- **11. Feats**
+- **12. Appendix**
+    - a. Experience by CR/Level
+    - b. Character Sheets
+</div>
+
+
+
+<div class='pageNumber auto'></div>
+\page
+# 1. Creating a Pokémon Trainer
+___
+You want to be the very best like no one ever was? Follow these guidelines to create your Pokémon Trainer! These rules are built to accommodate any 5e race, but it is assumed all players play the class of Pokémon Trainer.
+
+## Class Features
+ The Pokémon Trainer class has the following features:
+
+#### Hit Points
+___
+- **Hit Dice:** 1d6 per level
+- **Hit Points at 1st Level:** 6 + your Constitution modifier
+- **Hit Points at Higher Levels:** 1d6 + your Constitution modifier.
+
+#### Proficiencies
+___
+- **Armor:** None
+- **Weapons:** None
+- **Tools:** Pokéballs
+
+___
+- **Saving Throws:** Charisma
+- **Skills:** Choose two from Animal Handling, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Persuasion, Sleight of Hand, Stealth, Survival.
+
+#### Equipment
+You start with the following equipment, in addition to the equipment granted by your background:
+- 5 Pokéballs
+- 1 potion
+- (a) a dungeoneer’s pack, (b) explorer’s pack, (c) scholar's pack, or (d) burglar's pack
+- A Pokédex
+- A starter Pokémon 
+- ₽1000 + ₽10 x 4d4
+
+### Trainer License and Bonds
+Only licensed trainers are permitted to capture Pokémon. Their trainer license allows trainers to gain access to special services at Pokémon Centers and to purchase goods at the Poké Mart. Trainers can lose their license for attacking other trainers or their Pokémon, or failing to take care of their own Pokémon. Losing your license is also tied to how much your Pokémon trust you and your skills as a Pokémon Trainer. If your Pokémon distrust you enough they may leave your side. If such a thing happens too often, you may be required to turn in your license. How much your Pokémon trust you is shown by their Bond Level. You can read more about the Bond System in section 6.
+
+### Starter Pokémon
+A trainer must begin with any single unevolved Pokémon of CR 1/2 or lower. This Pokémon starts at Bond Level +1 (reference section 6 for information on the Bond System). 
+
+```
+```
+
+### Pokéslots
+A Trainer can carry any number of Pokémon in their pack. However, a trainer can only use a number of Pokémon each day equal to their available Pokéslots. For each Pokeslot you have you must pick a single Pokémon to use that day. Once all of your chosen Pokémon for a day have fainted or been killed you can no longer send out any Pokémon during that day. You can change the list of prepared Pokémon when you finish a long rest. Trainers gain an additional Pokéslot at levels 5, 10, and 15.
+
+
+<div class='classTable'>
+##### The Pokémon Trainer
+| Level | Prof Bonus | Features | Pokéslots |Max CR
+|:---:|:---:|:---|:---:|:---:
+| 1st | +2 | Starter Pokémon, Specialization| 3 |1/2
+| 2nd | +2 | Trainer Path, Control Upgrade | 3 |1
+| 3rd | +2 | Control Upgrade | 3 |3
+| 4th | +2 | Ability Score Improvement, Control Upgrade | 3 |5
+| 5th | +3 | Trainer Path Feature, Pokéslot | 4 |5
+| 6th | +3 | Trainer Orders, Control Upgrade | 4 |6
+| 7th | +3 | Specialization | 4 |6
+| 8th | +3 | Ability Score Improvement, Control Upgrade | 4 |8
+| 9th | +4 | Trainer Path Feature | 4 |8
+| 10th | +4 | Pokéslot, Control Upgrade | 5 |9
+| 11th | +4 | Trainer's Resolve | 5 |9
+| 12th | +4 | Ability Score Improvement, Control Upgrade | 5 |11
+| 13th | +5 | Pokémon Tracker | 5 |11
+| 14th | +5 | Control Upgrade | 5 |12
+| 15th | +5 | Trainer Path Feature, Pokéslot | 6 |12
+| 16th | +5 | Ability Score Improvement | 6 |12
+| 17th | +6 | Control Upgrade | 6 |13
+| 18th | +6 | Specialization | 6 |13
+| 19th | +6 | Ability Score Improvement | 6 |13
+| 20th | +6 | Control Upgrade, Master Trainer|6 |15
+</div>
+<div class='pageNumber auto'></div>
+\page
+<div class='pageNumber auto'></div>
+
+### Pokédex
+A hand-held computer with an advanced camera and image recognition software. A trainer can use an action to identify a Pokémon within 60 feet using the Pokédex's scanner.  Doing so registers the Pokémon on the Pokédex, and reveals the Pokémon's base CR, that particular Pokémon's level, and some brief facts about the species.
+
+### Trainer Orders
+At 6th level you have a basic understanding of how to work with your Pokémon as a team. As a bonus action you can give one Pokémon within 30 feet one of the following Trainer Orders. You must be able to see the Pokémon and it must be able to hear you. The Trainer Order lasts until that start of your next turn or until it ends prematurely. You can use Trainer Orders a number of times each day equal to your proficiency bonus. At the end of a long rest you regain all uses of Trainer Orders.
+___
+- **Attack Order:** Choose one creature you can see. You point out the target's weaknesses allowing your active Pokémon to have advantage on their next melee attack against that target.
+- **Defend Order:** If your active Pokémon is vulnerable to any damage type, you can remove one of those vulnerabilities from your Pokémon until after it takes that type of damage.
+- **Dodge Order:** The next time your Pokémon is forced to make a saving throw they may roll an additional 1d8 and add the number rolled to their result.
+
+### Trainer's Resolve
+By the time you reach 11th level, you have had your fair share of experience in difficult battles and have emerged victorious and strong. You are now immune to being frightened, and may choose a second saving throw to become proficient in.
+
+<div class='pageNumber auto'></div>
+
+
+<img src='https://vignette.wikia.nocookie.net/nintendo/images/8/8e/Dawn.png/revision/latest?cb=20100904171851&path-prefix=en' style='position:absolute;bottom:50px;left:110px;width:230px' />
+
+
+<div style='margin-top:700px'></div>
+<img src='https://i.pinimg.com/originals/e0/c3/35/e0c335d510f0a2c8f4c1df5efa0a020b.png' style='position:absolute;bottom:50px;left:480px;width:200px' />
+
+
+
+### Pokémon Tracker
+At level 13, you have already spent countless hours in the wild, searching for Pokémon high and low. Once per long rest you may search for Pokémon in the nearby area. You learn a list of wild Pokémon that can be found in the nearby area.
+
+### Master Trainer
+You have finally achieved the title of Master Trainer. Your Pokémon are at peak fighting performance. When you or your Pokémon fail a saving throw, you may choose to succeed instead. This feature can be used twice per long rest.
+
+## Pokémon Control
+The stronger the Pokémon, the more difficult they are to control. The strength of Pokémon you can control in the game depends on the level of your character as shown in the Max CR column of the Pokémon Trainer table. Pokémon with a higher CR than can be controlled can still be caught, but will not leave its Pokéball until the trainer is powerful enough to control them. The maximum Pokémon CR that you can control increases as you level up as shown in the table above.
+
+Some DMs may wish to allow a trainer to control a Pokémon with CR greater than normally allowed. Perhaps that Pokémon evolved into a much more powerful Pokémon too soon or maybe it was a powerful ally that now wishes to travel with the party. Use your best judgement on what should be allowed and talk to your DM and players about bending this rule.
+
+\page
+
+## Specializations
+Players may choose a specialization from the following list, granting them bonuses depending on the type of Pokémon they train. Specializations that give a bonus to skill checks can be chosen again for an additional +1 bonus for each time it is chosen. See the table above for each level a trainer receives a Specialization.
+
+#### Bird Keeper 
+You gain proficiency in Perception. Add a +1 bonus to all skill checks made by any of your bird Pokémon.
+___
+#### Bug Maniac 
+You gain Proficiency in Nature. Add a +1 bonus to all skill checks made by any of your Bug-type Pokémon.
+___
+#### Picnicker 
+You gain proficiency in Survival. Add a +1 bonus to all skill checks made by any of your Ground-type Pokémon.
+___
+#### Dragon Tamer 
+Increase your Wisdom by +1. Add a +1 bonus to all skill checks made by any of your Dragon-type Pokémon.
+___
+#### Rocker 
+Increase your Intelligence by +1. Add a +1 bonus to all skill checks made by any of your Electric-type Pokémon.
+___
+#### Pyromaniac 
+Increase your Charisma by +1. Add a +1 bonus to all skill checks made by any of your Fire-type Pokémon.
+___
+#### Gardener 
+You gain proficiency in Nature. Add a +1 bonus to all skill checks made by any of your Grass-type Pokémon.
+___
+#### Martial Artist 
+Increase your Strength, Constitution, or Dexterity by +1. Add a +1 bonus to all skill checks made by any of your Fighting-type Pokémon.
+___
+#### Hiker
+Increase your Strength, Constitution, or Dexterity by +1. Add a +1 bonus to all skill checks made by any of your Rock-type Pokémon.
+___
+#### Sailor
+Increase your Strength, Constitution, or Dexterity by +1. Add a +1 bonus to all skill checks made by any of your Water-type Pokémon.
+___
+#### Mystic
+You gain proficiency in Arcana. Add a +1 bonus to all skill checks made by any of your Ghost-type Pokémon.
+___
+#### Detective
+Increase your Dexterity, Intelligence, or Charisma by +1. You gain proficiency in the Investigation skill.
+```
+```
+___
+#### Psychic
+Increase your Intelligence by +1. Add a +1 bonus to all skill checks made by any of your Psychic-type Pokémon.
+___
+#### Swimmer:
+Gain a swim speed equal to your movement speed. Add a +1 bonus to all skill checks made by any of your Water-type Pokémon.
+___
+#### Ruin Maniac
+You gain proficiency in History. Add a +1 bonus to all skill checks made by any of your Steel-type Pokémon.
+___
+#### Punk
+You gain proficiency in Intimidation. Add a +1 bonus to all skill checks made by any of your Dark-type Pokémon.
+___
+#### Traveler
+You learn two languages of your choice. Add a +1 bonus to all skill checks made by any of your Ice-type Pokémon.
+___
+#### Fairy Tale Expert
+You gain proficiency in Religion. Add a +1 bonus to all skill checks made by any of your Fairy-type Pokémon.
+___
+#### Ninja
+You gain proficiency in Stealth. Add a +1 bonus to all skill checks made by any of your Poison-type Pokémon.
+___
+#### Actor
+You gain proficiency in Performance and Deception. 
+___
+#### Biker
+You are surprisingly adept at riding your bike. You own a foldable trick bike which you can use to perform trick maneuvers or gain a burst of speed. When using the bike for tricks you gain a +2 to Acrobatics checks and a +10 feet to your horizontal jumps. If you are biking on a smooth surface (such as concrete) your movement speed becomes 60 feet. If you are biking on a difficult surface (such as a forest trail) your movement speed becomes 40 feet.
+___
+#### PokéFan
+You can use your Pokédex as a bonus action instead of a regular action. Your Pokédex also has a range of 100 feet.
+___
+#### Scientist
+Increase your Intelligence by +1. Add a +2 bonus to all skill checks made by any of your artificial or fossil Pokémon.
+___
+#### Cool Trainer
+Increase your Charisma score by +1. Add a +1 bonus to all skill checks made by any of your Normal-type Pokémon.
+___
+#### Rich Trainer
+Choose a TM to add to your inventory.
+___
+#### Grunt
+The first time any of your Pokémon drop to Bond Level -3, they stay at Bond Level -2 instead.
+
+<div class='pageNumber auto'></div>
+
+\page
+___
+#### Pokémon Collector
+Once per long rest as an action you can choose one Pokémon to look for. You know if that Pokémon can be found within a 5 mile radius and the general direction to travel to increase your chances of finding that Pokémon. 
+___
+#### Butler
+When haggling for prices on buying or selling items you get a +5 to any Charisma checks.
+___
+#### Musician
+When you gain a new Pokémon without an established nature you can roll twice for its nature choosing one of the results to take.
+___
+#### Veteran
+If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice: Strength score, Dexterity score, Constitution score, Armor Class, Current hit points, total levels. You can use this specialization an amount of times equal to your Intelligence score per long rest (minimum one).
+___
+#### Lone Wolf
+You gain darkvision. With it you can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.
+___
+#### Firebreather
+You learn the Dancing Lights cantrip.
+___
+#### Aroma Lady
+You learn the Druidcraft cantrip.
+___
+#### Kindler
+You learn the Light cantrip.
+___
+#### Idol
+You learn the Friends cantrip.
+___
+#### Teacher
+You learn the Guidance cantrip.
+___
+#### Engineer
+You gain proficiency with three tool sets of your choice.
+___
+#### Jogger
+Your movement speed increases by 10 ft.
+___
+#### Doctor
+You can use Basic Restorative items and Berries as a bonus action twice per long rest.
+```
+```
+___
+#### Burglar
+You gain proficiency in Stealth and Slight of Hand.
+___
+#### Bodybuilder
+You gain proficiency in Acrobatics and Athletics.
+___
+#### Poké Maniac
+You gain proficiency in History and Insight.
+___
+#### Camper
+You gain proficiency in Nature and Survival.
+___
+#### Medium
+You gain proficiency in Medicine and Religion.
+___
+#### Hex Maniac
+You gain proficiency in Arcana and Intimidation.
+___
+#### Beauty
+You gain proficiency in Persuasion and Animal Handling.
+___
+#### Expert
+You can recall your Pokemon to their Pokeball from a range of 120 feet. However, when you send out a new Pokemon they must still be within 60 ft of your person.
+___
+#### Triathlete
+When you switch out your Pokemon that Pokemon may immediately move as far as their movement speed.
+
+<img 
+  src='https://i.imgur.com/xeKKHye.png' 
+  style='position:absolute;bottom:80px;right:90px;width:280px;mix-blend-mode:multiply'/>
+
+<div class='pageNumber auto'></div>
+\page
+## Trainer Paths
+There are many ways and reasons to train Pokémon, ranging from a desire for adventure to a wish to learn more about them. At the 2nd level choose one of the following paths:
+
+### Ace Trainer
+Your goal is to become one of the strongest trainers in the world, and so you excel in battle. All of your Pokémon gain a +1 bonus to their attack and damage rolls.
+#### Battle Master 
+When you reach level 5, you gain a number of battle dice (d6) equal to your Dexterity modifier. These die can be added to a single attack or damage roll. You can assign any amount of the dice to any of your Pokémon at the end of each of your long rests. A Pokémon with a battle dice can use one of those dice when they roll an attack roll or damage roll. Each day when you assign your battle dice for the day, any previous day's assignments are removed.
+#### Rapid Switching 
+When you reach level 9, your Pokémon can choose to take a single action or move on the turn they are switched. They still cannot use a bonus action or a reaction on that turn. Additionally, your battle dice become a d8.
+#### Tactical Mastery 
+Certain trainers choose to excel in one arena, utilizing it to its fullest potential. When you reach level 15, increase all of your Pokémon’s speed by 10. Then, choose an ability score. Each of your Pokémon increases that ability score by one. You must choose the same ability score to increase for all of your Pokémon. This increase will also apply to all Pokémon you catch in the future. Additionally, your battle dice become a d10.
+___
+### Hobbyist
+You think being a trainer requires being very good at a little bit of everything. You can choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. In addition, if your Pokémon are proficient in either of those skills, they too double their proficiency bonus to those ability checks.
+#### Versatile 
+At level 5, you gain a number of skill dice (d6) equal to your Intelligence modifier. These dice may be added to a single skill check or saving throw. You can assign any amount of these dice to yourself or any of your Pokémon at the end of each of your long rests.  Each day when you assign your skill dice for the day, any previous day's assignments are removed.
+```
+```
+#### Tinkerer 
+At level 9 you gain proficiency in tinker's tools. During each long rest, providing you have enough raw materials at your disposal, you can attempt a tinker's tools check to craft any one item under "Pokéballs", "X-Items", or "Other Held Items" in Section 10. Attempting the check costs you in resources equal to half the cost of the attempted item. The DC for these checks is equal to 10 + item's cost/₽250 (rounded down). Additionally, your skill dice become a d8.
+#### Multitalented 
+At level 15, whenever you capture or collect a new Pokémon, choose two of its ability scores to increase by 1. When you gain this ability, this bonus applies retroactively to Pokémon you have already caught. Additionally, your skill dice become a d10.
+___
+### Nurse
+You have a nurturing touch and a skill for mentoring Pokémon to bring out the best in them. You gain proficiency in the Medicine skill. Every time you use an item or ability to heal a Pokémon, that Pokémon regains addtional hit points equal to your Wisdom modifier (minimum one).
+#### Pokéchef
+You excel at creating meals for your Pokémon, seemingly out of nothing. At level 5, you are frequently prepared with some sort of edible treat, granting 2d4+2 hit points when given. You can give the treat to a creature as a bonus action and other creatures can administer it as an action. You can use this feature a number of times equal to your proficiency modifier per long rest.
+#### Warning Words
+At 9th level, you can call out in battle, warning your Pokémon of incoming threats. When one of your Pokémon would suffer damage, you may use your reaction to reduce the incoming damage by 2d6 plus your Wisdom modifier. You may use this ability a number of times equal to your Wisdom modifier per day (minimum one).
+#### Loyal to a Fault 
+The care and attention you show to your Pokémon is returned in kind. When you reach level 15, your Pokémon have advantage on saving throws against negative status effects. Additionally, the amount you can reduce with your Warning Words ability increases to 3d6 plus your Wisdom modifier.
+<div class='pageNumber auto'></div>
+
+<img src='https://cdn.donmai.us/original/cb/fc/__ekans_pokemon_drawn_by_spareribs__cbfc08a40b250ac661d3839c3966c9d4.png' style='position:absolute;bottom:45px;left:410px;width:380px;' />
+
+
+\page
+___
+### Poké Breeder
+Your dream is to care for Pokémon, giving them an environment where they can live and grow as well as guiding the trainers that use them. When you choose this path, you can add half your Charisma modifier (round down, minimum one) to any skill check that does not already benefit from your proficiency bonus. 
+#### Frying Pan as a Drying Pan
+Your knowledge of Pokémon anatomy makes you particularly skilled at healing. At level 5, you can cure one status effect affecting any Pokémon as an action. You can use this feature a number of times equal to your Charisma modifier per day.
+#### Cheerleader 
+You have the ability to inspire those around you. At level 9, once per short rest, you may use a bonus action to boost all allied Pokémon within 200 feet with inspiring words. Until your next turn, you may add your Charisma modifier to your choice of all allied Pokémon attack rolls, damage rolls, or AC.
+#### Rally
+When you reach level 15 in this path you can bolster the resolve of your Pokémon. As a bonus action, choose one Pokémon you can see within 120 feet to receive 1d8 + your Charisma modifier (minimum one) temporary hit points.
+
+___
+### Researcher
+You wish to learn more about Pokémon and the secrets that they hold within. Due to your heightened understanding of your Pokémon, you may add your Intelligence modifier (minimum one) to any skill check your Pokémon makes. You may use this abiliy a number of times equal to your proficiency bonus per long rest.
+
+#### Analyst
+At level 5 your keen mind allows you to discern details about a Pokémon others might overlook. As an action or bonus action, you can make a Investigation check contested by a Pokémon’s Deception check. If you succeed, you learn that Pokémon’s abilities and the name of one random move it knows.
+#### Evolutionary Expert 
+At level 9, your understanding of the secrets behind Pokémon evolution allows you to influence the process. Your Pokémon gain 1 additional ability score point to put into any ability when they evolve. This bonus also retroactively applies to any Pokémon that evolved while under your care. Additionally, you may ignore the restriction of placing only 3 points in a single ability score when evolving.
+#### Professor 
+At level 15, you are an expert in your field. Your Analyst ability now also tells you the Pokémon's remaining HP and its AC. In addition, you learn that target's weak spots, granting your Pokémon +5 to all attack rolls against the Pokémon until the end of your next turn.
+<div class='pageNumber auto'></div>
+```
+```
+___
+### Pokémon Collector
+Your fascination with all the different types of Pokémon of the world drives your need to collect them all. Gain proficiency in the Animal Handling skill or another skill of your choice if you already have proficiency in Animal Handling. Your proficiency bonus for your Animal Handling skill is doubled.
+#### Gotta Catch ‘Em All 
+At level 5, you are extremely practiced in the art of Pokémon collecting. Add +5 to all future attempts to catch a Pokémon. You also gain proficiency in one skill of your choice.
+#### Careful Catching 
+At level 9, Your bonus from Gotta Catch 'Em All increases to +10 and any Pokémon you catch instantly are healed of their status ailments and brought to full health. Additionally you may choose at any time to attempt to catch a Pokémon as if it is at one third of its total health.
+#### Disciplined Creatures 
+At level 15, you have trained your Pokémon to hold onto their last bit of strength. When your Pokémon are brought to 0 HP, you can choose to bring it to 1 HP instead. You can only use this ability once per Pokémon per long rest.
+
+<img 
+  src='http://static.tvtropes.org/pmwiki/pub/images/ProfElmHGSS_6265.PNG' 
+  style='position:absolute;bottom:45px;right:70px;width:290px;mix-blend-mode:multiply'/>
+
+\page
+___
+### Pokémon Ranger
+Your bond with the wild shows in your bond with your Pokémon. When you choose this Path, gain proficiency in the Nature and Survival skills. In addition, you may use the Help action as a bonus action.
+#### Capture Styler
+As a Pokémon Ranger you use a special tool to capture Pokémon called a Capture Styler. At level 5, if you have run all the way around a Pokémon, drawing a closed shape by the path you traveled, you gain a +10 to capturing that Pokémon.
+#### Bestial Fury
+At 9th level, you can unleash the primal animal within your Pokémon. As an action you can command your Pokémon to strike out in a flurry of attacks. That Pokémon can use a single target move with a Move Time of 1 action and a range of melee an amount of times equal to your Wisdom modifier while only using one PP. If you command a Pokémon to strike out in this way, that Pokémon cannot move or use actions until the end of your next turn. You can use this ability once per long rest.
+#### Dominate Pokémon
+At level 15, once per long rest as a bonus action, you may force an enemy Pokémon you can see with 60 feet to make a Wisdom saving throw against a DC of 8 + your proficiency modifier + your Wisdom modifier. If you or your allies are fighting the Pokémon, it has advantage on the saving throw. On a failure, that Pokémon follows your commands for one minute. Each time the Pokémon takes damage, it makes a new Wisdom saving throw against this effect. If the saving throw succeeds, this effect ends.
+
+<img src='https://poketouch.files.wordpress.com/2016/08/pokemon_ranger_guardian_signs_artwork.jpg?w=768' style='position:absolute;bottom:240px;left:75px;width:300px' />
+
+<div style='margin-top:270px'></div>
+
+### Type Expert
+You've dedicated your Pokémon journey to the study and training of only one type of Pokémon. When you choose this trainer path at level 2, choose a single type called your expert type. When one of your Pokémon hits a damaging move of your expert type, you can cause that move to deal maximum damage on that move's damage dice. You can use this feature a number of times equal to your Wisdom modifier per long rest (minimum one). 
+#### Be The Very Best 
+At level 5, you become keenly aware of how to channel your Pokémon's type in battle. Your Pokémon of your expert type that use a move of that type gain a bonus to the attack roll equal to your trainer Wisdom modifier (minimum one). Additionally, Pokémon of your expert type have the PP of moves of your expert type increase by a multiplier of 1.5 (rounded down).
+#### I'm Gonna Have My Own Gym 
+At level 9, your knowledge of your type extends beyond how your Pokémon fights. Whenever a Pokémon of your chosen type is your Active Pokémon, that Pokémon can gain advantage on a skill check. You can give your Pokémon this advantage a number of times equal to your Wisdom modifier per long rest (minimum one).
+#### Type Resistance 
+At level 15, you are so familiar with your type that what was once a glaring weakness is now easily overcome. Choose one type that your expert type is vulnerable to. Pokémon you own of your expert type can no longer be vulnerable to that type.
+
+___
+### Athlete
+You're able to teach your Pokémon the art of physical exercise. Your Pokémon gain the ability to use the Dodge, Disengage, and Dash actions on their turns as bonus actions. You can have your Pokémon use these actions as a bonus a number of times equal to your Strength modifier (minimum one) per short rest.
+#### Strength of Body
+At level 5, your Pokémon become as tough and strong as you are. Once per round, your Pokémon can add your Strength modifier to any damage they deal with a move with a range of Melee.
+#### Indomitable
+A strong body is nothing without a strong mind. At level 9, you can use your reaction to cause one of your Pokémon to reroll a saving throw that they fail. If you do so, they must use the new roll. You can use this feature a number of times equal to your Strength modifier per long rest (minimum one).
+#### Mastery of Self
+At level 15, you are the pinnacle of physique, strength, and power. Therefore, so are your Pokémon. When you capture a Pokémon you may choose to raise its Strength, Dexterity OR Constitution by 2. When you gain this ability, this bonus applies retroactively to Pokémon you have already caught.
+
+<img src='https://vignette.wikia.nocookie.net/pokemonfanon/images/e/e7/Bruno.png/revision/latest?cb=20180206000319' style='position:absolute;bottom:35px;right:150px;width:190px' />
+
+
+<div class='pageNumber auto'></div>
+\page
+
+# 2. Catching Pokémon
+___
+<div style='margin-top:20px'></div>
+
+
+Catching Pokémon, much like in the original game, is crucial to your success as a Pokémon Trainer. There are several rules to follow when catching Pokémon:
+
+- As previously stated, a trainer can carry any number of Pokémon. However, since a trainer can only use a number of Pokémon per day equal to their Pokéslots, they may choose to store Pokémon they capture in a second location.
+- A Pokéball is destroyed on a failed catch attempt. 
+- A caught Pokémon retains its level, all status effects, and current HP at the time of the catch.
+- It is impossible for a Trainer to catch a Pokémon whose level is greater than their current level.
+- A caught Pokémon starts with the minimum amount of experience for that Pokémon’s level.
+- A fainted or dead Pokémon cannot be caught.
+- If you catch a Pokémon instead of causing it to faint you do not gain experience from that Pokémon
+
+There may be Pokémon in the wild that are friendly and happy to join you in your adventures. For those that need a little more coaxing, the mechanics of catching a Pokémon are much like casting a spell that everyone knows.
+___
+
+>#### Throw Pokéball
+<br/>
+- **Action Cost:** 1 action
+- **Range:** 60 feet
+- **Components:** 1 Pokéball of any type that is consumed upon capture attempt
+>
+>You hurl a Pokéball at a wild Pokémon in attempt to capture it. Make a Capture Roll by rolling a d20 and adding your choice of your Wisdom or Charisma modifier to the roll. If you are proficient in Pokéballs, you may add your proficiency bonus to the check.
+You have advantage on the check if the Pokémon is poisoned, restrained, asleep, burned, confused, or frozen.
+<br><br>
+The DC to catch a Pokémon is equal to:
+10 + Pokémon’s CR (rounded down) + Pokémon level + Fraction of HP remaining multiplied by 10 (rounded down)
+<br><br>
+*Note: Bonuses are added to your throw, depending on which type of Pokéball you use. See the item list for the different types of Pokéballs.*
+
+
+<div class='wide'>
+<div class='descriptive'>
+##### Pokémon Catching Example
+You are a Level 5 Trainer and want to capture a level 3 Pikachu (CR 1/2). The DM knows you have knocked its health down to 10/15, and your Bellsprout has poisoned it. The DM would calculate your DC to capture it as:
+<pr>
+Starting value: **10**
+<pr>+ Pokémon CR: *1/2 rounded down* = **0**
+<pr>+ Pokémon Level: **3**
+<pr>+ Fraction HP remaining times 10: *10x10/15 = 6.66 rounded down* = **6**
+<pr>= **19**
+___
+You would have to roll a total of 19 or higher on your capture check to capture the Pikachu with a regular Pokéball, and you have advantage because the Pikachu is poisoned! 
+</div>
+
+*Note: It is at the discretion of the DM to reveal any information regarding the DC to capture Pokémon, but the player should at least know whether or not the chance is impossible due to level constraints.*
+</div>
+
+
+<img src='https://fsmedia.imgix.net/e5/c2/07/a1/b9fb/4408/bf61/a41ae2cb9a59/so-many-to-choose-from.png?rect=0%2C0%2C800%2C400&auto=format%2Ccompress&dpr=2&w=650' style='position:absolute;bottom:30px;right:125px;width:550px' />
+
+
+
+<div class='pageNumber auto'></div>
+\page
+
+# 3. Pokémon Care
+___
+
+## Active Pokémon
+At each short or long rest, a trainer must choose an **Active Pokémon**. This Pokémon stays outside their Pokéball and roams around with the trainer to socialize and help with skill checks. In battle, they are the first one to fight until switched out.  A trainer can switch out their Active Pokémon at any time except immediately before entering a battle by taking the switch action (see section 4). If this Pokémon faints, the trainer must choose a new Active Pokémon at that time.
+
+Pokémon, like trainers, are proficient in various skills. Outside of battle, a Pokémon may “help” their trainers, granting advantage on one of the trainer’s skill checks as long as the Pokémon is proficient in that skill. For example: Ash has chosen Pikachu as his active Pokémon. Pikachu is proficient in History and Performance. If Ash uses either of these skills, he is given advantage on the roll.
+
+## Healing
+The rules below slightly modify the D&D 5e rules on healing in order to make Pokémon 5e more like the Pokémon video games. However, if you are playing in a world where Pokécenters are not common, you may wish to modify these rules. There are three ways to heal your Pokémon.
+- Bring them to a Pokécenter.
+- Take a long or short rest.
+- Give them potions or restorative food.
+
+### Pokécenters
+Pokécenters are small hospital-like facilities that can heal your Pokémon to full health and cure all their statuses in less than 30 minutes – for a small fee. Healing a Pokémon at a Pokécenter has a wide range of cost, usually around ₽100 to ₽1000. Pokécenters can be found across the world in abundance. Pokémon can recover their hit die only at Pokécenters.
+
+### Rests
+Long rests take at least eight hours and refresh all Pokémon health, statuses, and PP. Pokémon do not recover hit die during long rests.
+
+Short rests take an hour and recover an amount of health equal to the number rolled on each of a Pokémon’s hit dice plus their Constitution modifier (as per normal D&D rules). PP and hit die are not recovered on short rests. Short rests do not heal status conditions.
+
+### Potions/Food
+These are items that can be given to a Pokémon as an action to instantly restore hit points, heal status effects, or temporarily increase abilities. These items cannot be given to Pokémon within Pokéballs (with some exceptions such as Revives). Potions and similar health restoring items can be used to bring a Pokémon from 0 HP to higher HP. 
+
+<img src='https://i.pinimg.com/originals/af/6b/30/af6b3067244212e16310ec1ae9a3adb7.jpg' style='position:absolute;bottom:40px;left:440px;width:300px' />
+```
+```
+## Pokémon Nature
+Each Pokémon has their own personality - their own wants, needs, likes and dislikes. Taking care of your Pokémon means building a trusting relationship with them and accepting them for who they are. As such, any Pokémon you come into contact with has its own **Nature** that affects their ability scores and sticks with them for their entire life. When a trainer catches a Pokémon, roll on the table below to determine their nature. When you choose your starter, you may choose which nature they have.
+
+<br>
+
+| d20| Nature|Effect|
+|:----:|:----:|:----:|
+| 1  | Reckless|+2 Strength, -2 Dexterity|
+| 2  | Rash |+2 Strength, -2 Constitution|
+| 3 | Adamant |+2 Strength, -2 Intelligence|
+| 4 | Quirky |+2 Intelligence, -2 Charisma|
+| 5 | Skittish |+2 Dexterity, -2 Strength|
+| 6| Hasty |+2 Dexterity, -2 Constitution|
+| 7 | Naughty |+2 Dexterity, -2 Charisma|
+| 8 | Naive |+2 Intelligence, -2 Wisdom|
+| 9 | Relaxed |+2 Constitution, -2 Dexterity|
+| 10 | Modest |+2 Intelligence, -2 Constitution|
+| 11| Grumpy |+2 Constitution, -2 Charisma|
+| 12| Brave |+2 Constitution, -2 Strength|
+| 13 | Careful|+2 Wisdom, -2 Dexterity|
+| 14| Curious |+2 Wisdom, -2 Intelligence|
+| 15 | Quiet |+2 Wisdom, -2 Charisma|
+| 16 | Gentle |+2 Charisma, -2 Strength|
+| 17 | Sassy |+2 Charisma, -2 Wisdom |
+| 18 | Jolly |+2 Charisma, -2 Intelligence|
+| 19 | Hardy |No Change|
+| 20 | Nimble |No Change|
+
+<div class='pageNumber auto'></div>
+
+## Pokémon Gender
+All non-artificial Pokémon have a gender. A Pokémon's gender can determine how certain moves, abilities, and even evolutions affects them. When a trainer catches a non-artificial Pokémon, roll 1d20. On 1 to 10 that Pokémon is a boy, on 11 to 20 that Pokémon is a girl.
+
+\page
+# 4. Battling
+___
+Being a master of Pokémon battles is core to being a Pokémon Trainer. Pokémon have their own set of moves, stats, and levels to gain. A Pokémon Trainer’s job on their turn is to assist their Pokémon in battle by interacting with the environment, providing potions or boosts, commanding their Pokémon to attack, or attempting to run away.
+
+## Combat
+Combat in Pokémon 5e is similar to D&D 5e, with a few exceptions:
+- At the start of a battle, you roll one initiative for both you and your Pokémon using your trainer's initiative bonus.
+- Only one of your Pokémon may be on the battlefield at any one time.
+- You only have one action and one bonus action between you and your Pokémon.
+- On your turn, both your trainer and your active Pokémon have a movement up to their speed.
+- Both you and your Pokémon have one reaction you can use per round of battle.
+- You MUST have a Pokémon in the battle at all times. If you have no remaining Pokémon (based on Pokéslots), you lose the battle and can rely only on yourself and your allies to get out of danger.
+
+## Moves/Move Powers
+Your Pokémon have several moves to choose from in battle, and can learn more as they advance levels or are given TMs and HMs. Moves in Pokémon 5e work similarly to spells in 5e D&D. Instead of a single character having a set amount of spell slots, each move has a set amount of **Power Points (PP)**. PP determines how many times the move can be used, one use per one PP. Refilling PP can be done by visiting a Pokécenter, long resting, or using an item such as Ether.
+
+Each move has a **Move Power** – the focused ability of that move. Move Powers can be any of the six main ability scores , and determine which ability to use for attack, damage, and saving throw DC.
+<div>
+*Attack Roll Bonus = Move Power Mod + Proficiency Mod*<br>
+*Damage Bonus = Move Power Mod*<br>
+*Saving Throw DC = 8 + Proficiency Mod + Move Power Mod*
+</div>
+
+As shown in the calculations above, all Pokémon are proficient in all moves they know. As a single Pokémon can have many moves that use many different Move Powers, it can be difficult to keep track of the different attack bonuses, damage bonuses and saving throw. It might be helpful to write down those numbers next to each of your Pokémon's attacks.
+
+Similar to spells in 5e D&D, if a Pokémon uses the Ready Action to ready a move, that Pokémon uses the PP immediately. This means that if the triggering event doesn't occur for that Pokémon's move before that Pokmeon's next turn, they use the move's PP without ever executing that move.
+
+
+```
+```
+## Switching Pokémon
+- A Trainer may take the "switch" action to recall one of their Pokémon within line of sight from up to 60 feet away and realease a new Pokémon within line of sight up to 60 feet away.
+- Changing out a Pokémon before it has fainted takes up an entire action, but changing out a Pokémon when it faints can be done immediately and out of turn as a free action. 
+- If a Pokémon is switched out as a free action as a result of that Pokémon fainting, the new Pokémon must be placed in the same space as the fainted Pokémon. 
+- Alternatively, when a trainer's Pokémon faints they can recall the fainted Pokémon immediately and then wait until their turn to take an action to release a new Pokémon within 60 feet from their person.
+- When a Pokémon is switched out it has to take a moment to take stablize itself after its recent reformation from pure energy. A Pokémon that has been switched cannot move, take any actions, take a reaction, or take a bonus action during the current turn.
+- Switching out a Pokémon does not provoke an attack of oppurtunity on either the trainer or the Pokémon
+
+## Attacks of Opportunity
+If a Pokémon leaves the melee range of another creature without using the Disengage action, or when not returning to a Pokéball, the opponent may use a melee move that has a move time of 1 action immediately as a reaction targeting the fleeing Pokémon. The move costs the normal amount of PP.
+
+
+## Trainers in Battle
+In Pokémon battles,  a trainer's main job is to interact with the environment, issue commands, and keep their Pokémon in the fight by administering boosts or potions. There are strict laws governing the world of Pokémon and any trainer vs. trainer combat is strictly prohibited, the penalty being the loss of one's Trainer License. As such, trainers may not target other trainers in officially sanctioned Pokémon battles. However this is not the case in wild Pokémon battle or in battle against particularly nefarious opponents.
+
+<img src='https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/26677602/original/b9b1e46e107840e634d54e954205e5d26351e2db/draw-your-Pokémon-team.png' style='position:absolute;bottom:30px;right:30px;width:400px' />
+<div class='pageNumber auto'></div>
+\page
+# 5. Types
+___
+Pokémon 5e replaces the standard 5e damage types (bludgeoning, slashing, force, thunder, etc.) with ones more typical to the Pokémon universe. These types are Fire, Water, Ice, Grass, Ground, Rock, Electric, Fighting, Ghost, Psychic, Poison, Bug, Flying, Dragon, Dark, Steel, Fairy and Normal. With these new types come new vulnerabilities and resistances as seen in the chart below. If a Pokémon resists a type, that type is "not very effective" (half damage). If a Pokmeon is vulnerable to a type, that type is "super effective" (double damage).
+
+## Dual Typing
+Many Pokémon have two distinct types rather than just one. To calculate the vulnerabilities and resistances of a multi-typed Pokémon, multiply the values in the column of their first type to the row of their second type. For example, a Normal/Psychic type Pokémon would be neutral to Fighting damage, resistant to Psychic, vulnerable against Bug, immune to Ghost, and vulnerable against Dark.
+
+## Double Resistances or Vulnerabilities
+It is quite possible that a Pokémon gains a resistance or vulnerability from both of its types. In this case the damage from that move only gets halved or doubled once, not twice. For example, Geodude is a Rock/Ground type and gains vulnerability to the Water type from both its Rock and Ground typing. If a Water-type move was to do a base of 6 damage to Geodude, he would take 12 damage, not 24. 
+
+## Immunities
+If a Pokémon is immune to a certain type,  it does not take damage from moves of that type. However, it still suffers other negative effects from those moves. For example, the Ghost-type Ghastly would not take damage from the Normal-type move Pound, but could still be put to sleep by the Normal-type move Sing.
+
+<div class='wide'>
+
+<img 
+  src='https://s3-us-west-2.amazonaws.com/en-samurai-gamers-images/wp-content/uploads/2017/11/22143704/pokemon-type-chart.jpg' 
+  style='position:absolute;bottom:50px;right:125px;width:570px;mix-blend-mode:'/>
+
+</div>
+<div class='pageNumber auto'></div>
+\page
+# 6. Bond System
+___
+The bond between trainer and Pokémon is the heart and soul of any respectable trainer's abilities.
+
+## The Basics
+In addtional to the rest of their stats, each Pokémon has a Bond Level between -4 and 3. Usually the trainer of a certain Pokémon dictates how that Pokémon moves and acts, but with a sufficently low Bond Level, the Dungeon Master may intercede and control how a Pokémon acts. A Pokémon with a Bond Level below 0 will begin to act out, sometimes disobeying the trainer or even leaving the party altogether. On the other hand, a Pokémon with a high enough Bond Level will gain benefits.
+
+When a Pokémon is captured from the wild, their Bond Level begins at 0. A Pokémon's Bond Level is specific to that Trainer/Pokémon pair. A Pokémon has a different Bond Level for each trainer it pairs with. If a Pokémon is ever returned to their original owner, they reset to the Bond Level they previously had with that trainer.
+
+## Pokémon and Death
+There are a few rules in Pokémon 5e that are different from regular 5e when dealing with the death of Pokémon. 
+- When your Pokémon reaches 0 HP, it faints and you may immediately replace it with another Pokémon allocated to one of your Pokéslots as a free action.
+- While the Pokémon is inside its Pokéball, it does not have to make death saving throws. 
+- Additionally, Pokémon can avoid normal 5e instant death from taking negative damage equal to their maximum health if the Pokémon is recalled to a Pokéball upon taking that damage. 
+- A Pokémon inside its Pokéball stabilizes at 0 HP after 10 minutes of uninterrupted time inside the ball. 
+- If a Pokémon at 0 HP stays out in the field and it has not been stabilized or its trainer cannot recall it, it must begin making death saving throws as normal. 
+
+Regardless, a Pokémon that faints may lose faith in their trainer and lose Bond Levels. 
+
+## Manipulating Bond Levels
+As you learn and grow with your Pokémon their Bond Level will fluctuate up and down. There are many ways to gain and lose Bond Levels, but below are some of the most common.
+
+### Fainted Pokémon and Bond Levels
+When your Pokémon faints, roll a d20. On a roll of 8 or lower your Pokémon loses one Bond Level. If enough of your Pokémon faint that you run out of Pokéslots, you "white out". When you white out you must roll a DC 12 Charisma saving throw for each of your fainted Pokémon. If you fail the saving throw, that Pokémon loses a Bond Level.
+
+```
+```
+### Bonding
+Bonding with your Pokémon is an important part of any trainer’s routine. Bonding with a Pokémon can take the form of practicing, eating together, playing games, or simply just enjoying one another’s company. When you've sufficiently Bonded with a Pokémon, you can make your choice of Animal Handling, Persuasion, or Nature skill check. The DC of this skill check is equal to 17 + the Pokémon's current Bond Level. On a success your Pokémon gains one Bond Level. 
+
+Your DM determines the frequency of bond checks for your game. Bond checks should be done whenever a trainer and a Pokémon truly grow together as a team!
+
+### Other Ways Of Changing Bonds
+Sometimes a DM might decide that a Pokémon's Bond Level changes without a check. For example, if a Pokémon is deposited in a PC for longer than 4 months, they might lose a Bond Level. Or, if you and your Pokémon work together to win a particularly difficult or meaningful battle, they might gain a Bond Level. Anything from the tragic death of a loved one to a solid high five can change the pair's bond. It's up to the DM what ultimately changes a Bond Level, but the rules here hopefully give some guidelines.
+
+1. ## Benefits and Detriments of Bond Levels
+The following table describes the effects of each Bond Level:
+
+| Level | Effect |
+|:-----:|:-------|
+| -4 | Your Pokémon no longer wishes to travel by your side. This Pokémon has the effects of Bond Level -3. If this Pokémon's Bond Level stays at -4 for a whole day, it leaves its trainer, never to return.|
+| -3 | This Pokémon gives a -4 to its trainer's initiative rolls and has a chance to disobey its trainer. Each time this Pokémon executes a move, roll a d20. On a roll of 5 or less that move has no effect.|
+| -2 | This Pokémon gives a -2 to its trainer's initiative rolls while it is an Active Pokémon and has a chance to disobey its trainer. At the beginning of every battle, roll 1d4. On a roll of 1 this Pokémon suffers the effects of Bond Level -3. |
+| -1 | This Pokémon gives a -2 to its trainer's initiative rolls while it is an Active Pokémon. |
+| 0 | A caught Pokémon starts at this Bond Level. |
+| +1 | This Pokémon gives a +2 to its trainer's initiative rolls while it is an Active Pokémon. |
+| +2 | This Pokémon gives a +2 to its trainer's initiative rolls while it is an Active Pokémon and +5 temporary HP at the end of each long rest. | 
+| +3 | This Pokémon gives a +4 to its trainer's initiative rolls while it is an Active Pokémon and gains +10 temporary HP at the end of each long rest.|
+
+<div class='pageNumber auto'></div>
+\page
+# 7. Pokémon and Character Advancement
+
+## Pokémon Experience
+Experience points are rewarded to Pokémon for successfully defeating other Pokémon, or given out at the DM’s discretion when the players complete a particularly difficult challenge or trainer battle. Only Pokémon that took part in the fight can be rewarded experience for that fight. See the *Running a Game* section for more information on experience. The following is a table containing the total experience a Pokémon needs at each level to level up:
+
+| Level | Experience Needed |
+|:----:|:-------------|
+| 1st  | 0|
+| 2nd | 300 |
+| 3rd | 800 |
+| 4th | 2,200|
+| 5th | 6,000 |
+| 6th | 10,000 |
+| 7th | 15,000 |
+| 8th | 21,000 |
+| 9th | 28,000 |
+| 10th | 37,000 |
+| 11th | 47,000|
+| 12th | 58,000 |
+| 13th | 70,000 |
+| 14th | 84,000 |
+| 15th | 100,000 |
+| 16th | 118,000|
+| 17th | 138,000 |
+| 18th | 160,000 |
+| 19th | 184,000 |
+| 20th | 210,000|
+
+### New Moves
+Your Pokémon may learn a new move on the list of moves for this level. Pokémon cannot know more than 4 moves at one time. If your Pokémon already knows 4 moves, it can replace a move it knows with a move from the move list for this level. When a Pokémon learns a new move, that move has one fourth of its maximum PP (rounded up, minimum one). The PP for this move can be restored as normal (for example, on a long rest).
+
+### Switch Moves
+Your Pokémon may replace any one move it knows with a move from any of the moves listed at levels lower than your Pokémon's current level.
+
+```
+```
+	
+### AC Up
+Your Pokémon gains 1 AC.
+	
+### Ability Score Increase
+Your Pokémon can increase one ability score of your choice by 2, or two ability scores of your choice by 1 (to a maximum of 20). They can also instead select a Feat for Pokémon (see section 11 for a list of Feats).
+
+
+### True Essence
+At level 20 your Pokémon is at its pinnacle. Two ability scores of its trainer's choice for this Pokémon increase by 2, up to a maximum of 22.
+
+<img src='https://s1.zerochan.net/Pok%C3%A9mon.600.1282896.jpg' style='position:absolute;bottom:110px;left:415px;width:380px' />
+	
+<div class='pageNumber auto'></div>
+	
+\page
+
+## Pokémon Advancement
+Just like PCs, Pokémon roll a hit die (determined in their stat block) and add their CON modifier to determine the increase in their maximum HP at each level (minimum one total HP increase). The Pokémon receives the maximum HP immediately but will not gain that effective HP until it rests or is healed. Every Pokémon receives benefits when they reach a new level as outlined below:
+
+<div class='classTable'>
+##### Pokémon Leveling
+| Level | Proficiency Bonus | Features |
+|:---:|:---:|:---|
+| 1st | +2 |  |
+| 2nd | +2 | New Moves |
+| 3rd | +2 | New Moves |
+| 4th | +2 | Ability Score Improvement |
+| 5th | +3 | AC Up, Switch Moves |
+| 6th | +3 | New Moves |
+| 7th | +3 | AC Up |
+| 8th | +3 | Ability Score Improvement |
+| 9th | +4 | New Moves |
+| 10th | +4 | Switch Moves |
+| 11th | +4 | AC Up |
+| 12th | +4 | Ability Score Improvement |
+| 13th | +5 | New Moves |
+| 14th | +5 | Switch Moves |
+| 15th | +5 | AC Up |
+| 16th | +5 | Ability Score Improvement |
+| 17th | +6 | New Moves |
+| 18th | +6 | Switch Moves |
+| 19th | +6 | Ability Score Improvement |
+| 20th | +6 | New Moves, True Essence |
+</div>
+
+<div class='pageNumber auto'></div>
+	
+<img src='https://external-preview.redd.it/NxvRoJOHPot8th48q7KZC-7U4BVk6Hw3J_B3SmWmCes.png?auto=webp&s=be752e195edb8708bafa4ad927dfe1e2dac1e257' style='position:absolute;bottom:35px;left:90px;width:280px;transform:scaleX(-1);' />
+
+```
+```
+
+## Evolution
+Pokémon can evolve into a new form once they hit a certain level as determined in their stat block.  When a Pokémon evolves, the following occurs:
+- It keeps its current ability scores, but gains 5 points to distribute towards any of those scores. No more than 3 of these points may be put into a single stat and no stat may be increased above 20.
+- It gains an HP equal to its level.
+- It acquires the hit dice of its evolved form for this level up and for furture rolls.
+- It acquires the AC of its evolved form if that AC is greater than its current AC.
+- The Pokémon might gain new proficiencies and new vulnerabilities/resistances as determined by its new form's stat block.
+- It keeps the known moves it had at the time of evolution, but must learn all future moves from its new move list.
+- If the Pokémon would receive other benefits at this level, it receives the benefits after it has evolved.
+- Evolution can be delayed at the player’s discretion, but once the decision has been made, the Pokémon cannot evolve until gaining an additional level.
+
+<img src='https://i.pinimg.com/736x/8c/a2/06/8ca20679abaa5c656de38512043739d6--my-pokemon-pokemon-stuff.jpg' style='position:absolute;bottom:80px;left:430px;width:350px' />
+
+\page
+	
+## Character Advancement
+This section outlines three options a DM can use for player character leveling. In Pokémon 5e, players do not gain levels by gaining experience. Instead Pokémon gain experience and trainers level up depending on the strength of their Pokémon.	
+	
+#### Option 1: Total Pokémon Levels
+The level of a character is determined by total levels of the character’s X highest leveled Pokémon, where X is the PC’s current number of Pokéslots.  The following table can be used as a guideline for PC leveling.
+
+| Character Level | Total Pokémon Levels Needed |
+|:---:|:---:|
+| 2nd | 3 | 
+| 3rd | 5 | 
+| 4th | 7 | 
+| 5th | 10 |
+| 6th | 18 | 
+| 7th | 24 | 
+| 8th | 27 | 
+| 9th | 30| 
+| 10th | 33 | 
+| 11th | 46 | 
+| 12th | 50 | 
+| 13th | 55 | 
+| 14th | 60 | 
+| 15th | 65 | 
+| 16th | 78 | 
+| 17th | 83 | 
+| 18th | 87 | 
+| 19th | 92 | 
+| 20th | 100 | 	
+	
+<div class='descriptive'>
+
+*For example, Ash is currently level 9  and owns five Pikachu at levels 11, 6, 8, 7 and 3. He only has 4 Pokéslots at this level. For the purpose of leveling, he uses his 4 highest level Pokémon's total levels: 6 + 7 + 8 + 11 = 32.  If he were to level up his level 6 Pikachu to level 7, then he would reach 10th level because his new total would be 7 + 7 + 8 + 11 = 33. Now that he is 10th level he receives another Pokéslot and his total for leveling changes to 3 + 7 + 7 + 8 + 11 = 36.*
+
+</div>
+
+The highest level Pokémon a trainer owns do not need to be carried by that trainer in order to level up.
+
+It is important to note that Pokémon captured at a high level are typically not as strong as those caught at a lower level and trained up to that point. Capturing higher leveled Pokémon may be beneficial for a player seeking to level up quickly, but a trainer with 3 recently captured Charizards is weaker than a trainer who has cared for 3 Charmanders through their evolutions.
+	
+#### Option 2: Pokédex Registration
+The level of the trainer is based upon how many Pokémon the trainer has registered in their Pokédex. Players can register Pokémon into their Pokédex by using said Pokédex as an action. The DM may also choose to allow trainers to register a Pokémon by reading a certain book, finding an artifact, speaking to a professor, etc. The following table can be used as a reference for levels based on number of Pokémon in a Pokédex.
+
+| Character Level | Pokémon Registered |
+|:---:|:---:|
+| 2nd | 15 |
+| 3rd | 35 |
+| 4th | 55 |
+| 5th | 80 |
+| 6th | 100 |
+| 7th | 120 |
+| 8th | 140 |
+| 9th | 165|
+| 10th | 185 |
+| 11th | 210 |
+| 12th | 230 |
+| 13th | 250 |
+| 14th | 270 |
+| 15th | 295 |
+| 16th | 315 |
+| 17th | 340 |
+| 18th | 360 |
+| 19th | 380 |
+| 20th | 400 |  
+
+#### Option 3: Milestone Leveling
+Perhaps the easiest, most straightfoward, and most narratively resonant method of leveling is milestone leveling. In this method, every trainer in a party is leveled at the same time whenever the DM determines the party has overcome a significant obstacle or reached a milestone in the game's story. A general rule of thumb is a player character's level should be a little higher than their highest level Pokémon. Do not use this rule of thumb if trainers are only training one Pokémon. In that case, their level should be a little lower than their highest leveled Pokémon.
+
+<img src='https://64.media.tumblr.com/5e1311b99992a9f34099996462d69973/3e2c129a5be7d812-b5/s1280x1920/ebed0f3613d376d77618560cfd2046c8ac1cfee1.jpg' style='position:absolute;bottom:40px;left:420px;width:350px' />
+	
+<div class='pageNumber auto'></div>
+\page
+# 8. Other Changes
+___
+### New Status Effects
+In addition to effects such as grappled, restrained, etc., Pokémon 5e adds or modifies several status effects. If an effect listed here has the same name as an effect from 5e D&D, use the effect listed here. If a Pokémon faints with one of these status conditions its condition, is healed when that Pokémon revives.
+
+#### Poisoned:
+A poisoned creature has disadvantage on all ability checks and saving throws, and takes 1d6 poison damage at the beginning of each of its turns until it faints or is cured of its poison. Poison and Steel-type Pokémon cannot be poisoned.
+
+#### Frozen:
+A frozen creature is incapacitated and restrained. It can attempt to break free of the ice with a DC 12 Strength save at the end of each of its turns. Ice-type Pokémon cannot be frozen.
+
+#### Confused:
+A confused creature is affected by confusion for three rounds. During this time, it loses its ability to take reactions and moves at half speed. It must roll a d20 at the beginning of each of its turns. On a result of 7 or lower, the creature hurts itself for 1d6 damage and ends its turn. At the end of each of its turns while confused, the creature can make a DC 16 Wisdom saving throw to end the confusion.
+
+#### Burned:
+A burnt creature deals half damage on all moves that use STR or DEX as their MOVE stat, and takes 1d6 fire damage at the beginning of each of its turns until it faints or is cured of its burns. Fire-type Pokémon cannot be burned.
+
+#### Asleep:
+A creature that is asleep is incapacitated, automatically fails all Strength and Dexterity saves, and falls prone.  A sleeping creature can make a DC 14 Constitution save at the beginning of each of its turns to attempt to wake up.
+
+#### Flinched:
+A flinched Pokémon has disadvantage on attack rolls. If a flinched Pokémon executes a move that requires a saving throw from the target, any targets have advantage on the roll. Being flinched lasts until the end of the creature's turn unless otherwise stated.
+
+#### Paralyzed:
+A paralyzed creature is incapacitated, cannot move or speak, fails any Dexterity or Strength saving throws, and attacks against it have advantage. A creature can make a DC 12 Constitution save at the end of each of its turns to escape paralysis. Electric-type Pokémon cannot be paralyzed.
+
+```
+```
+
+### Challenge Rating (CR)
+CR works slightly different in Pokémon 5e. Each Pokémon is given a “Base CR”. This is the challenge rating of the Pokémon at the lowest level it can be found. Think of CR as a number that signifies the strength of the species, not the specific Pokémon. For example, a level 1 Pidgey (Base CR 1/8) is not as strong  as a level 1 Bulbasaur (Base CR 1/2). However a level 5 Pidgey would be significantly strongther than a level 1 Pidgey even though they have the same CR. 
+	
+This new definition of CR gives a way to compare Pokémon species. This CR is only a rough estimate of the Pokémon's power. A particular Pokémon may situtationally become more powerful than its CR may signify. For guidance on giving out experience points for defeating Pokémon based on CR and level, see the *Running a Game* section and the tables in the Appendix.
+
+### Mounts
+Trainers can mount Pokémon that is at least one size larger than themselves. See page 198 of the 5th edition Player’s Handbook for rules on mounting.
+
+### Pokémon Armor Class
+A Pokémon's armor class is not based off its Dexterity score or any man-made armor it wears. Rather, each Pokémon has a base AC specific to its species, notated on each Pokémon's stat block. The AC of each Pokémon can be temporarily or permanently modified by feats, moves, level ups, and other effects.
+	
+### Trainer Death Saving Throws and Unconsciousness
+Death is not as common in the Pokémon world as it is in 5e D&D. If you would like trainers to die less often, consider using this optional rule set. If a trainer is reduced to 0 HP, they make death saving throws as normal. However, they only need two successes to stabilize at 0 HP. Additionally, any medicine check to stabilize a trainer has advantage. A DC 15 medicine check can be performed on an 0 HP stable trainer to bring them to conciousness at 1 HP. An unconscious trainer's Pokémon will continue to follow the trainer's last command to its best ability unless such a command puts the Pokémon in mortal peril. In general a Pokémon with a higher Bond Level is more likely to act in line with its trainer's wishes while its trainer is unconscious.
+
+<div class='pageNumber auto'></div>
+\page
+# 9. Running a Game
+___
+### Building Encounters
+There will be essentially two types of encounters in Pokémon 5e: Wild Pokémon encounters and Trainer Battles. Keep in mind that every Pokémon presented in this supplement's Pokédex is presented at its lowest possible level. To use Pokémon of higher levels as adversaries in battle, you will have to manually increase their stats. Use the table for Pokémon Advancement in Section 7 as a guide.
+
+#### Wild Pokémon:
+As a DM, you have a responsibility to continually introduce your players to new Pokémon of various levels throughout the campaign. Your trainers will want to go out into the wilderness to experience fighting and catching new Pokémon. It is important to remember that Pokémon of higher levels cannot be caught until the trainer has also reached that level, and higher leveled Pokémon help players progress through their levels without having to do much training. As such, capture-focused expeditions should contain several Pokémon of lower levels, while battle-focused  encounters should contain high level Pokémon to present a challenge to the player.
+
+Because of a trainer's unique ability to capture the creatures they are fighting, it can be difficult to build wild Pokémon encounters. A wild Pokémon of medium levels that challenges your players can easily be caught and provides a significant and untimely boost to that player's power. This is not necessarily a bad thing, but rather a unique circumstance that a DM using this system should be aware of. Consider using a swarm of Weedle instead of a Beedrill, or perhaps giving wild Pokémon certain bonuses that disappear when they are captured by a trainer.
+
+#### Trainer Battles
+Often in a campaign, your players will come across other trainers that will want to engage in a Pokémon battle. Combat for these fights are similar to wild Pokémon encounters with a few differences:
+- Another trainer’s Pokémon cannot be caught by any means.
+- Trainer battles do not have to have the same number of trainers or Pokémon participating on both sides, but official trainer battles should have those numbers agreed upon before the battle begins.
+- Pokémon belonging to a trainer act on that trainer's turn rather than on their own turn.
+- In an official trainer battle, there must always be an Active Pokémon on the battlefield. If one side of the battle has no Active Pokémon for a whole round, that side loses.
+
+To make trainer combat feel special, consider giving certain important or powerful NPC trainers unique abilities or more powerful Pokémon. Never forget that the bond between trainer and Pokémon is of upmost importance in Pokémon D&D. Trainers in battle should be willing and ready to act in battle as best they can to support their Pokémon.
+
+```
+```
+
+### Starting Adventures Past Level 1
+You may want to start a game with trainers higher than level 1. If this is the case, make sure you follow these additional rules:
+- If your are using Option 1 for character advancement, the total levels of a trainer’s Pokémon cannot exceed the minimum level as shown in the experience chart.
+- None of the trainer’s Pokémon can have a CR above what they can control based on their level.
+- One of the trainer’s Pokémon should be of a CR ½ or lower as their starter.
+
+### Experience Points
+Experience for Pokémon encounters should be given out at the discretion of the DM based on participation in the fight by each PC, or distributed equally among all players. The amount of experience given out is based on both the opposing Pokémon's CR and its level. See the Appendix for an example table on rewarding experience for defeating Pokémon.
+
+<img src='http://cdn.shopify.com/s/files/1/1433/5988/products/Egg2_grande.png?v=1484634107' style='position:absolute;bottom:20px;right:-70px;width:600px' />
+
+<div class='pageNumber auto'></div>
+	
+\page
+# 10. Items
+___
+
+
+<div class='wide'>
+Items from the 5th edition Player's Handbook can be used as normal, though disallowing some items (such as powerful magic items) might be appropriate for the setting. The following items are added and are specific to the Pokémon universe.
+
+
+## Pokéballs
+The essential inventory item for any Pokémon Trainer, the Pokéball allows you to catch wild Pokémon and gives them a place to be safe, warm, and ready for battle.
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:----|:----------|:-----|
+| Pokéball  | +0 to Capture Rolls. |₽250|
+| Great Ball  | +5 to Capture Rolls. |₽450|
+| Ultra Ball | +10 to Capture Rolls. |₽700|
+| Hyper Ball | +15 to Capture Rolls. |₽1000|
+| Giga Ball | +20 to Capture Rolls. |₽1500|
+| Level Ball | +5 to Capture Rolls. if the Active Pokémon is a higher level than target. | ₽300 |
+| Dive Ball | +10 to Capture while catching a Pokémon in a large body of water. | ₽400 |
+| Moon Ball | +15 to Capture Rolls against members of Nidoran, Jigglypuff, Clefairy, Skitty, or Munna evolutions. | ₽400 |
+| Friend Ball | +0 to Capture Rolls. Sets Bond Level to +1 after catch. | ₽400 |
+| Repeat Ball | +15 to Capture Rolls against a target that is the same species as your Active Pokémon. | ₽400 |
+| Heavy Ball | +10 to Capture Rolls against Pokémon of size large or bigger. | ₽800|
+| Fast Ball | +10 to Capture Rolls against Pokémon with movement speed higher than 30 feet. | ₽800 |
+| Dusk Ball | +10 to Capture Rolls against Pokémon in caves or at night. |₽400|
+| Timer Ball | +20 to Capture Rolls against Pokémon who have been in battle for 8 rounds or more. | ₽1300
+| Nest Ball | +5 to Capture Rolls against Pokémon of level 3 or lower. |₽300 
+| Net Ball | +10 to Capture Rolls against Bug or Water Pokémon. | ₽400
+| Quick Ball | +5 to Capture Rolls on the first round of combat. | ₽300
+| Love Ball | +10 to Capture Rolls if your active Pokémon is at Bond Level 2 or higher. | ₽400
+| Master Ball | Automatic Success on Capture Roll. |Not Sold
+	
+</div>
+
+## Key Items
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:-----|:-------------|:-----|
+|Pokédex|Used to register Pokémon. |₽10,000
+|XP Share|Half of experience from combat can be distributed to carried Pokémon that did not fight in the battle.|₽7,500
+</div>
+
+
+
+</div>
+<div class='pageNumber auto'></div>
+
+\page
+
+<div class='wide'>
+## X–Items
+The following items are boosts that a trainer can use as an action to increase their Pokémon’s effectiveness in battle.
+
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:----|:-------------|:-----|
+|X Attack|Adds +2 to the attack roll of a Pokémon for 1 minute.|₽500
+|X Defend|Adds +1 to the AC of a Pokémon for 1 minute.|₽700
+|X Special|Increases save DCs of a Pokémon by +1 for 1 minute.|₽700
+|X Sp. Defense|Boost saving throws this Pokémon rolls by +2 for 1 minute.|₽350
+|X Speed|Increases walking, flying, or swimming movement speed by 10 feet for 1 minute.|₽350
+|Dire Hit|Critical hits on attacks made by the Pokémon occur on rolls of 19 and 20 for 1 minute.|₽400
+|X Accuracy|Grants advantage on next attack roll.|₽350
+|Guard Spec|Prevents status ailments for 1 minute.|₽700
+
+</div>
+
+
+## Vitamins
+Vitamins are rare and expensive items that can be used to permanently increase the stats of your Pokémon. You cannot increase your Pokémon's stats above 20 by using vitamins. No one type of vitamin can be used on a single Pokémon more than 2 times.
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:----|:-------------|:-----|
+|HP Up|Increase maximum HP by the maximum roll of one of the Pokémon's hit dice.|₽4900
+|Protein|Increase STR by 1.|₽4900
+|Iron|Increase DEX by 1.|₽4900
+|Calcium|Increases CON by 1.|₽4900
+|Zinc|Increase WIS by 1.|₽4900
+|Carbos|Increase CHA by 1.|₽4900
+|PP Up|Increase the PP of one of the Pokémon's moves by 2.|₽8800
+</div>
+
+## Evolutionary Items
+Some Pokémon can only evolve when coming into contact with certain evolutionary stones. The following can be found at most major stores:
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:----|:-------------|:-----|
+|Fire Stone|Evolves Vulpix, Growlith, Pansear and Eevee.|₽3000
+|Leaf Stone|Evolves Gloom, Weepinbell, Nuzleaf, Pansage, and Exeggcute.|₽3000
+|Moon Stone|Evolves Nidorina, Nidorino, Clefairy, Skitty, Munna and Jigglypuff.|₽3000
+|Thunder Stone|Evolves Pikachu, Eelektrik and Eevee.|₽3000
+|Water Stone|Evolves Poliwhirl, Shellder, Eevee, Lombre, Panpour and Staryu.|₽3000
+|Sun Stone|Evolves Gloom, Sunkern, Cottonee, Petlil, and Helioptile.|₽3000
+|Shiny Stone|Evolves Roselia, Togetic, Minccino, and Floette.|₽3000
+|Dusk Stone|Evolves Misdreavus, Murkrow, Lampent, and Doublade.|₽3000
+|Dawn Stone|Evolves Snorunt and Kirlia.|₽3000
+|Ice Stone|Evolves Alolan Vulpix and Alolan Sandshrew.|₽3000
+|King's Rock|Evolves Slowpoke and Poliwhirl.|₽3000
+|Dragon Scale|Evolves Seadra.|₽3000
+|Metal Coat|Evolves Onix and Scyther.|₽3000
+|Up Grade|Evolves Porygon and Porygon2.|₽3000
+|Reaper Cloth|Evolves Dusclops.|₽3000
+</div></div>
+
+<div class='pageNumber auto'></div>
+	
+\page
+<div class='wide'>
+
+## TMs/HMs
+The tables below contain a list of moves that can be taught to your Pokémon, even if they do not learn them in their natural progression of leveling. A TM is a one-use item and is destroyed once a Pokémon learns the move from the TM. Each Pokémon has a list of TMs that they can learn notated on their stat block. When a Pokémon learns a TM, that move starts with one fourth (rounded up, minimum one) of its maximum PP. That move can be brought to full PP on a rest as normal. Note: If a TM move is replaced, it can be relearned by purchasing another TM.
+### TMs
+<div class='descriptive'>
+
+| TM | Cost | TM |Cost|TM|Cost|
+|:----|:----|:----|:----|:----|:----|
+|01 - Work Up|₽1600|02 - Dragon Claw|₽2800|03 - Psyshock|₽2400
+|04 - Calm Mind|₽3600|05 - Roar|₽2400|06 - Toxic|₽1600
+|07 - Hail|₽2400|08 - Bulk Up|₽1600|09 - Venoshock|₽2800
+|10 - Hidden Power|₽2800|11 - Sunny Day|₽2800|12 - Taunt|₽1600
+|13 - Ice Beam|₽3200|14 - Blizzard|₽4000|15 - Hyper Beam|₽3200
+|16 - Light Screen|₽2800|17 - Protect|₽3200|18 - Rain Dance|₽2800
+|19 - Roost|₽2800|20 - Safeguard|₽2800|21 - Frustration|₽2400
+|22 - Solar Beam|₽2800
+|23 - Smack Down|₽2400|24 - Thunderbolt|₽2400|25 - Thunder|₽3200
+|26 - Earthquake|₽3200|27 - Return|₽2400|28 - Leech Life|₽3200
+|29 - Psychic|₽3200|30 - Shadow Ball|₽2400|31 - Brick Break|₽2000
+|32 - Double Team|₽2400|33 - Reflect|₽2400|34 - Sludge Wave|₽2800
+|35 - Flamethrower|₽3200|36 - Sludge Bomb|₽3200|37 - Sandstorm|₽2000
+|38 - Fire Blast|₽3200|39 - Rock Tomb|₽2000|40 - Aerial Ace|₽2400
+|41 - Torment|₽1200|42 - Facade|₽2000|43 - Flame Charge|₽2800
+|44 - Rest|₽2000|45 - Attract|₽1600|46 - Thief|₽2000
+|47 - Low Sweep|₽2000|48 - Round|₽2800|49 - Echoed Voice|₽3200
+|50 - Overheat|₽3200|51 - Steel Wing|₽2400|52 - Focus Blast|₽3200
+|53 - Energy Ball|₽2800|54 - False Swipe|₽1200|55 - Scald|₽2800
+|56 - Fling|₽2400|57 - Charge Beam|₽2400|58 - Sky Drop|₽2400
+|59 - Brutal Swing|₽2400|60 - Quash|₽1200|61 - Will-O-Wisp|₽2000
+|62 - Acrobatics|₽3200|63 - Embargo|₽2800|64 - Explosion|₽3200
+|65 - Shadow Claw|₽2000|66 - Payback|₽2000|67 - Smart Strike|₽2400
+|68 - Giga Impact|₽3600|69 - Rock Polish|₽1600|70 - Aurora Veil|₽3200
+|71 - Stone Edge|₽3200|72 - Volt Switch|₽2800|73 - Thunder Wave|₽1200
+|74 - Gyro Ball|₽2800|75 - Swords Dance|₽2800|76 - Fly|₽2800
+|77 - Psych Up|₽1600|78 - Bulldoze|₽1600|79 - Frost Breath|₽2800
+|80 - Rock Slide|₽2400|81 - X-Scissor|₽2400|82 - Dragon Tail|₽2400
+|83 - Infestation|₽3200|84 - Poison Jab|₽2400|85 - Dream Eater|₽2400
+|86 - Grass Knot|₽2800|87 - Swagger|₽1600|88 - Sleep Talk|₽1200
+|89 - U-turn|₽2800|90 - Substitute|₽2800|91 - Flash Cannon|₽2400
+|92 - Trick Room|₽3200|93 - Wild Charge|₽2800|94 - Surf|₽3200
+|95 - Snarl|₽2000|96 - Nature Power|₽2800|97 - Dark Pulse|₽3600
+|98 - Waterfall|₽2400|99 - Dazzling Gleam|₽2800|100 - Confide|₽1600
+
+</div>
+
+</div>
+
+
+<div class='pageNumber auto'></div>
+\page
+<div class='wide'>
+
+<div class='pageNumber auto'></div>	
+	
+## Berries and Held Items
+Pokémon may be given a single item to hold with varying effects. Some effects are triggered by events as an immediate free action, others may have static effects that are always in place. The following is a list of items that can be held and their effects. Each Pokémon may only have one held item at a time.
+
+### Berries
+<div class='descriptive'>
+
+|Item|Effect|Cost|
+|:----|:----|:----|
+|Oran Berry|Restores 10 HP. Activated when a Pokémon drops below 50% HP.|₽200
+|Sitrus Berry|Restores 30 HP. Activated when a Pokémon drops below 50% HP.|₽550
+|Leppa Berry|Restores 5 PP. Activated when a move is depleted of PP.|₽1000
+|Lum Berry|Cures any status condition. Activated when affected with any status.|₽500
+|Chesto Berry|Cures Sleep. Activated when put to sleep.|₽200
+|Rawst Berry|Cures Burn. Activated when burnt.|₽200
+|Aspear Berry|Cures Frozen. Activated when frozen.|₽200
+|Cheri Berry|Cures Paralysis. Activated when paralyzed.|₽200
+|Pecha Berry|Cures Poison. Activated when poisoned.|₽200
+|Persim Berry|Cures Confusion. Activated when confused.|₽200
+
+</div>
+
+### Other Held Items
+<div class='descriptive'>
+
+|Item|Effect|Cost|
+|:----|:----|:----|
+|Black Belt|Fighting-type moves do an additional 1d4 damage of that type.|₽4400
+|Black Glasses|Dark-type moves do an additional 1d4 damage of that type.|₽4400
+|Charcoal|Fire-type moves do an additional 1d4 damage of that type.|₽4400
+|Dragon Fang|Dragon-type moves do an additional 1d4 damage of that type.|₽4400
+|Focus Band|This creature is immune to the flinched status.|₽1200
+|Focus Sash|This Pokémon gains the benefits of the Sturdy ability.|₽3000
+|Hard Stone|Rock-type moves do an additional 1d4 damage of that type.|₽4400
+|King's Rock|On natural attack rolls of 19 or 20, the target flinches.|₽3000
+|Leftovers|Restores 1d4 HP to the holder at the end of their turn.|₽5000
+|Lucky Egg|XP from battle for this Pokémon is increased by 10%.|₽5000|
+|Magnet|Electric-type moves do an additional 1d4 damage of that type.|₽4400
+|Metal Coat|Steel-type moves do an additional 1d4 damage of that type.|₽4400
+|Miracle Seed|Grass-type moves do an additional 1d4 damage of that type.|₽4400
+|Mystic Water|Water-type moves do an additional 1d4 damage of that type.|₽4400
+|Never Melt Ice|Ice-type moves do an additional 1d4 damage of that type.|₽4400
+|Pixie Plate|Fairy-type moves do an additional 1d4 damage of that type.|₽4400
+|Poison Barb|Poison-type moves do an additional 1d4 damage of that type.|₽4400
+|Quick Claw|Increase initiatvie rolls of this Pokemon's trainer by +3 while this Pokémon is Active.|₽1000
+|Scope Lens|Cirtical hits occur on attack rolls of a natural 19 and 20.|₽1500
+|Sharp Beak|Flying-type moves do an additional 1d4 damage of that type.|₽4400
+|Silk Scarf|Normal-type moves do an additional 1d4 damage of that type.|₽4400
+|Silver Powder|Bug-type moves do an additional 1d4 damage of that type.|₽4400
+|Soft Sand|Ground-type moves do an additional 1d4 damage of that type.|₽4400
+|Spell Tag|Ghost-type moves do an additional 1d4 damage of that type.|₽4400
+|Twisted Spoon|Psychic-type moves do an additional 1d4 damage of that type.|₽4400
+
+</div>
+
+</div>
+\page
+<div class='wide'>
+
+## Basic Restoratives
+The following items are given to your Pokémon as an action to restore HP, revive, or cure status ailments. A master trainer is always prepared with a slew of restoratives.
+
+<div class='descriptive'>
+
+| Item | Effect | Cost |
+|:-|:-|:-|
+|Potion|Restores 2d4+2 HP.|₽200|
+|Super Potion|Restores 6d4+6 HP.|₽380
+|Hyper Potion|Restores  10d4+10 HP.|₽700
+|Antidote|Cures Poison.|₽200
+|Paralyze Heal|Cures Paralysis.|₽200
+|Burn Heal|Cures Burn.|₽200
+|Ice Heal|Cures Frozen.|₽200
+|Full Heal|Cures all Status Effects affecting one Pokémon.|₽850
+|Revive|Revives fainted Pokémon on the field or in their Pokéball with 2d4+2 HP. That Pokémon does not need to make a bond check for this fainting.|₽2000
+|Max Revive|Revives fainted Pokémon on the field or in their Pokéball with 6d4+6 HP. That Pokémon does not need to make a bond check for this fainting.|₽4000
+|Ether|Restores 5 PP to a single move.|₽700
+|Max Ether|Restores 5 PP to all moves of a single Pokémon.|₽2200
+|Elixir|Restores 10 PP to a single move.|₽1000
+|Max Elixir|Restores 10 PP to all moves of a single Pokémon.|₽3500
+|Candy Bar|Restores 5 HP.|₽150
+|Soda Pop|Restores 10 HP.|₽275
+|Berry Juice|Restores 20 HP.|₽500
+|Lemonade|Restores 30 HP.|₽650
+|MooMoo Milk|Restores 50 HP.|₽1200
+
+<img src='https://vignette.wikia.nocookie.net/pokemongo/images/a/a8/Potions.png/revision/latest?cb=20171114123735' style='position:absolute;bottom:20px;right:220px;width:380px' />
+
+
+</div>
+
+</div>
+
+<div class='pageNumber auto'></div>
+	
+\page
+# 11.  Feats
+___
+Any feature not related to combat from the 5e PHB can be selected for trainers. The following feats can be selected by your Pokémon instead of taking the Ability Score Increase given during the leveling process.
+
+#### Extra Move:
+Your Pokémon can know one more move (five total moves instead of four). You may later take this feat again to gain the ablity to know one more move (to a maximum of six moves total).
+
+#### Extra AC:
+Your Pokémon’s AC increases by 2. This bonus is included through a Pokémon’s evolutions and is separate from any AC Ups obtained through leveling. This feat can only be taken once.
+
+#### Tireless:
+Your Pokémon endures hours of rigorous training which keep it in battle longer than the average Pokémon. Gain +1 PP for every move.
+
+#### Terrain Adept
+Your Pokémon is especially skilled when fighting on a specific terrain. Choose one of the following terrains when selecting this feature. Your Pokémon gains +4 to attack rolls when in this terrain.
+Terrains: Coastal, Swamp, Forest, Arctic, Desert, Grassland, Hill, Mountain, Underwater.
+
+#### Loyal
+When your Pokémon would lose a Bond Level, roll a d20. On a result of 12 or higher, they do not lose that Bond Level.
+
+#### Ambidextrous
+Your Pokémon can hold an addtional held item.
+
+#### Prodigy
+If this Pokémon is not currently counting towards your level advancement as per option 1 in the trainer advancement section, all experience points gained by this Pokémon are doubled.
+
+#### Scholar
+When this Pokémon is taught a TM, it does not destroy the TM.
+
+```
+```
+
+#### Natural Healer
+As an action, your Pokémon can restore hit points to a creature equal to 1d6 + your Pokémon's level. The creature can't regain hit points from this feat again until it finishes a short or long rest.
+
+#### Natural Mount
+While this Pokémon is mounted, if the creature mounting it is attacked, it can force the attack to target itself instead. Addtionally, if this Pokémon or its mounter are forced to make a Dexterity saving throw that would result in half damage on success, it can deploy additional defenses. This Pokémon can choose either itself or its mounter to take no damage if they succeed on the saving throw, and only half damage if they fail.
+
+#### Gifted
+This Pokémon increases the maximum of one of its ability scores to 22. When you gain this feat the ability score does not increase, it only gains the potential to later increase to 22.
+
+#### Persuasive
+If this Pokémon is your Active Pokémon when you attempt to catch a Pokémon, this Pokémon may attempt to make a Persuasion skill check against a DC of 12 + the opposing Pokémon's CHA modifier. On a success your Capture Roll gains a bonus + 5.
+
+#### Combo Master
+Your Pokémon is an expert in combining strikes against a foe. When this feature is selected, add +3 to damage rolls from attacks that hit more than once. (Fury Swipes, Double Slap, etc.)
+
+#### Smooth Facade
+Your Pokémon is hardened, shrugging pain off like it is nothing. When suffering from a negative status ailment other than Sleep, your Pokémon gains +3 to their AC.
+
+#### Resilient
+Choose one ability score. This Pokémon increases the chosen ability score by 1 and gains proficiency in the saving throw of that ability.
+
+#### Tough
+This Pokémon's hit point maximum increases by an amount equal to twice its level when it gains this feat. Whenever this Pokémon gains a level thereafter, its hit point maximum increases by an additional 2 hit points.
+
+#### Proficient
+This Pokémon gains proficiency in 3 skills of your choice. This feat cannot be taken more than once by the same Pokémon.
+
+#### Specialized
+Choose one move this Pokémon knows. That move gains +2 maximum PP.
+
+<img src='https://i.pinimg.com/originals/4e/ff/3c/4eff3c0806d84ac7cc1c323f10260d9d.png' style='position:absolute;bottom:35px;left:90px;width:260px' />
+
+<div class='pageNumber auto'></div>
+
+\page
+
+<div class='pageNumber auto'></div>	
+	
+# 12. Appendix
+___
+<div class='wide'>
+### Pokémon Experience Rewarded By Level & CR, Option 1: Fast Leveling
+___
+___
+
+| Level :::: CR | 1/8|1/4|1/2|1|2|3|4|5|6
+|:----|:-------------|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|**1**|	25|	50|	100|	200|	450|	700|	1,100|	1,800|	2,300|
+|**2**|	50|	100|	200|	450|	700|	1,100|	1,800|	2,300|	2,900|
+|**3**|	100|	200|	450|	700|	1,100|	1,800|	2,300|	2,900|	3,900|
+|**4**|	200|	450|	700|	1,100|	1,800|	2,300|	2,900|	3,900|	5,000|
+|**5**|	450|	700|	1,100|	1,800|	2,300|	2,900|	3,900|	5,000|	6,100|
+|**6**	|700|	1,100|	1,800|	2,300|	2,900|	3,900|	5,000|	6,100|	7,200|
+|**7**|	1,100|	1,800|	2,300|	2,900|	3,900|	5,000|	6,100|	7,200|	8,400|
+|**8**|	1,800|	2,300|	2,900|	3,900|	5,000|	6,100|	7,200|	8,400|	9,800|
+|**9**|	2,300|	2,900|	3,900|	5,000|	6,100|	7,200|	8,400|	9,800|	11,200|
+|**10**|	2,900|	3,900|	5,000|	6,100|	7,200|	8,400|	9,800|	11,200|	12,600|
+|**11**|	3,900|	5,000|	6,100|	7,200|	8,400|	9,800|	11,200|	12,600|	14,000|
+|**12**|	5,000|	6,100|	7,200|	8,400|	9,800|	11,200|	12,600|	14,000|	14,750|
+|**13**|	6,100|	7,200|	8,400|	9,800|	11,200|	12,600|	14,000|	14,750|	15,500|
+|**14**|	7,200|	8,400|	9,800|	11,200|	12,600|	14,000|	14,750|	15,500|	16,500|
+|**15**|	8,400|	9,800|	11,200|	12,600|	14,000|	14,750|	15,500|	16,500|	18,000|
+|**16**|	9,800|	11,200|	12,600|	14,000|	14,750|	15,500|	16,500|	18,000|	19,500|
+|**17**|	11,200|	12,600|	14,000|	14,750|	15,500|	16,500|	18,000|	19,500|	21,000|
+|**18**|	12,600|	14,000|	14,750|	15,500|	16,500|	18,000|	19,500|	21,000|	23,000|
+|**19**|	14,000|	14,750|	15,500|	16,500|	18,000|	19,500|	21,000|	23,000|	25,000|
+|**20**|	14,750|	15,500|	16,500|	18,000|	19,500|	21,000|	23,000|	25,000|	27,000|
+</div>
+
+<div class='wide'>
+
+| Level :::: CR |7|8| 9|10|11|12|13|14|15|
+|:----|:-------------|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|1|	2,900|-|-|-|-|-|-|-|-|							
+|2|	3,900|-|-|-|-|-|-|-|-|			
+|3|	5,000|-|		-|-|-|-|-|-|-					
+|4|	6,100|-|					-|-|-|-|-|-|-		
+|5|	7,200|	8,400|	9,800|	11,200|	12,600|		-|-|-|-		
+|6|	8,400|	9,800|	11,200|	12,600|	14,000|				-|-|-|-
+|7|	9,800|	11,200|	12,600	|14,000	|14,750				|-|-|-|-
+|8|	11,200|	12,600|	14,000	|14,750	|15,500				|-|-|-|-
+|9|	12,600|	14,000|14,750	|15,500	|16,500				|-|-|-|-
+|10	|	14,000|	14,750|15,500	|16,500	|18,000	|19,500	|21,000	|23,000|-	
+|11	|	14,750|	15,500|16,500	|18,000	|19,500	|21,000	|23,000	|25,000	|-
+|12	|15,500|	16,500|18,000	|19,500	|21,000	|23,000	|25,000	|27,000	|-
+|13	|	16,500|	18,000|19,500	|21,000	|23,000	|25,000	|27,000	|29,500	|-
+|14	|	18,000|	19,500|21,000	|23,000	|25,000	|27,000	|29,500	|32,000	|-
+|15	|	19,500|	21,000|23,000	|25,000	|27,000	|29,500	|32,000	|35,000	|38,000
+|16	|	21,000|	23,000|25,000	|27,000	|29,500	|32,000	|35,000	|38,000	|41,000
+|17	|	23,000|	25,000|27,000	|29,500	|32,000	|35,000	|38,000	|41,000	|45,000
+|18	|	25,000|	27,000|29,500	|32,000	|35,000	|38,000	|41,000	|45,000	|50,000
+|19	|	27,000|	29,500|32,000	|35,000	|38,000	|41,000	|45,000	|50,000	|55,000
+|20	|	29,500|	32,000|35,000	|38,000	|41,000	|45,000	|50,000	|55,000	|60,000
+</div>
+___
+
+\page
+___
+<div class='wide'>
+### Pokémon Experience Rewarded By Level & CR, Option 2: Slow Leveling
+	
+<div class='pageNumber auto'></div>	
+
+| Level :::: CR | 1/8|1/4|1/2|1|2|3|4|5|6
+|:----|:-------------|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|**1**|	25|45|80|150|240|370|530|730|960
+|**2**|	50|90|150|250|390|560|760|1010|1290
+|**3**|	90|160|270|410|590|800|1060|1360|1690
+|**4**|	170|280|430|620|850|1120|1430|1780|2170
+|**5**|	300|450|650|890|1180|1510|1870|2280|2730
+|**6**| 480|680|940|1240|1580|1970|2400|2870|3380
+|**7**|	720|990|1300|1670|2080|2530|3020|3560|4130
+|**8**|	1040|1370|1760|2190|2660|3180|3750|4340|4980
+|**9**|	1450|1850|2300|2800|3350|3940|4570|5240|5930
+|**10**|1950|2420|2950|3530|4150|4810|5510|6250|7010
+|**11**|2550|3110|3710|4370|5070|5800|6580|7380|8210
+|**12**|3270|3910|4600|5330|6110|6920|7770|8640|9530
+|**13**|4120|4840|5610|6430|7290|8170|9090|10040|11000
+|**14**|5100|5910|6770|7670|8610|9570|10560|11570|12600
+|**15**|6220|7130|8070|9060|10080|11120|12180|13260|14360
+|**16**|7500|8500|9530|10610|11700|12830|13960|15110|16270
+|**17**|8950|10040|11160|12320|13500|14700|15910|17120|18340
+|**18**|10570|11750|12970|14210|15470|16740|18020|19310|20580
+|**19**|12370|13650|14960|16290|17630|18970|20320|21670|23000
+|**20**|14370|15750|17140|18550|19970|21390|22810|24210|25600
+</div>
+
+<div class='wide'>
+
+| Level :::: CR |7|8| 9|10|11|12|13|14|15|
+|:----|:-------------|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|1|1230|1530|1860|2220|2620|3030|3470|3940|4420
+|2|1610|1960|2340|2750|3190|3660|4140|4650|5170
+|3|2060|2460|2900|3360|3850|4360|4890|5440|6010
+|4|2590|3050|3540|4050|4590|5150|5730|6320|6930
+|5|3210|3720|4270|4830|5420|6030|6660|7300|7940
+|6|3920|4490|5090|5710|6350|7010|7680|8360|9050
+|7|4730|5360|6010|6680|7380|8080|8800|9520|10250
+|8|5640|6330|7040|7760|8510|9260|10030|10790|11560
+|9|6660|7410|8170|8960|9750|10550|11360|12170|12970
+|10|7800|8600|9430|10260|11110|11960|12810|13650|14500
+|11|9060|9920|10800|11690|12590|13480|14370|15260|16140
+|12|10450|11370|12310|13250|14190|15130|16060|16980|17890
+|13|11970|12960|13950|14940|15930|16910|17880|18840|19780
+|14|13640|14680|15720|16760|17800|18820|19830|20820|21780
+|15|15450|16550|17650|18730|19810|20870|21910|22930|23920
+|16|17420|18580|19720|20850|21970|23060|24140|25180|26200
+|17|19550|20760|21950|23120|24280|25410|26510|27580|28620
+|18|21850|23110|24340|25560|26750|27900|29030|30120|31180
+|19|24320|25620|26900|28150|29370|30560|31710|32820|33890
+|20|26970|28320|29630|30920|32170|33380|34550|35670|36750
+</div>
+___
+
+
+\page
+### Character Sheets
+This character sheet comes from an old draft of this document but can still be helpful to keep track of your Pokémon. For example, STAB is no longer in use for this supplement and Pokémon do not have proficiency in ability scores by themselves.
+	
+<br>
+<br>
+<div class='wide'>
+##### Pokémon
+Editable PDF: https://www.dropbox.com/s/ivudszf3oweu512/Pokémon%20Char%20Sheet%20Editable.pdf?dl=0
+<img 
+  src='https://i.imgur.com/rViuA76.jpg' 
+  style='width:670px' />
+</div>
+<div class='pageNumber auto'></div>
+
+# Move List
+___
+<div class='wide'>
+Please see the Move List document for a full list of moves Pokémon can learn.
+https://homebrewery.naturalcrit.com/share/r1kWD6xgQ
+</div>
+
+# Pokémon Stats
+___
+<div class='wide'>
+Please see the Pokédex documents below for full stat blocks of Pokémon at the lowest level they can be found in the wild.
+<br>
+Gen 1: https://homebrewery.naturalcrit.com/share/ryW4V-iDm
+<br>
+Gen 2: https://homebrewery.naturalcrit.com/share/rJpKADOi7
+<br>
+Gen 3: https://homebrewery.naturalcrit.com/share/BJbukVY0Q
+<br>
+Gen 4: https://homebrewery.naturalcrit.com/share/H1bghTSoJV
+<br>
+Gen 5: https://homebrewery.naturalcrit.com/share/Sy7beVL2ZN
+<br>
+Gen 6: https://homebrewery.naturalcrit.com/share/Hy7DmIubGN
+<br>
+Gen 7: https://homebrewery.naturalcrit.com/share/BkZ02LnOfE
+</div>

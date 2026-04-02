@@ -1,0 +1,12 @@
+{
+  "name": "pokemon-5e-app",
+  "version": "1.0.0",
+  "description": "Pokémon em 5ª Edição - Aplicação de consulta de regras e fichas",
+  "scripts": {
+    "start": "node server.js",
+    "parse": "node parsers/parse-pokemon.js && node parsers/parse-moves.js && node parsers/parse-rules.js",
+    "parse:pokemon": "node parsers/parse-pokemon.js",
+    "parse:moves": "node parsers/parse-moves.js",
+    "parse:rules": "node parsers/parse-rules.js"
+  }
+}
