@@ -197,6 +197,47 @@ const SPEC_DESCRIPTIONS = {
 const POKESLOTS_BY_LEVEL = {1:3,2:3,3:3,4:3,5:4,6:4,7:4,8:4,9:4,
   10:5,11:5,12:5,13:5,14:5,15:6,16:6,17:6,18:6,19:6,20:6};
 
+const TRAINER_SKILLS = [
+  { id: 'animal_handling', en: 'Animal Handling', pt: 'Adestrar Animais' },
+  { id: 'insight', en: 'Insight', pt: 'Intuição' },
+  { id: 'intimidation', en: 'Intimidação', pt: 'Intimidação' },
+  { id: 'investigation', en: 'Investigation', pt: 'Investigação' },
+  { id: 'medicine', en: 'Medicine', pt: 'Medicina' },
+  { id: 'nature', en: 'Nature', pt: 'Natureza' },
+  { id: 'perception', en: 'Perception', pt: 'Percepção' },
+  { id: 'persuasion', en: 'Persuasão', pt: 'Persuasão' },
+  { id: 'sleight_of_hand', en: 'Sleight of Hand', pt: 'Prestidigitação' },
+  { id: 'stealth', en: 'Stealth', pt: 'Furtividade' },
+  { id: 'survival', en: 'Survival', pt: 'Sobrevivência' },
+  { id: 'arcana', en: 'Arcana', pt: 'Arcanismo' },
+  { id: 'history', en: 'History', pt: 'História' },
+  { id: 'religion', en: 'Religion', pt: 'Religião' },
+  { id: 'performance', en: 'Performance', pt: 'Atuação' },
+  { id: 'deception', en: 'Deception', pt: 'Enganação' },
+  { id: 'acrobatics', en: 'Acrobatics', pt: 'Acrobacia' },
+  { id: 'athletics', en: 'Athletics', pt: 'Atletismo' }
+];
+
+const SPEC_ATTR_BONUS = {
+  'Dragon Tamer': 'wis',
+  'Rocker': 'int',
+  'Pyromaniac': 'cha',
+  'Psychic': 'int',
+  'Scientist': 'int',
+  'Cool Trainer': 'cha',
+  'Detective': ['dex', 'int', 'cha'],
+  'Martial Artist': ['str', 'con', 'dex'],
+  'Hiker': ['str', 'con', 'dex'],
+  'Sailor': ['str', 'con', 'dex']
+};
+
+const PACK_OPTIONS = [
+  { id: 'dungeoneer', name: 'Pacote de Masmorras', items: ['Tocha (10)', 'Rações (10 dias)', 'Corda de cânhamo (50 pés)', 'Pé de cabra', 'Martelo', 'Pítons (10)', 'Lanterna furta-fogo', 'Óleo (2 frascos)', 'Pequena caixa de metal', 'Pote de tinta', 'Caneta de pena', 'Folhas de papel (10)', 'Faca pequena', 'Saco de areia'] },
+  { id: 'explorer', name: 'Pacote de Explorador', items: ['Mochila', 'Saco de dormir', 'Kit de refeição', 'Caixa de fogo', 'Tocha (10)', 'Rações (10 dias)', 'Cantil', 'Corda de cânhamo (50 pés)'] },
+  { id: 'scholar', name: 'Pacote de Estudioso', items: ['Mochila', 'Livro de estudo', 'Pote de tinta', 'Caneta de pena', 'Folhas de papel (10)', 'Pequena faca', 'Saco de areia'] },
+  { id: 'burglar', name: 'Pacote de Burguês', items: ['Mochila', 'Saco de 1.000 esferas metálicas', '15 metros de linha de sino', 'Sino', 'Velas (5)', 'Pé de cabra', 'Martelo', 'Pítons (10)', 'Lanterna furta-fogo', 'Óleo (2 frascos)', 'Rações (5 dias)', 'Caixa de fogo', 'Cantil'] }
+];
+
 // ── State ──────────────────────────────────────────────────────────
 let allPokemon = [];
 let allMoves   = [];
@@ -922,6 +963,11 @@ function setupMoveFilters() {
 }
 
 // ── Rules Page ─────────────────────────────────────────────────────
+function toggleRulesNav() {
+  const nav = document.getElementById('rules-nav-tree');
+  if (nav) nav.classList.toggle('show-mobile');
+}
+
 function renderRules() {
   const nav = document.getElementById('rules-nav-tree');
   if (!nav || nav.dataset.rendered) return;
@@ -960,6 +1006,10 @@ function showRulesChapter(ci) {
 
   const content = document.getElementById('rules-content-area');
   if (!content) return;
+
+  // Close nav on mobile
+  const nav = document.getElementById('rules-nav-tree');
+  if (nav) nav.classList.remove('show-mobile');
 
   // Build chapter content
   let html = `<h2>${chapter.title}</h2>`;
@@ -1167,7 +1217,14 @@ function newSheet() {
     level: 1,
     path: 'Ace Trainer',
     specialization: '',
-    pokemon: []
+    attributes: { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 },
+    skills: [],
+    specSkills: [],
+    specAttrBonus: null,
+    equipment: ['5 Pokéballs', '1 Potion', 'Pokédex'],
+    money: 1000,
+    pokemon: [],
+    currentStep: 1
   };
   sheets.push(sheet);
   saveSheets();
@@ -1193,6 +1250,12 @@ function renderSheetEditor() {
   const sheet  = sheets[editingSheet];
   if (!sheet) { closeSheetEditor(); return; }
 
+  // Check if wizard is active
+  if (sheet.currentStep && sheet.currentStep <= 6) {
+    renderWizard(sheet, view);
+    return;
+  }
+
   const pokeslots = POKESLOTS_BY_LEVEL[sheet.level] || 3;
   const pathOptions = TRAINER_PATHS.map(p =>
     `<option value="${p}" ${sheet.path===p?'selected':''}>${p}</option>`).join('');
@@ -1202,61 +1265,131 @@ function renderSheetEditor() {
     return p ? filledSlotHTML(p, i, sheet) : emptySlotHTML(i);
   }).join('');
 
+  const specOptions = Object.keys(SPEC_DESCRIPTIONS).map(s =>
+    `<option value="${s}" ${sheet.specialization===s?'selected':''}>${s}</option>`).join('');
+
+  const profBonus = Math.floor((sheet.level - 1) / 4) + 2;
+  const conMod = Math.floor((sheet.attributes.con - 10) / 2);
+  const maxHP = 6 + conMod + (sheet.level - 1) * (4 + conMod);
+
   view.innerHTML = `
     <div class="sheet-editor-header">
       <button class="sheet-back-btn" onclick="closeSheetEditor()">← Voltar</button>
-      <h2 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--text-primary)">${sheet.name || 'Ficha'}</h2>
-      <button class="btn btn-primary btn-sm" onclick="saveSheetEditor()">Salvar</button>
+      <div style="flex:1">
+        <h2 class="page-title" style="margin:0">${sheet.name}</h2>
+        <div class="page-subtitle">Nível ${sheet.level} · ${sheet.path}</div>
+      </div>
+      <button class="btn btn-primary" onclick="saveSheetEditor()">Salvar Ficha</button>
     </div>
 
-    <div class="editor-section">
-      <div class="editor-section-title">Informações do Treinador</div>
-      <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label">Nome</label>
-          <input class="form-input" id="ed-name" type="text" value="${sheet.name||''}" placeholder="Nome do treinador">
+    <div class="sheet-editor-layout">
+      
+      <!-- Lado Esquerdo: Atributos e Perícias -->
+      <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
+        
+        <div class="editor-section">
+          <div class="editor-section-title">Status do Treinador</div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:15px">
+            <div class="attr-box" style="padding:10px">
+              <div class="attr-name" style="margin:0; font-size:0.6rem">HP Máximo</div>
+              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxHP}</div>
+            </div>
+            <div class="attr-box" style="padding:10px">
+              <div class="attr-name" style="margin:0; font-size:0.6rem">Proficiência</div>
+              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">+${profBonus}</div>
+            </div>
+            <div class="attr-box" style="padding:10px; grid-column: 1 / -1">
+              <div class="attr-name" style="margin:0; font-size:0.6rem">Teste de Resistência (CAR)</div>
+              <div style="font-size:1.1rem; font-weight:700; color:var(--gold)">+${profBonus + Math.floor((sheet.attributes.cha - 10) / 2)}</div>
+            </div>
+          </div>
+          <div class="attr-grid" style="grid-template-columns: repeat(3, 1fr); gap:8px">
+            ${Object.entries(sheet.attributes).map(([k,v]) => {
+              const mod = Math.floor((v - 10) / 2);
+              return `
+                <div class="attr-box" style="padding:8px">
+                  <div class="attr-name" style="font-size:0.55rem; margin-bottom:2px">${k.toUpperCase()}</div>
+                  <div style="font-size:0.9rem; font-weight:700">${v}</div>
+                  <div class="attr-mod" style="font-size:0.7rem">${mod >= 0 ? '+' : ''}${mod}</div>
+                </div>`;
+            }).join('')}
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Nível</label>
-          <input class="form-input" id="ed-level" type="number" min="1" max="20" value="${sheet.level||1}"
-                 onchange="updateSheetLevel(this.value)">
+
+        <div class="editor-section">
+          <div class="editor-section-title">Perícias Proficientes</div>
+          <div style="display:flex; flex-direction:column; gap:4px">
+            ${TRAINER_SKILLS.map(s => {
+              const isProf = (sheet.skills||[]).includes(s.id) || (sheet.specSkills && sheet.specSkills.includes(s.id));
+              if (!isProf) return '';
+              const attr = getSkillAttr(s.id);
+              const attrScore = sheet.attributes[attr] || 10;
+              return `<div style="font-size:0.85rem; display:flex; justify-content:space-between">
+                <span>${s.pt}</span>
+                <span style="color:var(--gold)">+${profBonus + Math.floor((attrScore - 10) / 2)}</span>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Equipamento e Dinheiro</div>
+          <div style="font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:10px">₽ ${sheet.money}</div>
+          <div style="font-size:0.75rem; color:var(--text-secondary); max-height:150px; overflow-y:auto">
+            ${(sheet.equipment||[]).join('<br>')}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lado Direito: Time Pokémon -->
+      <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
+        <div class="editor-section">
+          <div class="editor-section-title">Time Pokémon (${sheet.pokemon.length}/${pokeslots})</div>
+          <div class="pokemon-slots-grid" id="pokemon-slots-container">
+            ${pokemonSlotsHTML}
+          </div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Configurações Básicas</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Nome</label>
+              <input type="text" id="ed-name" class="form-input" value="${sheet.name}">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nível</label>
+              <select id="ed-level" class="form-select" onchange="updateSheetLevel(this.value)">
+                ${Array.from({length:20}, (_,i)=>`<option value="${i+1}" ${sheet.level===(i+1)?'selected':''}>Nível ${i+1}</option>`).join('')}
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Caminho</label>
+              <select id="ed-path" class="form-select">${pathOptions}</select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Especialização</label>
+              <select id="ed-spec" class="form-select">${specOptions}</select>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="form-group" style="margin-top:var(--gap-md)">
-        <label class="form-label">Caminho</label>
-        <select class="form-select" id="ed-path" onchange="updatePathInfo(this.value)">${pathOptions}</select>
-      </div>
-      <div id="ed-path-info"></div>
-
-      <div class="form-group" style="margin-top:var(--gap-md)">
-        <label class="form-label">Especialização</label>
-        <select class="form-select" id="ed-spec" onchange="updateSpecInfo(this.value)">
-          <option value="">— Nenhuma —</option>
-          ${SPECIALIZATIONS.map(s =>
-            `<option value="${s}" ${sheet.specialization===s?'selected':''}>${s}</option>`
-          ).join('')}
-        </select>
-      </div>
-      <div id="ed-spec-info"></div>
-    </div>
-
-    <div class="editor-section">
-      <div class="editor-section-title" style="display:flex;align-items:center;justify-content:space-between">
-        <span>Time Pokémon (${pokeslots} slots)</span>
-        <span style="font-size:0.7rem;color:var(--text-muted);font-family:var(--font-body)">Nível ${sheet.level} → ${pokeslots} Pokéslots</span>
-      </div>
-      <div class="pokemon-slots" id="pokemon-slots-container">
-        ${pokemonSlotsHTML}
-      </div>
     </div>`;
-
-  // Populate info cards after DOM is ready
-  setTimeout(() => {
-    updatePathInfo(sheet.path || 'Ace Trainer');
-    updateSpecInfo(sheet.specialization || '');
-  }, 0);
 }
+
+function getSkillAttr(skillId) {
+  const mapping = {
+    animal_handling: 'wis', insight: 'wis', intimidation: 'cha', investigation: 'int',
+    medicine: 'wis', nature: 'int', perception: 'wis', persuasion: 'cha',
+    sleight_of_hand: 'dex', stealth: 'dex', survival: 'wis',
+    arcana: 'int', history: 'int', religion: 'int', performance: 'cha',
+    deception: 'cha', acrobatics: 'dex', athletics: 'str'
+  };
+  return mapping[skillId] || 'int';
+}
+
 
 function updatePathInfo(value) {
   const el = document.getElementById('ed-path-info');
@@ -1458,12 +1591,24 @@ function openPokedexForSheet(slotIdx) {
 function saveSheetEditor() {
   const sheet = sheets[editingSheet];
   if (!sheet) return;
-  sheet.name = document.getElementById('ed-name')?.value || 'Treinador';
-  sheet.level = parseInt(document.getElementById('ed-level')?.value) || 1;
-  sheet.path  = document.getElementById('ed-path')?.value || 'Ace Trainer';
-  sheet.specialization = document.getElementById('ed-spec')?.value || '';
+  const newName = document.getElementById('ed-name')?.value || 'Treinador';
+  const newLevel = parseInt(document.getElementById('ed-level')?.value) || 1;
+  const newPath  = document.getElementById('ed-path')?.value || 'Ace Trainer';
+  const newSpec  = document.getElementById('ed-spec')?.value || '';
+
+  // If specialization changed, we might need to recalculate bonuses (though usually wizard handles this)
+  if (sheet.specialization !== newSpec) {
+    sheet.specialization = newSpec;
+    applySpecBonuses(sheet);
+  }
+
+  sheet.name = newName;
+  sheet.level = newLevel;
+  sheet.path = newPath;
+
   saveSheets();
   showToast('Ficha salva com sucesso!');
+  renderSheets();
 }
 
 // ── Add Pokemon to Sheet ───────────────────────────────────────────
@@ -1625,3 +1770,460 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEvents();
   init();
 });
+
+// ── Wizard Implementation ──────────────────────────────────────────
+
+function renderWizard(sheet, container) {
+  const steps = [
+    { n: 1, label: 'Caminho' },
+    { n: 2, label: 'Atributos' },
+    { n: 3, label: 'Perícias' },
+    { n: 4, label: 'Especialização' },
+    { n: 5, label: 'Equipamento' },
+    { n: 6, label: 'Pokémon Inicial' },
+    { n: 7, label: 'Revisão' }
+  ];
+
+  const progressHTML = steps.map(s => `
+    <div class="wizard-step ${sheet.currentStep === s.n ? 'active' : (sheet.currentStep > s.n ? 'completed' : '')}">
+      ${sheet.currentStep > s.n ? '✓' : s.n}
+    </div>`).join('');
+
+  container.innerHTML = `
+    <div class="wizard-container">
+      <div class="wizard-header">
+        <h2 class="page-title">Criação de Treinador</h2>
+        <p class="page-subtitle">Passo ${sheet.currentStep} de 7: ${steps[sheet.currentStep-1].label}</p>
+      </div>
+      <div class="wizard-progress">${progressHTML}</div>
+      <div id="wizard-step-content"></div>
+      <div class="wizard-footer">
+        <button class="btn btn-outline" onclick="wizardBack()" ${sheet.currentStep === 1 ? 'disabled' : ''}>Voltar</button>
+        <button class="btn btn-primary" onclick="wizardNext()">${sheet.currentStep === 7 ? 'Finalizar' : 'Próximo'}</button>
+      </div>
+    </div>`;
+
+  renderWizardStep(sheet, document.getElementById('wizard-step-content'));
+}
+
+function renderWizardStep(sheet, stepContent) {
+  switch(sheet.currentStep) {
+    case 1: renderStep1(sheet, stepContent); break;
+    case 2: renderStep2(sheet, stepContent); break;
+    case 3: renderStep3(sheet, stepContent); break;
+    case 4: renderStep4(sheet, stepContent); break;
+    case 5: renderStep5(sheet, stepContent); break;
+    case 6: renderStep7(sheet, stepContent); break; // Starter Pokemon
+    case 7: renderStep6(sheet, stepContent); break; // Review
+  }
+}
+
+function renderStep1(sheet, el) {
+  const currentPath = sheet.path || 'Ace Trainer';
+  const desc = PATH_DESCRIPTIONS[currentPath];
+
+  el.innerHTML = `
+    <div class="editor-section">
+      <div class="form-group" style="margin-bottom:20px">
+        <label class="form-label">Nome do Treinador</label>
+        <input type="text" id="wiz-name" class="form-input" value="${sheet.name}" onchange="updateWizField('name', this.value)" placeholder="Ex: Ash Ketchum">
+      </div>
+      
+      <div class="wizard-layout">
+        <div class="spec-selection-list">
+          ${TRAINER_PATHS.map(p => `
+            <div class="spec-item ${currentPath===p?'active':''}" onclick="updateWizField('path', '${p}'); renderSheets();">
+              ${p}
+            </div>`).join('')}
+        </div>
+        <div class="spec-detail">
+          <h3 style="color:var(--gold); margin-bottom:10px">${currentPath}</h3>
+          <div class="option-info-card">
+            <div class="option-info-summary" style="margin-bottom:12px">${desc.summary}</div>
+            <div class="option-info-bonus"><span class="option-info-label">Bônus de Classe:</span> ${desc.bonus}</div>
+          </div>
+          <div style="margin-top:20px">
+            <h4 class="form-label" style="margin-bottom:10px">Habilidades de Nível 1</h4>
+            <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5">
+              ${desc.features.filter(f => f.level <= 1).map(f => `<strong>${f.name}:</strong> ${f.description}`).join('<br><br>') || 'Nenhuma habilidade passiva no nível 1.'}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderStep2(sheet, el) {
+  const attrs = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  const labels = { str:'FOR', dex:'DES', con:'CON', int:'INT', wis:'SAB', cha:'CAR' };
+
+  el.innerHTML = `
+    <div class="editor-section">
+      <p style="margin-bottom:20px; font-size:0.9rem; color:var(--text-secondary)">
+        Defina seus atributos iniciais. O valor base é 10. Você pode ajustá-los livremente.
+      </p>
+      <div class="attr-grid">
+        ${attrs.map(a => {
+          const val = sheet.attributes[a];
+          const mod = Math.floor((val - 10) / 2);
+          return `
+            <div class="attr-box">
+              <div class="attr-name">${labels[a]}</div>
+              <div class="attr-value-wrap">
+                <button class="attr-btn" onclick="updateAttr('${a}', -1)">-</button>
+                <div class="attr-score">${val}</div>
+                <button class="attr-btn" onclick="updateAttr('${a}', 1)">+</button>
+              </div>
+              <div class="attr-mod">${mod >= 0 ? '+' : ''}${mod}</div>
+            </div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:30px; text-align:center">
+         <div class="form-label">Pontos de Vida Estimados</div>
+         <div style="font-size:1.5rem; font-weight:700; color:var(--gold)">
+            ${6 + Math.floor((sheet.attributes.con - 10) / 2) + (sheet.level - 1) * (4 + Math.floor((sheet.attributes.con - 10) / 2))} PV
+         </div>
+      </div>
+    </div>`;
+}
+
+function renderStep3(sheet, el) {
+  const trainerSkills = TRAINER_SKILLS.slice(0, 11);
+
+  el.innerHTML = `
+    <div class="editor-section">
+      <p style="margin-bottom:20px; font-size:0.9rem; color:var(--text-secondary)">
+        Escolha 2 perícias iniciais da classe Pokémon Trainer.
+      </p>
+      <div class="skill-selection-grid">
+        ${trainerSkills.map(s => `
+          <div class="skill-checkbox-item ${sheet.skills.includes(s.id)?'active':''}" onclick="toggleSkill('${s.id}')">
+            <input type="checkbox" ${sheet.skills.includes(s.id)?'checked':''} onclick="event.stopPropagation(); toggleSkill('${s.id}')">
+            <span>${s.pt}</span>
+          </div>`).join('')}
+      </div>
+      <div style="margin-top:20px; text-align:right; font-size:0.85rem; color:${sheet.skills.length===2?'var(--gold)':'var(--text-dim)'}">
+        Selecionadas: ${sheet.skills.length} / 2
+      </div>
+    </div>`;
+}
+
+function renderStep4(sheet, el) {
+  const specs = Object.keys(SPEC_DESCRIPTIONS);
+  const currentSpec = sheet.specialization || specs[0];
+  const desc = SPEC_DESCRIPTIONS[currentSpec];
+
+  el.innerHTML = `
+    <div class="editor-section wizard-layout">
+      <div class="spec-selection-list">
+        ${specs.map(s => `
+          <div class="spec-item ${currentSpec===s?'active':''}" onclick="updateWizField('specialization', '${s}'); renderSheets();">
+            ${s}
+          </div>`).join('')}
+      </div>
+      <div class="spec-detail">
+        <h3 style="color:var(--gold); margin-bottom:10px">${currentSpec}</h3>
+        ${desc.type ? `<div class="type-badge" style="--badge-color:${getTypeColor(desc.type)}; margin-bottom:15px">${desc.type}</div>` : ''}
+        <div class="option-info-card">
+          ${desc.bonus ? `<div style="margin-bottom:10px"><span class="option-info-label">Bônus:</span> ${desc.bonus}</div>` : ''}
+          <div><span class="option-info-label">Efeito:</span> ${desc.effect}</div>
+        </div>
+        
+        ${renderSpecChoice(sheet, currentSpec)}
+      </div>
+    </div>`;
+}
+
+function renderSpecChoice(sheet, spec) {
+  const choice = SPEC_ATTR_BONUS[spec];
+  if (!Array.isArray(choice)) return '';
+
+  const labels = { str:'Força', dex:'Destreza', con:'Constituição', int:'Inteligência', wis:'Sabedoria', cha:'Carisma' };
+  
+  return `
+    <div style="margin-top:20px">
+      <label class="form-label">Escolha o Atributo para o Bônus +1</label>
+      <div style="display:flex; gap:10px; margin-top:8px">
+        ${choice.map(a => `
+          <button class="btn btn-sm ${sheet.specAttrBonus===a?'btn-primary':'btn-outline'}" 
+                  onclick="updateWizField('specAttrBonus', '${a}'); renderSheets();">
+            ${labels[a]}
+          </button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function renderStep5(sheet, el) {
+  el.innerHTML = `
+    <div class="editor-section">
+      <h4 class="editor-section-title">Escolha seu Pacote de Equipamento</h4>
+      <div class="pack-grid">
+        ${PACK_OPTIONS.map(p => {
+          const active = sheet.equipment.includes(p.name);
+          return `
+            <div class="pack-card ${active?'active':''}" onclick="selectPack('${p.name}')">
+              <div class="pack-card-name">${p.name}</div>
+              <div class="pack-card-items">${p.items.join(', ')}</div>
+            </div>`;
+        }).join('')}
+      </div>
+      
+      <div style="margin-top:30px">
+        <h4 class="editor-section-title">Outros Equipamentos Iniciais</h4>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <span class="type-badge" style="--badge-color:#777">5 Pokéballs</span>
+          <span class="type-badge" style="--badge-color:#777">1 Potion</span>
+          <span class="type-badge" style="--badge-color:#777">Pokédex</span>
+          <span class="type-badge" style="--badge-color:#777">Starter Pokémon</span>
+        </div>
+      </div>
+
+      <div style="margin-top:30px">
+        <h4 class="editor-section-title">Dinheiro Inicial</h4>
+        <div style="display:flex; align-items:center; gap:20px">
+          <div style="font-size:1.5rem; font-weight:700; color:var(--gold)">₽ ${sheet.money}</div>
+          <button class="btn btn-outline btn-sm" onclick="rollMoney()">🎲 Rolar Dinheiro (1000 + 10x4d4)</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderStep6(sheet, el) {
+  el.innerHTML = `
+    <div class="editor-section">
+      <div class="summary-grid">
+        <div>
+          <div class="summary-section">
+            <div class="summary-label">Nome</div>
+            <div class="summary-value">${sheet.name}</div>
+          </div>
+          <div class="summary-section">
+            <div class="summary-label">Nível e Caminho</div>
+            <div class="summary-value">Nível ${sheet.level} — ${sheet.path}</div>
+          </div>
+          <div class="summary-section">
+            <div class="summary-label">Especialização</div>
+            <div class="summary-value">${sheet.specialization || 'Nenhuma'}</div>
+          </div>
+        </div>
+        <div>
+          <div class="summary-section">
+            <div class="summary-label">Atributos</div>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:5px">
+               ${Object.entries(sheet.attributes).map(([k,v]) => `
+                 <div style="font-size:0.8rem"><strong>${k.toUpperCase()}:</strong> ${v}</div>
+               `).join('')}
+            </div>
+          </div>
+          <div class="summary-section">
+            <div class="summary-label">Perícias</div>
+            <div style="font-size:0.85rem">${sheet.skills.map(s => TRAINER_SKILLS.find(ts=>ts.id===s).pt).join(', ')}</div>
+          </div>
+          <div class="summary-section">
+            <div class="summary-label">Pokémon Inicial</div>
+            <div class="summary-value">${sheet.pokemon[0] ? sheet.pokemon[0].name : 'Nenhum'}</div>
+          </div>
+          <div class="summary-section">
+            <div class="summary-label">Dinheiro</div>
+            <div class="summary-value">₽ ${sheet.money}</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; padding:15px; background:rgba(242,201,76,0.05); border:1px solid var(--gold-dim); border-radius:var(--r-md); font-size:0.9rem">
+        Tudo pronto! Clique em <strong>Finalizar</strong> para criar sua ficha e começar sua jornada.
+      </div>
+    </div>`;
+}
+
+function renderStep7(sheet, el) {
+  const starters = allPokemon.filter(p => {
+    const cr = p.cr;
+    return (cr === '0' || cr === '1/8' || cr === '1/4' || cr === '1/2');
+  });
+
+  const currentStarter = sheet.pokemon[0];
+
+  el.innerHTML = `
+    <div class="editor-section">
+      <p style="margin-bottom:20px; font-size:0.9rem; color:var(--text-secondary)">
+        Todo treinador começa com um Pokémon de CR 1/2 ou inferior. Este Pokémon começa com <strong>Bond Level +1</strong>.
+      </p>
+      
+      <div class="toolbar" style="margin-bottom:20px">
+        <input type="text" id="starter-search" class="search-input" placeholder="Buscar Pokémon inicial..." oninput="filterStarters(this.value)">
+      </div>
+
+      <div id="starter-list" class="pokemon-grid" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); max-height:400px; overflow-y:auto; padding:10px">
+        ${renderStarterListHTML(starters, currentStarter)}
+      </div>
+    </div>`;
+}
+
+function renderStarterListHTML(list, current) {
+  return list.map(p => `
+    <div class="pokemon-card ${current && current.number === p.number ? 'selected' : ''}" 
+         onclick="selectStarter('${p.number}')" 
+         style="padding:10px; ${current && current.number === p.number ? 'border-color:var(--gold); background:rgba(242,201,76,0.05)' : ''}">
+      <img src="${spriteURL(p.number)}" style="width:60px; height:60px; margin:0 auto 8px; display:block">
+      <div style="text-align:center; font-size:0.8rem; font-weight:700">${p.name}</div>
+      <div style="text-align:center; font-size:0.7rem; color:var(--text-muted)">CR ${p.cr}</div>
+    </div>`).join('');
+}
+
+function filterStarters(query) {
+  const q = query.toLowerCase();
+  const starters = allPokemon.filter(p => {
+    const cr = p.cr;
+    const isStarter = (cr === '0' || cr === '1/8' || cr === '1/4' || cr === '1/2');
+    return isStarter && p.name.toLowerCase().includes(q);
+  });
+  const sheet = sheets[editingSheet];
+  document.getElementById('starter-list').innerHTML = renderStarterListHTML(starters, sheet.pokemon[0]);
+}
+
+function selectStarter(number) {
+  const sheet = sheets[editingSheet];
+  const n = parseInt(number);
+  const p = allPokemon.find(pk => pk.number === n);
+  if (!p) return;
+
+  sheet.pokemon = [{
+    number: p.number,
+    name: p.name,
+    level: p.level || 1,
+    bond: 1,
+    selectedMoves: p.moves.starting ? p.moves.starting.slice(0,4) : []
+  }];
+  
+  saveSheets();
+  renderSheets();
+}
+
+// ── Wizard Helpers ────────────────────────────────────────────────
+
+function updateWizField(field, val) {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  sheet[field] = val;
+  saveSheets();
+}
+
+function updateAttr(attr, delta) {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  const newVal = Math.max(1, Math.min(30, sheet.attributes[attr] + delta));
+  sheet.attributes[attr] = newVal;
+  saveSheets();
+  renderSheets();
+}
+
+function toggleSkill(skillId) {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  const idx = sheet.skills.indexOf(skillId);
+  if (idx >= 0) {
+    sheet.skills.splice(idx, 1);
+  } else if (sheet.skills.length < 2) {
+    sheet.skills.push(skillId);
+  } else {
+    showToast('Você só pode escolher 2 perícias!', 'error');
+    return;
+  }
+  saveSheets();
+  renderSheets();
+}
+
+function selectPack(packName) {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  const packNames = PACK_OPTIONS.map(p => p.name);
+  sheet.equipment = sheet.equipment.filter(e => !packNames.includes(e));
+  sheet.equipment.push(packName);
+  saveSheets();
+  renderSheets();
+}
+
+function rollMoney() {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  const roll = Array.from({length:4}, () => Math.floor(Math.random()*4)+1).reduce((a,b)=>a+b, 0);
+  sheet.money = 1000 + 10 * roll;
+  saveSheets();
+  renderSheets();
+}
+
+function wizardNext() {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  
+  if (sheet.currentStep === 3 && sheet.skills.length < 2) {
+    showToast('Selecione 2 perícias para continuar!', 'error');
+    return;
+  }
+  if (sheet.currentStep === 4 && !sheet.specialization) {
+    showToast('Selecione uma especialização!', 'error');
+    return;
+  }
+  if (sheet.currentStep === 6 && sheet.pokemon.length === 0) {
+    showToast('Escolha seu Pokémon inicial!', 'error');
+    return;
+  }
+  
+  if (sheet.currentStep < 7) {
+    sheet.currentStep++;
+  } else {
+    finalizeWizard(sheet);
+  }
+  saveSheets();
+  renderSheets();
+}
+
+function wizardBack() {
+  const sheet = sheets[editingSheet];
+  if (!sheet) return;
+  if (sheet.currentStep > 1) {
+    sheet.currentStep--;
+    saveSheets();
+    renderSheets();
+  }
+}
+
+function finalizeWizard(sheet) {
+  applySpecBonuses(sheet);
+  sheet.currentStep = 8;
+  showToast('Treinador e Pokémon Inicial prontos!');
+}
+
+function applySpecBonuses(sheet) {
+  const specName = sheet.specialization;
+  const bonus = SPEC_ATTR_BONUS[specName];
+  sheet.specSkills = [];
+  if (typeof bonus === 'string') {
+    sheet.attributes[bonus] += 1;
+  } else if (sheet.specAttrBonus) {
+    sheet.attributes[sheet.specAttrBonus] += 1;
+  }
+  const specSkillsMap = {
+    'Bird Keeper': ['perception'],
+    'Bug Maniac': ['nature'],
+    'Picnicker': ['survival'],
+    'Gardener': ['nature'],
+    'Mystic': ['arcana'],
+    'Detective': ['investigation'],
+    'Ruin Maniac': ['history'],
+    'Punk': ['intimidation'],
+    'Fairy Tale Expert': ['religion'],
+    'Ninja': ['stealth'],
+    'Actor': ['performance', 'deception'],
+    'Burglar': ['stealth', 'sleight_of_hand'],
+    'Bodybuilder': ['acrobatics', 'athletics'],
+    'Poké Maniac': ['history', 'insight'],
+    'Camper': ['nature', 'survival'],
+    'Medium': ['medicine', 'religion'],
+    'Hex Maniac': ['arcana', 'intimidation'],
+    'Beauty': ['persuasion', 'animal_handling']
+  };
+  if (specSkillsMap[specName]) {
+    sheet.specSkills = specSkillsMap[specName];
+  }
+}

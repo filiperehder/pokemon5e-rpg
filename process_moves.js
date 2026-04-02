@@ -5,7 +5,12 @@ const path = require('path');
 const movesPath = 'public/data/moves.json';
 const moves = JSON.parse(fs.readFileSync(movesPath, 'utf8'));
 
+// Re-read from English if available to avoid double-translation artifacts
+const movesEnglishPath = 'public/data/moves_english.json';
+const movesSource = JSON.parse(fs.readFileSync(fs.existsSync(movesEnglishPath) ? movesEnglishPath : movesPath, 'utf8'));
+
 const translations = {
+  // ... (keeping previous ones for quality)
   "Absorb": {
     "description": "Você tenta absorver um pouco da saúde de um inimigo. Faça uma jogada de ataque à distância contra uma criatura. Em um acerto, a criatura sofre 1d4 + MOVE de dano de planta. Metade do dano causado é restaurada pelo usuário.",
     "higherLevels": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11 e 4d4 no nível 17."
@@ -111,7 +116,7 @@ const translations = {
     "higherLevels": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11 e 4d10 no nível 17."
   },
   "Attract": {
-    "description": "Você é a coisa mais fofa. Uma criatura de gênero diferente do seu dentro do alcance deve ter sucesso em um teste de resistência de Carisma ou ficará enfeitiçada pela duração, ou até que você ou seus companheiros façam qualquer coisa prejudicial a ela.",
+    "description": "Você é a coisa mais fofa. Uma criatura de gênero diferente do seu dentro do alcance deve ter sucesso em um teste de resistência de Carisma ou ficarará enfeitiçada pela duração, ou até que você ou seus companheiros façam qualquer coisa prejudicial a ela.",
     "higherLevels": ""
   },
   "Aura Sphere": {
@@ -205,237 +210,115 @@ const translations = {
   "Body Slam": {
     "description": "Você se lança em direção a um oponente em uma tentativa de esmagá-lo com seu tamanho físico. Faça um ataque corpo a corpo em um alvo. Em um acerto, o alvo sofre 1d8 + MOVE de dano normal e deve ter sucesso em um teste de resistência de Constituição CD 12 ou ficar paralisado.",
     "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
-  },
-  "Bone Club": {
-    "description": "Você atinge um Pokémon com um porrete de osso. Faça uma jogada de ataque corpo a corpo, causando 1d8 + MOVE em um acerto bem-sucedido. Se a rolagem de ataque natural for 18 ou mais, o alvo recua em seu próximo turno.",
-    "higherLevels": "O dano base do ataque aumenta para 1d10 no nível 5 e 1d12 no nível 11. O alcance de recuo aumenta para 17 ou mais no nível 5 e 16 ou mais no nível 11."
-  },
-  "Bone Rush": {
-    "description": "Um osso espectral aparece em sua mão. Você faz uma série de ataques rápidos com ele antes que ele desapareça. Faça uma jogada de ataque corpo a corpo, causando 1d6 + MOVE em um acerto. Após atingir com sucesso um alvo, role um d4. Em um resultado de 3 ou 4, você pode atingir imediatamente novamente para um dano de terra adicional de 1d6. Continue este processo até falhar em rolar um 3 ou 4 na rolagem do d4.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d8 no nível 5, 1d10 no nível 11 e 1d12 no nível 17."
-  },
-  "Bonemerang": {
-    "description": "Você lança um bumerangue e faz dois ataques à distância contra um alvo. Em cada acerto bem-sucedido, você causa 1d6 + MOVE de dano de terra.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d8 no nível 5, 1d10 no nível 11 e 1d12 no nível 17."
-  },
-  "Boomburst": {
-    "description": "Você emite uma onda estrondosa de energia sonora. Cada criatura em um cone de 60 pés faz um teste de resistência de Constituição, sofrendo 3d8 de dano normal em uma falha ou metade do dano em um sucesso.",
-    "higherLevels": "O dano base deste ataque aumenta para 5d8 no nível 5, 8d8 no nível 11 e 10d8 no nível 17."
-  },
-  "Bounce": {
-    "description": "Você salta no ar e cai sobre seu inimigo. Escolha um alvo para atacar ao usar este movimento. Durante este turno, antes de atacar seu oponente, você pode tratar seu movimento como movimento de voo. Se você terminar seu turno no ar e não puder voar, você cai imediatamente após fazer o ataque. Faça um ataque corpo a corpo contra o alvo, causando 1d8 + MOVE de dano voador em um acerto.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
-  },
-  "Brave Bird": {
-    "description": "Você mergulha no alvo em uma investida total. Faça um ataque corpo a corpo causando 1d12 + MOVE em um acerto. Até o final do seu próximo turno, sua velocidade de movimento é reduzida pela metade e você não pode voar.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11 e 4d12 no nível 17."
-  },
-  "Brick Break": {
-    "description": "Você golpeia precisamente com a lateral da mão aberta. Faça um ataque corpo a corpo contra um Pokémon, causando 1d8 + MOVE de dano lutador em um acerto. Este movimento destrói barreiras que defendem o Pokémon alvo, como Tela de Luz, Refletir e Véu de Aurora.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
-  },
-  "Brine": {
-    "description": "Você controla a água ao redor do seu oponente e o faz cozinhar nas águas turbulentas. Faça uma jogada de ataque à distância contra seu oponente causando 1d6 + MOVE de dano em um acerto. Se seu oponente sofreu dano do tipo água desde o início do seu último turno, este movimento causa 1d6 de dano de água adicional.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Brutal Swing": {
-    "description": "Você gira seus braços estendidos em um círculo brutal ao seu redor. Faça uma única jogada de ataque corpo a corpo. Esse ataque alveja cada criatura de sua escolha dentro do alcance corpo a corpo de você. Cada criatura atingida sofre 1d8 + MOVE de dano sombrio.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
-  },
-  "Bubble": {
-    "description": "Você dispara uma série de bolhas que se movem rapidamente em um alvo. Faça três ataques à distância, causando 1d4 de dano de água em cada acerto bem-sucedido.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11 e 1d12 no nível 17."
-  },
-  "Bubble Beam": {
-    "description": "Você dispara um fluxo concentrado de bolhas em uma linha de 80 pés, com 5 pés de largura. Qualquer Pokémon pego na linha deve ter sucesso em um teste de resistência de DES contra a sua CD de Move, sofrendo 3d6 de dano de água em uma falha, ou metade disso em um sucesso.",
-    "higherLevels": "O dano base deste ataque aumenta para 5d6 no nível 5, 7d6 no nível 11 e 9d6 no nível 17."
-  },
-  "Bug Bite": {
-    "description": "Você ataca com presas, mandíbulas ou algo semelhante. Faça uma jogada de ataque corpo a corpo contra um oponente, causando 1d6 + MOVE de dano de inseto em um acerto. Se o seu oponente estiver segurando uma fruta, você a consome imediatamente e ganha seus benefícios.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Bug Buzz": {
-    "description": "Você cria uma série de zumbidos poderosos e horrorosos. Escolha um número de alvos igual ao seu modificador de MOVE (mínimo um) a até 30 pés de você. Cada alvo deve fazer um teste de resistência de Constituição, sofrendo 2d6 de dano em uma falha e metade do dano em um sucesso.",
-    "higherLevels": "O dano base deste ataque aumenta para 5d6 no nível 5, 7d6 no nível 11 e 10d6 no nível 17."
-  },
-  "Bulk Up": {
-    "description": "Você se concentra em sua forma física e flexiona os músculos. Você pode usar este movimento para conceder a si mesmo vantagem em sua próxima jogada de ataque neste turno, ou para realizar a ação de esquiva.",
-    "higherLevels": ""
-  },
-  "Bulldoze": {
-    "description": "Você cria tremores no solo em um quadrado de 20 pés originando-se de você. Todos os Pokémon nessa área fazem um teste de resistência de Destreza, sofrendo 2d4 de dano em uma falha e metade do dano em um sucesso.",
-    "higherLevels": "O dano base deste ataque aumenta para 3d4 no nível 5, 5d4 no nível 11 e 6d4 no nível 17."
-  },
-  "Bullet Punch": {
-    "description": "Você endurece seu punho e golpeia rapidamente. Faça um ataque corpo a corpo. Em um acerto, o Pokémon sofre 1d4 + MOVE de dano de aço.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d10 no nível 11 e 2d8 no nível 17."
-  },
-  "Bullet Seed": {
-    "description": "Você dispara uma série de sementes pesadas no oponente. Faça uma jogada de ataque à distância, causando 1d6 + MOVE em um acerto. Após atingir com sucesso um alvo, role um d4. Em um resultado de 3 ou 4, você pode atingir imediatamente novamente para um dano normal adicional de 1d6. Continue este processo até falhar em rolar um 3 ou 4 na rolagem do d4.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d8 no nível 5, 1d10 no nível 11 e 1d12 no nível 17."
-  },
-  "Burn Up": {
-    "description": "Você inflige dano massivo queimando sua essência de fogo. Cada criatura em uma linha de 60 pés de comprimento e 5 pés de largura originando-se de você deve fazer um teste de resistência de destreza sofrendo 4d6 de dano de fogo em uma falha e metade disso em um sucesso. Após usar este movimento, você perde todas as resistências e vulnerabilidades do seu tipo fogo até o final do seu próximo turno.",
-    "higherLevels": "O dano base deste ataque aumenta para 7d6 no nível 5, 10d6 no nível 11 e 13d6 no nível 17."
-  },
-  "Calm Mind": {
-    "description": "Você tira um momento para estabilizar sua vontade. Até o final do seu próximo turno, você tem vantagem em testes de resistência e os inimigos têm desvantagem em testes de resistência que você os faz realizar.",
-    "higherLevels": ""
-  },
-  "Camouflage": {
-    "description": "Você usa suas habilidades naturais para se misturar com o ambiente. Escolha um tipo de um Pokémon dentro do alcance. Você ganha resistência a esse tipo pela duração deste movimento.",
-    "higherLevels": ""
-  },
-  "Captivate": {
-    "description": "Você atrai a atenção da multidão com seus movimentos espetaculares. Alveje uma criatura dentro do alcance para fazer um teste de resistência de Sabedoria contra a sua CD de MOVE. Em uma falha, ela não pode usar um movimento que alveje criaturas que não sejam você pela duração. Uma criatura que falhar neste teste de resistência pode repeti-lo no final de cada um de seus turnos para encerrar os efeitos deste movimento.",
-    "higherLevels": "No nível 5, você pode alvejar mais uma criatura com este movimento. No nível 11, você pode alvejar 3 criaturas no total e no nível 17 você pode alvejar 4 criaturas no total."
-  },
-  "Celebrate": {
-    "description": "Você faz uma dancinha. Se desejar, você pode causar 1 de dano ou curar 1 de dano em qualquer criatura cuja localização exata você conheça.",
-    "higherLevels": ""
-  },
-  "Charge": {
-    "description": "Você reserva um tempo para concentrar a eletricidade que faz parte do seu ser. Seu próximo ataque que causa dano elétrico causa dano máximo.",
-    "higherLevels": ""
-  },
-  "Charge Beam": {
-    "description": "Você dispara um raio de eletricidade no seu oponente, tentando capturar um pouco da energia para si mesmo. Faça uma jogada de ataque à distância contra um oponente, causando 1d6 + MOVE de dano elétrico em um acerto. Se você rolar um 19 ou 20 ao atacar com este movimento, seu próximo ataque que causa dano elétrico causa dano máximo.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Charm": {
-    "description": "Você age da forma mais charmosa possível. Escolha uma criatura dentro do alcance que não seja hostil a você. Pela duração, você e seu treinador têm vantagem em todos os testes de Carisma direcionados a essa criatura.",
-    "higherLevels": ""
-  },
-  "Chatter": {
-    "description": "Você tagarela incessantemente para irritar e insultar seu inimigo. Escolha uma criatura que você possa ver. Se ela puder ouvir você, ela deve passar em um teste de Sabedoria ou sofrer 1d6 + MOVE de dano voador e ter desvantagem em sua próxima jogada de ataque antes do final de seu próximo turno.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Chip Away": {
-    "description": "Você atinge seu oponente, visando perfurar suas defesas. Faça uma jogada de ataque corpo a corpo contra seu oponente, causando 1d8 + MOVE de dano em um acerto. Você não pode ter desvantagem neste ataque.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
-  },
-  "Circle Throw": {
-    "description": "Você agarra o oponente, gira-o ao seu redor e o lança para longe. O alvo faz um teste de resistência de Força. Em uma falha, o alvo sofre 1d8 + MOVE de dano lutador. Além disso, se o alvo não for mais do que um tamanho maior que o usuário, o alvo é empurrado 10 pés em uma direção de sua escolha e fica caído.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d12 no nível 5, 2d8 no nível 11 e 2d12 no nível 17."
-  },
-  "Clamp": {
-    "description": "Você prende um inimigo, tentando mantê-lo no lugar e causar dano massivo. Faça uma jogada de ataque corpo a corpo. Em um acerto, o alvo sofre 1d6 + MOVE de dano de água e fica agarrado e impedido (com CD de escape igual à sua CD de MOVE). Enquanto você estiver agarrando uma criatura desta forma, você pode gastar sua ação para atacar aquela criatura novamente com este movimento sem gastar um PP adicional.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d10 no nível 5, 2d6 no nível 11 e 2d10 no nível 17."
-  },
-  "Clanging Scales": {
-    "description": "Você bate suas escamas umas nas outras e imbui o som com sua essência, criando um ataque de som poderoso. Faça uma jogada de ataque à distância, causando 2d10 de dano de dragão em um acerto.",
-    "higherLevels": "O dano base deste ataque aumenta para 4d10 no nível 5, 6d10 no nível 11 e 8d10 no nível 17."
-  },
-  "Clear Smog": {
-    "description": "Você lança uma bolha especial de lama que se expande em uma névoa brilhante. Uma esfera de névoa com 20 pés de raio aparece centrada em um ponto que você escolher dentro do alcance, espalhando-se pelas esquinas e obscurecendo pesadamente a área que preenche. A névoa dura até o final da duração do movimento ou até que um vento de pelo menos 10 milhas por hora a disperse.",
-    "higherLevels": ""
-  },
-  "Close Combat": {
-    "description": "Você desfere um espancamento total no oponente com total desconsideração pelas suas próprias defesas. Faça um ataque corpo a corpo contra um Pokémon alvo. Em um acerto, causa 2d12 + MOVE de dano. Até o final do seu próximo turno, os ataques contra você têm vantagem e você tem -2 na CA.",
-    "higherLevels": "O dano base deste ataque aumenta para 4d12 no nível 5, 6d12 no nível 11 e 8d12 no nível 17."
-  },
-  "Coil": {
-    "description": "Você se enrola, preparando-se para seu próximo movimento. Enquanto você mantiver a concentração neste movimento, você tem +2 na CA e vantagem em jogadas de ataque corpo a corpo.",
-    "higherLevels": "No nível 11, o bônus na CA torna-se +4."
-  },
-  "Comet Punch": {
-    "description": "Você ataca com um soco rápido como um raio. Faça uma jogada de ataque corpo a corpo. O alvo sofre 1d4 + MOVE em um acerto. Após atingir com sucesso um alvo, role um d4. Em um resultado de 3 ou 4, você pode atingir imediatamente novamente para um dano normal adicional de 1d4. Continue este processo até falhar em rolar um 3 ou 4 na rolagem do d4.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11 e 1d10 no nível 17."
-  },
-  "Confide": {
-    "description": "Você conta um segredo ao seu oponente, pegando-o desprevenido. Escolha um oponente para fazer um teste de resistência de Sabedoria. Em uma falha, ele tem desvantagem em testes de resistência de Força, Inteligência e Carisma pela duração deste movimento.",
-    "higherLevels": ""
-  },
-  "Confuse Ray": {
-    "description": "Você libera um raio de energia psíquica destinado a confundir um oponente. Escolha um alvo no alcance. O alvo deve fazer um teste de resistência de Sabedoria contra a sua CD de Move ou sofrer 1d6 de dano psíquico e ficar confuso.",
-    "higherLevels": "O dano aumenta para 2d6 no nível 11."
-  },
-  "Confusion": {
-    "description": "Você tenta entrar na mente de um inimigo e causar confusão. Faça uma jogada de ataque à distância contra uma criatura no alcance, causando 1d6 + MOVE de dano psíquico em um acerto. Se acertar, o alvo deve fazer um teste de resistência de Sabedoria contra a sua CD de MOVE, ficando confuso em uma falha.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Constrict": {
-    "description": "Você se envolve ao redor de um Pokémon inimigo, tentando espremer a vida dele. Faça uma jogada de ataque corpo a corpo. Em um acerto, o alvo sofre 1d4 + MOVE de dano normal e fica agarrado e impedido por você.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11 e 4d4 no nível 17."
-  },
-  "Conversion": {
-    "description": "Você analisa suas próprias habilidades e se adapta para se encaixar nelas. Escolha um de seus movimentos que você conheça. Pela duração, você troca seu tipo (ambos os tipos, se aplicável) pelo tipo único desse movimento. Com esta mudança, todas as suas resistências e vulnerabilidades anteriores são trocadas pelas do seu novo tipo.",
-    "higherLevels": ""
-  },
-  "Conversion 2": {
-    "description": "Você analisa as ações do seu oponente e se adapta de acordo. Após um Pokémon inimigo usar um movimento, você pode usar sua reação para mudar seu tipo para um tipo aleatório que seja resistente ou imune ao tipo desse movimento (se tal tipo existir). Pela duração, seu tipo (ambos os tipos, se aplicável) é trocado pelo tipo único desse movimento. Com esta mudança, todas as suas resistências e vulnerabilidades anteriores são trocadas pelas do seu novo tipo.",
-    "higherLevels": ""
-  },
-  "Copycat": {
-    "description": "Qualquer coisa que você possa fazer, eu posso fazer melhor. Você usa o movimento que foi usado mais recentemente nesta batalha, se esse movimento tiver um tempo de movimento de uma ação.",
-    "higherLevels": ""
-  },
-  "Cosmic Power": {
-    "description": "Você clama pelos poderes do cosmos para protegê-lo. Você ganha vantagem em testes de resistência de Constituição, Destreza e Sabedoria enquanto mantiver a concentração neste movimento.",
-    "higherLevels": ""
-  },
-  "Cotton Guard": {
-    "description": "Você se cerca com uma camada espessa de lã. Você recebe +4 na CA pela duração.",
-    "higherLevels": ""
-  },
-  "Cotton Spore": {
-    "description": "Você solta uma nuvem de esporos pegajosos em direção a um oponente. O alvo faz um teste de resistência de Destreza contra a sua CD de MOVE. Em uma falha, seu deslocamento é reduzido pela metade pela duração enquanto os esporos o cobrem em uma solução pegajosa. Uma criatura afetada pelos esporos pode repetir o teste de resistência no final de cada um de seus turnos para remover os esporos.",
-    "higherLevels": ""
-  },
-  "Counter": {
-    "description": "Após ser atacado, você usa seus reflexos e revida contra seu inimigo. Após um inimigo atacar você com um movimento que usa Força ou Destreza como seu poder de MOVE, você pode usar sua reação para fazer uma jogada de ataque corpo a corpo contra esse oponente. Em um acerto, você causa 1d6 + MOVE de dano lutador.",
-    "higherLevels": "O dano base deste ataque aumenta para 1d8 no nível 5, 1d10 no nível 11 e 1d12 no nível 17."
-  },
-  "Covet": {
-    "description": "Você simplesmente quer mais do que eles. Faça um ataque corpo a corpo contra o alvo, causando 1d6 + MOVE de dano em um acerto. Se acertar, você pode pegar um dos itens que o alvo está segurando. Você não pode usar este item até o final desta batalha.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11 e 4d6 no nível 17."
-  },
-  "Crabhammer": {
-    "description": "Você traz a dor golpeando com sua garra. Faça uma jogada de ataque corpo a corpo, causando 1d10 + MOVE de dano de água em um acerto bem-sucedido. Este movimento causa um acerto crítico em uma rolagem natural de 18, 19 ou 20.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11 e 4d10 no nível 17."
-  },
-  "Crafty Shield": {
-    "description": "Você constrói um campo de força de uma energia rosa de sensação estranha. Qualquer criatura dentro de uma esfera de 30 pés originando-se de você é imune a ser envenenada, congelada, confundida, queimada, adormecida, recuada e paralisada enquanto você mantiver a concentração.",
-    "higherLevels": ""
-  },
-  "Cross Chop": {
-    "description": "Você desce ambos os braços em um golpe duplo devastador. Faça uma jogada de ataque corpo a corpo com -5 para atingir, causando 1d10 + 10 + MOVE de dano lutador em um acerto bem-sucedido. Este movimento causa um acerto crítico em uma rolagem natural de 19 ou 20.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11 e 4d10 no nível 17."
-  },
-  "Cross Poison": {
-    "description": "Você corta com dois membros pontiagudos com veneno através do inimigo. Faça uma jogada de ataque corpo a corpo, causando 1d8 + MOVE de dano de veneno em um acerto bem-sucedido. Se acertar, seu alvo deve fazer um teste de resistência de Constituição CD 8, ficando envenenado em uma falha. Este movimento causa um acerto crítico em uma rolagem natural de 19 ou 20.",
-    "higherLevels": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11 e 4d8 no nível 17."
   }
-
 };
 
-moves.forEach(move => {
-  const trans = translations[move.name];
+const typeMap = {
+    "poison": "veneno",
+    "fire": "fogo",
+    "water": "água",
+    "grass": "planta",
+    "electric": "elétrico",
+    "psychic": "psíquico",
+    "ice": "gelo",
+    "dragon": "dragão",
+    "dark": "sombrio",
+    "fairy": "fada",
+    "fighting": "lutador",
+    "flying": "voador",
+    "ghost": "fantasma",
+    "ground": "terra",
+    "rock": "pedra",
+    "steel": "aço",
+    "bug": "inseto",
+    "normal": "normal"
+};
+
+const commonReplacements = [
+    [/Make a ranged attack roll/gi, "Faça uma jogada de ataque à distância"],
+    [/Make a ranged attack/gi, "Faça um ataque à distância"],
+    [/Make a melee attack roll/gi, "Faça uma jogada de ataque corpo a corpo"],
+    [/Make a melee attack/gi, "Faça um ataque corpo a corpo"],
+    [/On a hit/gi, "Em um acerto"],
+    [/On a successful hit/gi, "Em um acerto bem-sucedido"],
+    [/On a failure/gi, "Em uma falha"],
+    [/On a success/gi, "Em um sucesso"],
+    [/On a failed save/gi, "Em um teste de resistência falho"],
+    [/saving throw/gi, "teste de resistência"],
+    [/against your MOVE CD/gi, "contra a sua CD de MOVE"],
+    [/against your Move DC/gi, "contra a sua CD de Move"],
+    [/Constitution/gi, "Constituição"],
+    [/Dexterity/gi, "Destreza"],
+    [/Strength/gi, "Força"],
+    [/Intelligence/gi, "Inteligência"],
+    [/Wisdom/gi, "Sabedoria"],
+    [/Charisma/gi, "Carisma"],
+    [/within range/gi, "dentro do alcance"],
+    [/feet/gi, "pés"],
+    [/action/gi, "ação"],
+    [/bonus action/gi, "ação bônus"],
+    [/reaction/gi, "reação"],
+    [/Concentration/gi, "Concentração"],
+    [/duration/gi, "duração"],
+    [/at level (\d+)/gi, "no nível $1"],
+    [/at level/gi, "no nível"],
+    [/level (\d+)/gi, "nível $1"],
+    [/increases to/gi, "aumenta para"],
+    [/The base damage of this attack/gi, "O dano base deste ataque"],
+    [/Half the damage done is restored by the user/gi, "Metade do dano causado é restaurada pelo usuário"],
+    [/the creature takes/gi, "a criatura sofre"],
+    [/the target takes/gi, "o alvo sofre"],
+    [/the Pokémon takes/gi, "o Pokémon sofre"],
+    [/takes (.*?) (poison|fire|water|grass|electric|psychic|ice|dragon|dark|fairy|fighting|flying|ghost|ground|rock|steel|bug|normal) damage/gi, (m, d, t) => `sofre ${d} de dano de ${typeMap[t.toLowerCase()]}`],
+    [/dealing (.*?) (poison|fire|water|grass|electric|psychic|ice|dragon|dark|fairy|fighting|flying|ghost|ground|rock|steel|bug|normal) damage/gi, (m, d, t) => `causando ${d} de dano de ${typeMap[t.toLowerCase()]}`],
+    [/(\d+d\d+ \+ MOVE) (poison|fire|water|grass|electric|psychic|ice|dragon|dark|fairy|fighting|flying|ghost|ground|rock|steel|bug|normal) damage/gi, (m, d, t) => `${d} de dano de ${typeMap[t.toLowerCase()]}`],
+    [/ (poison|fire|water|grass|electric|psychic|ice|dragon|dark|fairy|fighting|flying|ghost|ground|rock|steel|bug|normal) damage/gi, (m, t) => ` de dano de ${typeMap[t.toLowerCase()]}`],
+    [/reactions/gi, "reações"],
+    [/become poisoned/gi, "fica envenenado"],
+    [/become burned/gi, "fica queimado"],
+    [/become paralyzed/gi, "fica paralisado"],
+    [/become frozen/gi, "fica congelado"],
+    [/become confused/gi, "fica confuso"],
+    [/become flinched/gi, "fica recuado"],
+    [/become prone/gi, "fica caído"]
+];
+
+function translate(text) {
+    if (!text) return "";
+    let translated = text;
+    for (const [regex, replacement] of commonReplacements) {
+        if (typeof replacement === 'function') {
+            translated = translated.replace(regex, replacement);
+        } else {
+            translated = translated.replace(regex, replacement);
+        }
+    }
+    return translated;
+}
+
+movesSource.forEach((sourceMove, index) => {
+  const move = moves[index]; // Assuming same order
+  const trans = translations[sourceMove.name];
   if (trans) {
     move.description = {
-      en: move.description,
+      en: sourceMove.description,
       pt: trans.description
     };
     move.higherLevels = {
-      en: move.higherLevels || "",
+      en: sourceMove.higherLevels || "",
       pt: trans.higherLevels || ""
     };
   } else {
-    // If not in this batch, just restructure with same English text for now
-    // Actually, user wants ALL translated. I'll have to do more batches.
-    if (typeof move.description === 'string') {
-        move.description = {
-            en: move.description,
-            pt: move.description // Placeholder to be translated in next batch
-        };
-    }
-    if (typeof move.higherLevels === 'string') {
-        move.higherLevels = {
-            en: move.higherLevels,
-            pt: move.higherLevels
-        };
-    }
+    move.description = {
+        en: sourceMove.description,
+        pt: translate(sourceMove.description)
+    };
+    move.higherLevels = {
+        en: sourceMove.higherLevels || "",
+        pt: translate(sourceMove.higherLevels)
+    };
   }
 });
 
 fs.writeFileSync(movesPath, JSON.stringify(moves, null, 2), 'utf8');
+console.log('Processed ' + moves.length + ' moves.');

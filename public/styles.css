@@ -801,6 +801,12 @@ ul, ol { list-style: none; }
   min-height: 0;
 }
 
+.rules-nav-mobile-toggle {
+  display: none;
+  width: 100%;
+  margin-bottom: var(--gap-md);
+}
+
 .rules-nav {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -813,6 +819,7 @@ ul, ol { list-style: none; }
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
+/* ... rest of rules-nav styles ... */
 
 .rules-chapter {
   margin-bottom: var(--gap-xs);
@@ -872,7 +879,7 @@ ul, ol { list-style: none; }
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: var(--gap-xl);
-  overflow-y: auto;
+  overflow: auto;
   max-height: 75dvh;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
@@ -885,6 +892,7 @@ ul, ol { list-style: none; }
   border-bottom: 2px solid var(--gold);
   padding-bottom: var(--gap-sm);
   margin-bottom: var(--gap-lg);
+  word-break: break-word;
 }
 .rules-content h3 {
   font-family: var(--font-heading);
@@ -894,6 +902,7 @@ ul, ol { list-style: none; }
   margin-bottom: var(--gap-md);
   padding-bottom: 4px;
   border-bottom: 1px solid var(--border);
+  word-break: break-word;
 }
 .rules-content p {
   color: var(--text-secondary);
@@ -918,6 +927,7 @@ ul, ol { list-style: none; }
   border-collapse: collapse;
   margin-bottom: var(--gap-lg);
   font-size: 0.82rem;
+  min-width: 400px;
 }
 .rules-content th {
   background: var(--bg-elevated);
@@ -946,7 +956,7 @@ ul, ol { list-style: none; }
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  overflow: hidden;
+  overflow: auto;
   flex: 1;
 }
 .moves-table {
@@ -1187,17 +1197,185 @@ ul, ol { list-style: none; }
 .form-select:focus { outline: none; border-color: var(--gold); }
 .form-select option { background: var(--bg-secondary); }
 
-/* ── Option Info Cards (Path & Spec descriptions) ─────────────── */
-.option-info-card {
+/* ── Wizard UI ────────────────────────────────────────────────── */
+.wizard-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.wizard-header {
+  text-align: center;
+  margin-bottom: var(--gap-lg);
+}
+.wizard-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--gap-2xl);
+  position: relative;
+}
+.wizard-progress::before {
+  content: '';
+  position: absolute;
+  top: 15px; left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+.wizard-step {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+  color: var(--text-dim);
+  transition: all var(--t-base);
+}
+.wizard-step.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-primary);
+  box-shadow: 0 0 15px rgba(242,201,76,0.3);
+}
+.wizard-step.completed {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--gap-xl);
+  padding-top: var(--gap-lg);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Attribute Grid ───────────────────────────────────────────── */
+.attr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--gap-lg);
+}
+.attr-box {
   background: var(--bg-input);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: var(--r-md);
-  padding: 14px 16px;
-  margin-top: 8px;
-  font-size: 0.82rem;
-  line-height: 1.55;
+  border-radius: var(--r-lg);
+  padding: var(--gap-md);
+  text-align: center;
+  transition: border-color var(--t-fast);
 }
+.attr-box:hover { border-color: var(--gold-dim); }
+.attr-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.attr-value-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.attr-btn {
+  width: 24px; height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.attr-btn:hover { border-color: var(--gold); color: var(--gold); }
+.attr-score { font-size: 1.5rem; font-weight: 700; font-family: var(--font-heading); width: 30px; }
+.attr-mod {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ── Skill Selection ──────────────────────────────────────────── */
+.skill-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.skill-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--t-fast);
+  font-size: 0.875rem;
+}
+.skill-checkbox-item:hover { border-color: var(--gold-dim); }
+.skill-checkbox-item.active { border-color: var(--gold); background: rgba(242,201,76,0.05); }
+.skill-checkbox-item input { cursor: pointer; }
+
+/* ── Pack Cards ───────────────────────────────────────────────── */
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gap-md);
+}
+.pack-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--gap-lg);
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+.pack-card:hover { border-color: var(--gold-dim); }
+.pack-card.active { border-color: var(--gold); background: rgba(242,201,76,0.05); }
+.pack-card-name { font-weight: 700; margin-bottom: 8px; color: var(--gold); }
+.pack-card-items { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; }
+
+/* ── Summary View ─────────────────────────────────────────────── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-xl);
+}
+.summary-section { margin-bottom: var(--gap-lg); }
+.summary-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; }
+.summary-value { font-weight: 600; }
+
+/* ── Specialization detail card ───────────────────────────────── */
+.spec-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.spec-item {
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+.spec-item.active { border-color: var(--gold); background: rgba(242,201,76,0.05); font-weight: 600; }
+
 .option-info-summary {
   color: var(--text-secondary);
   font-style: italic;
@@ -1692,27 +1870,100 @@ ul, ol { list-style: none; }
 /* ── Dividers ─────────────────────────────────────────────────── */
 .divider { height: 1px; background: var(--border); margin: var(--gap-md) 0; }
 
+/* ── Layout Utilities ────────────────────────────────────────── */
+.responsive-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-lg);
+  align-items: start;
+}
+
+.sheet-editor-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--gap-xl);
+  align-items: start;
+}
+
+.wizard-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--gap-xl);
+  align-items: start;
+}
+
 /* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .sheet-editor-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar { transform: translateX(-100%); }
   .main-content { margin-left: 0; padding-bottom: var(--nav-height); }
   .bottom-nav { display: flex; }
   .page { padding: var(--gap-md); }
+  
+  /* Rules Navigation for Mobile */
   .rules-layout { grid-template-columns: 1fr; }
-  .rules-nav { display: none; }
+  .rules-nav-mobile-toggle { display: block; }
+  .rules-nav {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-height: 80dvh;
+    z-index: 1000;
+    box-shadow: var(--shadow-modal);
+  }
+  .rules-nav.show-mobile { display: block; }
+  
+  .wizard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .toolbar > * {
+    width: 100%;
+  }
+  .result-count {
+    margin-left: 0;
+    text-align: center;
+    margin-top: var(--gap-sm);
+  }
+  
   .moves-table th:nth-child(n+4),
   .moves-table td:nth-child(n+4) { display: none; }
+  
   .pokemon-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   .slide-panel { width: 100%; }
-  .stat-block-grid { grid-template-columns: repeat(3, 1fr); }
-  .combat-stats { grid-template-columns: repeat(3, 1fr); }
+  
+  .responsive-2col {
+    grid-template-columns: 1fr;
+  }
+  
   .pokemon-slots { grid-template-columns: 1fr; }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
 }
 
 @media (max-width: 480px) {
   .pokemon-grid { grid-template-columns: repeat(2, 1fr); }
   .detail-header { flex-direction: column; text-align: center; }
   .detail-header-info { width: 100%; }
+  .stat-block-grid { grid-template-columns: repeat(2, 1fr); }
+  .combat-stats { grid-template-columns: 1fr; }
+  .detail-actions { flex-direction: column; }
+  .detail-actions .btn { width: 100%; }
 }
 
 /* ── Utility ──────────────────────────────────────────────────── */
