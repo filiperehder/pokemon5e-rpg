@@ -1,0 +1,626 @@
+[
+  {
+    "name": "Water Shuriken",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Dexterity",
+      "pt": "Destreza"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You quickly fire a spray of shurikens made of water at your opponent. Make a ranged attack roll, doing 1d4 + MOVE water damage on a hit. After successfully hitting a target, roll a d4. On a result of 3 or 4, you may immediately hit again for an additional 1d4 water damage. Continue this process until you fail to roll a 3 or 4 on the d4 roll.",
+      "pt": "You quickly fire a spray of shurikens made of water at your opponent. Faça uma jogada de ataque à distância, doing 1d4 + MOVE water damage Em um acerto. After successfully hitting a target, roll a d4. On a result of 3 or 4, you may immediately hit again for an additional 1d4 water damage. Continue this process until you fail to roll a 3 or 4 on the d4 roll."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d6 at level 5, 1d8 at level 11, and 1d10 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11, and 1d10 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Water Sport",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 15,
+    "duration": "1 round",
+    "range": "30 feet",
+    "description": {
+      "en": "You surround an ally in a spout of water. Until the start of your next turn one creature within range has resistance to fire damage. If the creature already had vulnerability to fire damage it instead takes neutral damage when affected by water sport.",
+      "pt": "You surround an ally in a spout of water. Until the start of your next turn one creature dentro do alcance has resistance to fire damage. If the creature already had vulnerability to fire damage it instead takes neutral damage when affected by water sport."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Water Spout",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Constitution/Wisdom",
+      "pt": "Constituição/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 2,
+    "duration": "Instantaneous",
+    "range": "Self (45-foot cone)",
+    "description": {
+      "en": "Your expel your reserves of water through a blowhole. Each creature in a 45 foot cone originating from yourself makes a Dexterity Saving throw. Those creature takes water damage equal to one third of your current HP on a failed save, or half as much as that on a successful one.",
+      "pt": "Your expel your reserves of water through a blowhole. Each creature in a 45 foot cone originating from yourself makes a Destreza teste de resistência. Those creature takes water damage equal to one third of your current HP Em um teste de resistência falho, or half as much as that Em um sucessoful one."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Waterfall",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You use a rocket of water equal to the crash of a waterfall to proper yourself upwards in a powerful uppercut. Make a melee attack roll against an opponent dealing 1d10 water damage on a hit. If you hit on a natural roll of 18 or higher, this attack flinches the opponent.",
+      "pt": "You use a rocket of water equal to the crash of a waterfall to proper yourself upwards in a powerful uppercut. Faça uma jogada de ataque corpo a corpo against an opponent dealing 1d10 water damage Em um acerto. If you hit on a natural roll of 18 or higher, this attack flinches the opponent."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Weather Ball",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Wisdom",
+      "pt": "Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "80 feet",
+    "description": {
+      "en": "You create a ball consisting of the energy of the weather around you. Make a ranged attack roll against an opponent, dealing 1d8 + MOVE damage on a hit. The type of this damage changes with the weather around you. If it is sunny outside the damage type is fire, if it is raining the damage type is water, if it is snowing the damage type is ice, and if the weather has no distinguishing characteristics the damage type is normal.",
+      "pt": "You create a ball consisting of the energy of the weather around you. Faça uma jogada de ataque à distância against an opponent, dealing 1d8 + MOVE damage Em um acerto. The type of this damage changes with the weather around you. If it is sunny outside the damage type is fire, if it is raining the damage type is water, if it is snowing the damage type is ice, and if the weather has no distinguishing characteristics the damage type is normal."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Whirlpool",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You trap the opponent in a swirling pool of water. Choose an opponent to make a Dexterity saving throw taking 1d6 +MOVE water damage on a failure. A creature Restrained by this move can use its actions to make a Strength check against your MOVE DC. If it succeeds, it is no longer Restrained. While you are restraining a creature with this move, you may spend your action to attack that creature again with this move without spending an additional PP.",
+      "pt": "You trap the opponent in a swirling pool of water. Choose an opponent to make a Destreza teste de resistência taking 1d6 +MOVE water damage Em uma falha. A creature Restrained by this move can use its açãos to make a Força check contra a sua CD de MOVE. If it succeeds, it is no longer Restrained. While you are restraining a creature with this move, you may spend your ação to attack that creature again with this move without spending an additional PP."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d10 at level 5, 2d6 at level 11, and 2d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d10 no nível 5, 2d6 no nível 11, and 2d10 no nível 17."
+    }
+  },
+  {
+    "name": "Whirlwind",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Self (15-foot sphere)",
+    "description": {
+      "en": "You create a whirlwind of spinning air around you. Each Pokémon within a 15 foot sphere center on yourself must make a Strength saving throw against your MOVE DC. On a failed save they are pushed 15 feet away from you and take 1d8 normal damage. On a successful saved they are not pushed and take half damage.",
+      "pt": "You create a whirlwind of spinning air around you. Each Pokémon within a 15 foot sphere center on yourself must make a Força teste de resistência contra a sua CD de MOVE. Em um teste de resistência falho they are pushed 15 pés away from you and take 1d8 normal damage. Em um sucessoful saved they are not pushed and take half damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d12 at level 5, 2d8 at level 11, and 2d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d12 no nível 5, 2d8 no nível 11, and 2d12 no nível 17."
+    }
+  },
+  {
+    "name": "Wide Guard",
+    "type": {
+      "en": "Rock",
+      "pt": "Pedra"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self (5-foot sphere)",
+    "description": {
+      "en": "You spread your arms to defend against a wide reaching move. When you are forced to make a saving throw against an effect that could affect multiple targets you may use Wide Guard as your reaction to give you and each creature of your choice within 5 feet of you advantage on that saving throw. If the triggering effect is damage and you or those creatures you select succeed on the saving throw, you take no damage from the attack as part of Wide Guard no matter the regular effects of the triggering attack.",
+      "pt": "You spread your arms to defend against a wide reaching move. When you are forced to make a teste de resistência against an effect that could affect multiple targets you may use Wide Guard as your reação to give you and each creature of your choice within 5 pés of you advantage on that teste de resistência. If the triggering effect is damage and you or those creatures you select succeed on the teste de resistência, you take no damage from the attack as part of Wide Guard no matter the regular effects of the triggering attack."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Wild Charge",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You surround yourself in wildly spastic electric current before laying into your opponent. You may move up to 15 feet then make a melee attack roll, dealing 1d12 + MOVE electric damage on a hit. Using this move tuckers you out. Until the end of your next turn you move at half speed for all your movements.",
+      "pt": "You surround yourself in wildly spastic electric current before laying into your opponent. You may move up to 15 pés then Faça uma jogada de ataque corpo a corpo, dealing 1d12 + MOVE electric damage Em um acerto. Using this move tuckers you out. Until the end of your next turn you move at half speed for all your movements."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Will-O-Wisp",
+    "type": {
+      "en": "Fire",
+      "pt": "Fogo"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 20,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You send out a ghostly wisp of flame which enters the foe's body. Make a ranged attack against an opponent, burning them on a hit.",
+      "pt": "You send out a ghostly wisp of flame which enters the foe's body. Faça um ataque à distância against an opponent, burning them Em um acerto."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Wing Attack",
+    "type": {
+      "en": "Flying",
+      "pt": "Voador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You strike out at an enemy Pokémon with your wings and the wind made by them. Make a ranged attack roll, doing 1d6 + MOVE flying damage on a hit.",
+      "pt": "You strike out at an enemy Pokémon with your wings and the wind made by them. Faça uma jogada de ataque à distância, doing 1d6 + MOVE flying damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Wish",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 1,
+    "duration": "Varies (Concentration)",
+    "range": "Varies",
+    "description": {
+      "en": "You pray that your dreams will come true. Yeah, me too buddy. Each time you use this move you may choose one of the following effects to happen: one ally within 1 mile regains 3d6 health, one enemy within 200 feet must make a DC 15 Charisma saving throw or take 3d6 non-typed damage, one ally within 200 feet gains +5 AC for 1 minute, or one ally within 200 feet has advantage on all skills checks, ability checks, and attack rolls for 10 minutes. If the effect you choose has a duration, you must concentrate on it for the duration.",
+      "pt": "You pray that your dreams will come true. Yeah, me too buddy. Each time you use this move you may choose one of the following effects to happen: one ally within 1 mile regains 3d6 health, one enemy within 200 pés must make a DC 15 Charisma teste de resistência or take 3d6 non-typed damage, one ally within 200 pés gains +5 AC for 1 minute, or one ally within 200 pés has advantage on all skills checks, ability checks, and attack rolls for 10 minutes. If the effect you choose has a duração, you must concentrate on it for the duração."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 6d6 at level 5, 9d9 at level 11, and 12d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 6d6 no nível 5, 9d9 no nível 11, and 12d6 no nível 17."
+    }
+  },
+  {
+    "name": "Withdraw",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "When you are hit by a melee or ranged attack, you can use your reaction to use this move to increase your AC by +3 until the start of your next turn if it would cause that attack to miss.",
+      "pt": "When you are hit by a melee or ranged attack, you can use your reação to use this move to increase your AC by +3 until the start of your next turn if it would cause that attack to miss."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Wonder Room",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You conjure a strange room full of symbols and warped imagery. Choose a 30 foot cube originating at a point within range for the pattern to momentarily appear in. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0. The effect ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.",
+      "pt": "You conjure a strange room full of symbols and warped imagery. Choose a 30 foot cube originating at a point dentro do alcance for the pattern to momentarily appear in. Each creature in the area who sees the pattern must make a Sabedoria teste de resistência. Em um teste de resistência falho, the creature becomes charmed for the duração. While charmed by this spell, the creature is incapacitated and has a speed of 0. The effect ends for an affected creature if it takes any damage or if someone else uses an ação to shake the creature out of its stupor."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Wood Hammer",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 7,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You bring down your arm in a slow powerful slam, aiming to smash your opponent. Make a melee attack roll against an opponent, dealing 2d12 + MOVE grass damage on a hit. Regardless of if you hit or miss this attack your reckless swing damages you own appendage. Until the end of your next turn you have disadvantage on melee attack rolls, move at half speed, and cannot take reactions.",
+      "pt": "You bring down your arm in a slow powerful slam, aiming to smash your opponent. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 2d12 + MOVE grass damage Em um acerto. Regardless of if you hit or miss this attack your reckless swing damages you own appendage. Until the end of your next turn you have disadvantage on melee attack rolls, move at half speed, and cannot take reaçãos."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d12 at level 5, 6d12 at level 11, and 8d12 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 4d12 no nível 5, 6d12 no nível 11, and 8d12 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Work Up",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 5,
+    "duration": "1 minute (Concentration)",
+    "range": "Self",
+    "description": {
+      "en": "You really amp yourself up! For the duration you have +1 to attack rolls and damage for both ranged and melee attacks. You cannot have this bonus from Work Up more then once.",
+      "pt": "You really amp yourself up! For the duração you have +1 to attack rolls and damage for both ranged and melee attacks. You cannot have this bonus from Work Up more then once."
+    },
+    "higherLevels": {
+      "en": "At level 7 this bonus increases to +2 and at level 13 this bonus increases to +3.",
+      "pt": "no nível 7 this bonus aumenta para +2 and no nível 13 this bonus aumenta para +3."
+    }
+  },
+  {
+    "name": "Worry Seed",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 20,
+    "duration": "4 hours",
+    "range": "Touch",
+    "description": {
+      "en": "You plant a seed with a faint odor and odd effect. Choose one creature you can touch to plant the seed on. For the duration the seed prevents the target from falling asleep. The seed is easy to dislodge and the target may do so as a bonus action.",
+      "pt": "You plant a seed with a faint odor and odd effect. Choose one creature you can touch to plant the seed on. For the duração the seed prevents the target from falling asleep. The seed is easy to dislodge and the target may do so as a bonus ação."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Wrap",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attempt to grapple a target into submission. Make a melee attack roll. On a hit, the target takes 1d4 + MOVE normal damage and is grappled and restrained by you. At the beginning of each of its turns, it may attempt to escape with a Strength saving throw against your Move DC. While a Pokémon is grappled by you you may continue this move, as a bonus action and without using a PP, to do an automatic 1d4 + MOVE damage.",
+      "pt": "You attempt to grapple a target into submission. Faça uma jogada de ataque corpo a corpo. Em um acerto, the target takes 1d4 + MOVE normal damage and is grappled and restrained by you. At the beginning of each of its turns, it may attempt to escape with a Força teste de resistência contra a sua CD de MOVE. While a Pokémon is grappled by you you may continue this move, as a bonus ação and without using a PP, to do an automatic 1d4 + MOVE damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d6 at level 5, 1d8 at level 11, and 1d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11, and 1d10 no nível 17."
+    }
+  },
+  {
+    "name": "Wring Out",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You squeeze your opponent as if they were a wet towel you were trying to dry. If you already have an opponent grappled you may use Wring Out to inflict an automatic 1d8 + MOVE normal damage",
+      "pt": "You squeeze your opponent as if they were a wet towel you were trying to dry. If you already have an opponent grappled you may use Wring Out to inflict an automatic 1d8 + MOVE normal damage"
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "X-Scissor",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack with both your front appendages, carving an X shape into your opponent. Make a melee attack roll, dealing 1d10 + MOVE bug damage on a hit",
+      "pt": "You attack with both your front appendages, carving an X shape into your opponent. Faça uma jogada de ataque corpo a corpo, dealing 1d10 + MOVE bug damage Em um acerto"
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Yawn",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You yawn at your opponent, making them suddenly drowsy. Target one opponent within range that can see you. That target must move a Charisma saving throw against your MOVE DC. On a failure they gain the asleep condition at the start of their next turn. They cannot make a check to wake up on the same turn they fall asleep. <div class='pageNumber auto'></div>",
+      "pt": "You yawn at your opponent, making them suddenly drowsy. Target one opponent dentro do alcance that can see you. That target must move a Charisma teste de resistência contra a sua CD de MOVE. Em uma falha they gain the asleep condition at the start of their next turn. They cannot make a check to wake up on the same turn they fall asleep. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Zap Cannon",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 6,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You charge a powerful bolt of arcing lightning, so powerful you can't quite control it. Make a ranged attack roll at disadvantage, dealing 1d12 + MOVE electric damage on a hit. If you hit with this move the target must make a Constitution saving throw against your MOVE DC or become paralyzed.",
+      "pt": "You charge a powerful bolt of arcing lightning, so powerful you can't quite control it. Faça uma jogada de ataque à distância at disadvantage, dealing 1d12 + MOVE electric damage Em um acerto. If you hit with this move the target must make a Constituição teste de resistência contra a sua CD de MOVE or become paralyzed."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17."
+    }
+  },
+  {
+    "name": "Zen Headbutt",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Strength/Intelligence",
+      "pt": "Força/Inteligência"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You have a different method of delivering your head's psychic energy to your opponent. Make a melee attack roll against your opponent, dealing 1d10 + MOVE psychic damage on a hit. On a natural attack roll of 19 or 20 the target flinches.",
+      "pt": "You have a different method of delivering your head's psychic energy to your opponent. Faça uma jogada de ataque corpo a corpo against your opponent, dealing 1d10 + MOVE psychic damage Em um acerto. On a natural attack roll of 19 or 20 the target flinches."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Zing Zap",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You spin around and release your electricity through your quills. Make a melee attack roll against an opponent, dealing 1d10 + MOVE electric damage on a hit. On a natural roll of 17 or higher your quills are too prickly and you flinch your opponent.",
+      "pt": "You spin around and release your electricity through your quills. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d10 + MOVE electric damage Em um acerto. On a natural roll of 17 or higher your quills are too prickly and you flinch your opponent."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  }
+]

@@ -43,6 +43,14 @@
         <span class="nav-icon">⚡</span>
         <span>Movimentos</span>
       </li>
+      <li class="nav-item" data-page="encontros">
+        <span class="nav-icon">🎲</span>
+        <span>Encontros</span>
+      </li>
+      <li class="nav-item" data-page="mapa">
+        <span class="nav-icon">🗺️</span>
+        <span>Mapa</span>
+      </li>
     </ul>
     <div class="sidebar-footer">
       Baseado em Pokémon in 5th Edition<br>
@@ -200,7 +208,78 @@
       </div>
     </section>
 
-  </main>
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: ENCONTROS
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-encontros" class="page">
+      <div class="page-header">
+        <h1 class="page-title">Gerador de Encontros</h1>
+        <p class="page-subtitle">Gere NPCs Pokémon com movimentos aleatórios para seus combates</p>
+      </div>
+
+      <div class="encounter-layout">
+        <div class="encounter-controls editor-section">
+          <div class="editor-section-title">Configurar NPC</div>
+          
+          <div class="form-group">
+            <label class="form-label">Pokémon</label>
+            <div class="select-search-wrap" style="position:relative">
+              <input type="text" id="encounter-poke-search" class="form-input" placeholder="Buscar Pokémon...">
+              <div id="encounter-poke-results" class="select-results hidden"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nível</label>
+            <div class="level-control-main">
+              <button class="level-btn-main" id="btn-encounter-lvl-minus">-</button>
+              <span class="level-display-main" id="encounter-lvl-display">Nível 1</span>
+              <button class="level-btn-main" id="btn-encounter-lvl-plus">+</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="btn-generate-encounter" style="margin-top:20px; width:100%">
+            🎲 Gerar NPC Aleatório
+          </button>
+        </div>
+
+        <div id="encounter-result-area" class="encounter-result">
+          <!-- Rendered by JS -->
+          <div class="empty-state">
+            <div class="empty-state-icon">🎲</div>
+            <div class="empty-state-title">Aguardando geração</div>
+            <div class="empty-state-text">Selecione um Pokémon e nível para gerar um NPC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PAGE: MAPA
+    ══════════════════════════════════════════════════════════════ -->
+    <section id="page-mapa" class="page">
+      <div class="page-header">
+        <h1 class="page-title">Mapa de Exploração</h1>
+        <p class="page-subtitle">Selecione uma rota para ver os Pokémon encontrados na região</p>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-sidebar">
+          <div class="editor-section-title">Locais Disponíveis</div>
+          <div id="map-location-list" class="map-location-list">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div id="map-detail-area" class="map-detail">
+          <div class="empty-state">
+            <div class="empty-state-icon">🗺️</div>
+            <div class="empty-state-title">Selecione um local</div>
+            <div class="empty-state-text">Clique em uma cidade ou rota para ver os detalhes</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <!-- Bottom Nav (Mobile) -->
   <nav class="bottom-nav">
@@ -219,6 +298,14 @@
     <div class="bottom-nav-item" data-page="movimentos">
       <span class="nav-icon">⚡</span>
       <span>Movimentos</span>
+    </div>
+    <div class="bottom-nav-item" data-page="encontros">
+      <span class="nav-icon">🎲</span>
+      <span>Encontros</span>
+    </div>
+    <div class="bottom-nav-item" data-page="mapa">
+      <span class="nav-icon">🗺️</span>
+      <span>Mapa</span>
     </div>
   </nav>
 
@@ -267,6 +354,6 @@
 <!-- ── Toast Container ─────────────────────────────────────────── -->
 <div id="toast-container" class="toast-container"></div>
 
-<script src="app.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

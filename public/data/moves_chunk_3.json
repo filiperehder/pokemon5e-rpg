@@ -1,0 +1,2602 @@
+[
+  {
+    "name": "Lick",
+    "type": {
+      "en": "Ghost",
+      "pt": "Fantasma"
+    },
+    "movePower": {
+      "en": "Dexterity/Charisma",
+      "pt": "Destreza/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 6,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You reach out and lick an enemy Pokémon. Make a melee attack roll. On a hit, do 1d4 + MOVE ghost damage, and force the enemy to succeed on a Constitution saving throw against your Move DC or become poisoned.",
+      "pt": "You reach out and lick an enemy Pokémon. Faça uma jogada de ataque corpo a corpo. Em um acerto, do 1d4 + MOVE ghost damage, and force the enemy to succeed on a Constituição teste de resistência contra a sua CD de MOVE or become poisoned."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d6 at level 5, 1d8 at level 11, and 1d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11, and 1d10 no nível 17."
+    }
+  },
+  {
+    "name": "Light Screen",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "When you are forced to make a saving throw, use this move as your reaction to take add +3 to the roll. You must use this move before you know the result of your roll.",
+      "pt": "When you are forced to make a teste de resistência, use this move as your reação to take add +3 to the roll. You must use this move before you know the result of your roll."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Liquidation",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You slam into the target using a full-force blast of water, destroying their defenses. Make a melee attack roll dealing 1d10 + MOVE water damage on a hit. On a successful hit, the next attack against the target has advantage.",
+      "pt": "You slam into the target using a full-force blast of water, destroying their defenses. Faça uma jogada de ataque corpo a corpo dealing 1d10 + MOVE water damage Em um acerto. Em um acerto bem-sucedido, the next attack against the target has advantage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Lock-On",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You focus your body and prepare to strike at the opponent's weakness. The first attack you hit until the end of your next turn scores a critical hit. <div class='pageNumber auto'></div>",
+      "pt": "You focus your body and prepare to strike at the opponent's weakness. The first attack you hit until the end of your next turn scores a critical hit. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Lovely Kiss",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You plant a kiss laced with sleeping poison. Make a melee attack roll against an opponent. On a hit that opponent falls asleep.",
+      "pt": "You plant a kiss laced with sleeping poison. Faça uma jogada de ataque corpo a corpo against an opponent. Em um acerto that opponent falls asleep."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Low Kick",
+    "type": {
+      "en": "Fighting",
+      "pt": "Lutador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You sweep the legs of your opponent. Make a melee attack against your target dealing 1d6 + MOVE fighting damage. If you hit the target then makes a Strength saving throw against your Strength MOVE DC, being knocked prone on a failure. If your target is over 500 lbs you may choose to re-roll any of the damage die for this move once, taking the second result if you choose to do so.",
+      "pt": "You sweep the legs of your opponent. Faça um ataque corpo a corpo against your target dealing 1d6 + MOVE fighting damage. If you hit the target then makes a Força teste de resistência against your Força MOVE DC, being knocked prone Em uma falha. If your target is over 500 lbs you may choose to re-roll any of the damage die for this move once, taking the second result if you choose to do so."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Low Sweep",
+    "type": {
+      "en": "Fighting",
+      "pt": "Lutador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack the opponent's legs, aimed to cripple. Make a melee attack against your target dealing 1d6 + MOVE fighting damage. If you hit the attack, the target's movement speed is lowered by 10 feet until the end of their next turn.",
+      "pt": "You attack the opponent's legs, aimed to cripple. Faça um ataque corpo a corpo against your target dealing 1d6 + MOVE fighting damage. If you hit the attack, the target's movement speed is lowered by 10 pés until the end of their next turn."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Lucky Chant",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "1 minute (Concentration)",
+    "range": "Self (20-foot sphere)",
+    "description": {
+      "en": "You chant an ancient spell. For the duration friendly creatures within 20 feet of you, including yourself, cannot be critically hit.",
+      "pt": "You chant an ancient spell. For the duração friendly creatures within 20 pés of you, including yourself, cannot be critically hit."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Lunge",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You leap ahead and strike the opponent. As part of this action you may move 15 feet in a line and make a melee attack roll, dealing 1d8 + MOVE bug damage on a hit.",
+      "pt": "You leap ahead and strike the opponent. As part of this ação you may move 15 pés in a line and Faça uma jogada de ataque corpo a corpo, dealing 1d8 + MOVE bug damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Mach Punch",
+    "type": {
+      "en": "Fighting",
+      "pt": "Lutador"
+    },
+    "movePower": {
+      "en": "Dexterity",
+      "pt": "Destreza"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 6,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You strike forth with a lighting quick punch. Make a melee attack dealing 1d6 + MOVE fighting damage on a hit.",
+      "pt": "You strike forth with a lighting quick punch. Faça um ataque corpo a corpo dealing 1d6 + MOVE fighting damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d8 at level 5, 2d6 at level 11, and 2d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d8 no nível 5, 2d6 no nível 11, and 2d10 no nível 17."
+    }
+  },
+  {
+    "name": "Magic Coat",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You surround yourself in a bouncy protective sheen. If an enemy's move causes you to receive a status condition through a saving throw, you may use your reaction to cause that enemy to make the saving throw instead of yourself. On a failure, they receive the status. This move can only reflect status effects. If a saving throw would cause you to take a status condition in addition some other effect, you may still cause your attacker to attempt their own saving throw to take the status effect but you also must make the saving throw and accept the other effects as per your result. <div class='pageNumber auto'></div>",
+      "pt": "You surround yourself in a bouncy protective sheen. If an enemy's move causes you to receive a status condition through a teste de resistência, you may use your reação to cause that enemy to make the teste de resistência instead of yourself. Em uma falha, they receive the status. This move can only reflect status effects. If a teste de resistência would cause you to take a status condition in addition some other effect, you may still cause your attacker to attempt their own teste de resistência to take the status effect but you also must make the teste de resistência and accept the other effects as per your result. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Magic Room",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence",
+      "pt": "Inteligência"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "1 hour (Concentration)",
+    "range": "60 feet",
+    "description": {
+      "en": "You place your opponent in a magic room. Target a 10 foot cube originating from a point within range. All creatures in the cube must make a Wisdom saving throw versus your MOVE DC. On a failure they lose the use of one of their held items or one attuned item for the duration (your choice). The target can repeat the saving throw once every minute at the end of its turn to end the effects.",
+      "pt": "You place your opponent in a magic room. Target a 10 foot cube originating from a point dentro do alcance. All creatures in the cube must make a Sabedoria teste de resistência versus your MOVE DC. Em uma falha they lose the use of one of their held items or one attuned item for the duração (your choice). The target can repeat the teste de resistência once every minute at the end of its turn to end the effects."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Magical Leaf",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Dexterity/Wisdom",
+      "pt": "Destreza/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You imbue a collection of leafs with a magical energy and fire them at the enemy. Make a ranged attack roll at advantage against an opponent dealing 1d6 + MOVE grass damage on a hit.",
+      "pt": "You imbue a collection of leafs with a magical energy and fire them at the enemy. Faça uma jogada de ataque à distância at advantage against an opponent dealing 1d6 + MOVE grass damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Magnet Bomb",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "Intelligence",
+      "pt": "Inteligência"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You levitate a lump of steel with your magnetic abilities and launch it at the opponent. Make a ranged attack roll, dealing 1d6 + MOVE steel damage on a hit.",
+      "pt": "You levitate a lump of steel with your magnetic abilities and launch it at the opponent. Faça uma jogada de ataque à distância, dealing 1d6 + MOVE steel damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Magnet Rise",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "10 minutes",
+    "range": "Self",
+    "description": {
+      "en": "You use your magnetic abilities to stay clear of the ground. For the duration you are immune to ground type damage as a flying type would be.",
+      "pt": "You use your magnetic abilities to stay clear of the ground. For the duração you are immune to ground type damage as a flying type would be."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Magnetic Flux",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 2,
+    "duration": "1 minute (Concentration)",
+    "range": "60 feet",
+    "description": {
+      "en": "You connect with a source of electricity just like yours. Choose a willing electric Pokémon within range. Both of you get +2 AC and +2 to saving throws for the duration if you stay within 60 ft of each other. If either of you moves out of range the effect immediately ends as if you had just lost concentration.",
+      "pt": "You connect with a source of electricity just like yours. Choose a willing electric Pokémon dentro do alcance. Both of you get +2 AC and +2 to teste de resistências for the duração if you stay within 60 ft of each other. If either of you moves out of range the effect immediately ends as if you had just lost Concentração."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Magnitude",
+    "type": {
+      "en": "Ground",
+      "pt": "Terra"
+    },
+    "movePower": {
+      "en": "Wisdom",
+      "pt": "Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Self (30-foot cone)",
+    "description": {
+      "en": "You place your hands on the ground and begin to make it tremble. As you unleash the energy into the ground, it becomes hard to control. Roll a d6. Then, roll as many 1d4 as you rolled on your initial d6. This move deals that much ground damage. Each Pokémon within a 30 foot cone originating from yourself makes a Strength saving throw against your MOVE DC to brace themselves against the vibrations. On a failed save they take the full damage of this move and on a successful save they take half of the damage.",
+      "pt": "You place your hands on the ground and begin to make it tremble. As you unleash the energy into the ground, it becomes hard to control. Roll a d6. Then, roll as many 1d4 as you rolled on your initial d6. This move deals that much ground damage. Each Pokémon within a 30 foot cone originating from yourself makes a Força teste de resistência contra a sua CD de MOVE to brace themselves against the vibrations. Em um teste de resistência falho they take the full damage of this move and Em um sucessoful save they take half of the damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d6 at level 5, 1d8 at level 11, and 1d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11, and 1d10 no nível 17."
+    }
+  },
+  {
+    "name": "Mat Block",
+    "type": {
+      "en": "Fighting",
+      "pt": "Lutador"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You whack the floor in front of you and pull up a mat for protection. You may create a 15 ft wide, 10 foot high, and 2 inches thick wall directly in front of you. The mat must be placed so that you are as close to the center of the mat as possible. The mat provides total cover for everyone behind it. The mat has an AC of 10 and an HP of 20.",
+      "pt": "You whack the floor in front of you and pull up a mat for protection. You may create a 15 ft wide, 10 foot high, and 2 inches thick wall directly in front of you. The mat must be placed so that you are as close to the center of the mat as possible. The mat provides total cover for everyone behind it. The mat has an AC of 10 and an HP of 20."
+    },
+    "higherLevels": {
+      "en": "At level 11 the mat's HP increases to 40. <div class='pageNumber auto'></div>",
+      "pt": "no nível 11 the mat's HP aumenta para 40. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Me First",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You need to be first at everything. While you know this move you have a +5 to initiative rolls while you are the active Pokémon. You may use Me First to move up to your movement speed.",
+      "pt": "You need to be first at everything. While you know this move you have a +5 to initiative rolls while you are the active Pokémon. You may use Me First to move up to your movement speed."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Mean Look",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 7,
+    "duration": "1 minute (Concentration)",
+    "range": "60 feet",
+    "description": {
+      "en": "You give an enemy a look and chill them to their core. One creature you can see within range makes a Wisdom saving throw, becoming frightened of you on a failure. The target can repeat this saving throw at the end of their turn, removing the frightened effect on a success.",
+      "pt": "You give an enemy a look and chill them to their core. One creature you can see dentro do alcance makes a Sabedoria teste de resistência, becoming frightened of you Em uma falha. The target can repeat this teste de resistência at the end of their turn, removing the frightened effect Em um sucesso."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Meditate",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "1 round",
+    "range": "Self",
+    "description": {
+      "en": "You enter a meditative stance, disconnecting yourself from the world and focusing on your inner energy. Until the end of your next turn you have resistance to all types of damage. Alternatively, you can use one PP of this move to gain maximum health from any hit dice you use during one rest.",
+      "pt": "You enter a meditative stance, disconnecting yourself from the world and focusing on your inner energy. Until the end of your next turn you have resistance to all types of damage. Alternatively, you can use one PP of this move to gain maximum health from any hit dice you use during one rest."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Mega Drain",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "50 feet",
+    "description": {
+      "en": "You attempt to drain the life force of an enemy Pokémon. Make a ranged attack on a target, doing 1d6 + MOVE grass damage on a hit. Half of the damage dealt is restored to the user.",
+      "pt": "You attempt to drain the life force of an enemy Pokémon. Faça um ataque à distância on a target, doing 1d6 + MOVE grass damage Em um acerto. Half of the damage dealt is restored to the user."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Mega Kick",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You strike out with a hard kick. Make a melee attack against a target, doing 1d8 + MOVE normal damage on a hit. If attacked with Mega Punch since the start of your previous turn, this attack has advantage.",
+      "pt": "You strike out with a hard kick. Faça um ataque corpo a corpo against a target, doing 1d8 + MOVE normal damage Em um acerto. If attacked with Mega Punch since the start of your previous turn, this attack has advantage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Mega Punch",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You strike out with a hard punch. Make a melee attack against a target, doing 1d8 + MOVE normal damage on a hit. If you attacked with Mega Kick since the start of your previous turn, this attack has advantage.",
+      "pt": "You strike out with a hard punch. Faça um ataque corpo a corpo against a target, doing 1d8 + MOVE normal damage Em um acerto. If you attacked with Mega Kick since the start of your previous turn, this attack has advantage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Megahorn",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You impale your horn onto your opponent. Make a melee attack roll, dealing 1d12 + MOVE bug damage on a hit.",
+      "pt": "You impale your horn onto your opponent. Faça uma jogada de ataque corpo a corpo, dealing 1d12 + MOVE bug damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17."
+    }
+  },
+  {
+    "name": "Memento",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You sacrifice yourself to psychologically damage your opponent. Choose one Pokémon within range to make a Wisdom saving throw. On a failure each of their moves loses 3 PP. As a consequence to your actions, you take 1d12 dark damage. <div class='pageNumber auto'></div>",
+      "pt": "You sacrifice yourself to psychologically damage your opponent. Choose one Pokémon dentro do alcance to make a Sabedoria teste de resistência. Em uma falha each of their moves loses 3 PP. As a consequence to your açãos, you take 1d12 dark damage. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Metal Burst",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You use the natural sheen and sturdiness of the metal material that encompasses your body to repel an attack. When you take super effective damage you may use your reaction to use this move and return a portion of the damage to one opponent within range. Your target must make a Constitution saving throw against your MOVE DC or take steel damage equal to half of the damage you took.",
+      "pt": "You use the natural sheen and sturdiness of the metal material that encompasses your body to repel an attack. When you take super effective damage you may use your reação to use this move and return a portion of the damage to one opponent dentro do alcance. Your target must make a Constituição teste de resistência contra a sua CD de MOVE or take steel damage equal to half of the damage you took."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Metal Claw",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You coat your claws in a shell of metal and strike your opponent. Make a melee attack roll dealing 1d6 + MOVE steel damage on a hit. If you roll max damage on one of the damage die for this attack, you have advantage on your next melee attack roll.",
+      "pt": "You coat your claws in a shell of metal and strike your opponent. Faça uma jogada de ataque corpo a corpo dealing 1d6 + MOVE steel damage Em um acerto. If you roll max damage on one of the damage die for this attack, you have advantage on your next melee attack roll."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Metal Sound",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "1 minute",
+    "range": "45 feet",
+    "description": {
+      "en": "You let out a screech of metal on metal. Choose up to five targets in range. Those targets have disadvantage on their next saving throw within the duration.",
+      "pt": "You let out a screech of metal on metal. Choose up to five targets in range. Those targets have disadvantage on their next teste de resistência within the duração."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Meteor Mash",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You rear back and smash your metal fist into your opponent with the force of a meteor. Make a melee attack roll dealing 1d10 + MOVE steel damage on a hit. If you roll max damage on your die for this attack, you may roll that die again and deal extra damage equal to the result.",
+      "pt": "You rear back and smash your metal fist into your opponent with the force of a meteor. Faça uma jogada de ataque corpo a corpo dealing 1d10 + MOVE steel damage Em um acerto. If you roll max damage on your die for this attack, you may roll that die again and deal extra damage equal to the result."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Metronome",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Varies",
+      "pt": "Varies"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "Varies",
+    "description": {
+      "en": "You summon a move at random to inflict against the enemy. When you use this move, roll a d100. The resulting number is the TM number for the move you use for this use of Metronome. If the move is unable to be completed because of line of sight, range, etc., Metronome does nothing.",
+      "pt": "You summon a move at random to inflict against the enemy. When you use this move, roll a d100. The resulting number is the TM number for the move you use for this use of Metronome. If the move is unable to be completed because of line of sight, range, etc., Metronome does nothing."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Milk Drink",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "10 minutes",
+      "pt": "10 minutes"
+    },
+    "pp": 2,
+    "duration": "8 hours",
+    "range": "Self",
+    "description": {
+      "en": "Milk is your favorite drink and you're gonna have some right now. You create a milk drink that restores 2d4 + MOVE health and last for the duration of this move. It takes an action to drink the milk and receive its restorative effects.",
+      "pt": "Milk is your favorite drink and you're gonna have some right now. You create a milk drink that restores 2d4 + MOVE health and last for the duração of this move. It takes an ação to drink the milk and receive its restorative effects."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d4 at level 5, 8d4 at level 11, and 10d4 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 4d4 no nível 5, 8d4 no nível 11, and 10d4 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Mimic",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 4,
+    "duration": "1 minute",
+    "range": "120 feet",
+    "description": {
+      "en": "You copy another Pokémon's movements, learning its ways in battle. Choose one Pokémon within range. When used this move is temporarily replaced for the duration by your choice of one of the target's moves that you know it has learned. After one PP is subtracted for this move's initial use, the replacement move will retain Mimic's remaining PP.",
+      "pt": "You copy another Pokémon's movements, learning its ways in battle. Choose one Pokémon dentro do alcance. When used this move is temporarily replaced for the duração by your choice of one of the target's moves that you know it has learned. After one PP is subtracted for this move's initial use, the replacement move will retain Mimic's remaining PP."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Mind Reader",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "30 seconds (Concentration)",
+    "range": "Self",
+    "description": {
+      "en": "You see into the mind of another. Choose one target. For the duration you have advantage for all your attacks against the target and for every saving throw caused by the target.",
+      "pt": "You see into the mind of another. Choose one target. For the duração you have advantage for all your attacks against the target and for every teste de resistência caused by the target."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Minimize",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "10 minutes (Concentration)",
+    "range": "Self",
+    "description": {
+      "en": "You shrink, increasing your evasion. For the duration you size is tiny, you gain an additional +2 to your AC, and you gain a +5 to Dexterity (Stealth) checks.",
+      "pt": "You shrink, increasing your evasion. For the duração you size is tiny, you gain an additional +2 to your AC, and you gain a +5 to Destreza (Stealth) checks."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Miracle Eye",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence",
+      "pt": "Inteligência"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "1 hour",
+    "range": "Touch",
+    "description": {
+      "en": "You imbue a creature with the the miracle of true seeing. For the duration one creature within range has true sight and has a bonus on attack rolls equal to your MOVE modifier. Only one creature may have the Miracle Eye effect from you at any one given time. As soon as you use MIracle Eye again, the benefits of the previous Miracle Eye disappear regardless of their remaining duration.",
+      "pt": "You imbue a creature with the the miracle of true seeing. For the duração one creature dentro do alcance has true sight and has a bonus on attack rolls equal to your MOVE modifier. Only one creature may have the Miracle Eye effect from you at any one given time. As soon as you use MIracle Eye again, the benefits of the previous Miracle Eye disappear regardless of their remaining duração."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Mirror Coat",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You throw a protective sheen around your body, absorbing the energy of the attack you are suffering. If any move would cause you to make a saving throw to avoid some damage you may use Mirror Coat as your reaction to gain resistance to the damage type of that move until you finish taking that move's damage. On your next attack you deal an extra 1d4 damage of the resisted move's type.",
+      "pt": "You throw a protective sheen around your body, absorbing the energy of the attack you are suffering. If any move would cause you to make a teste de resistência to avoid some damage you may use Mirror Coat as your reação to gain resistance to the damage type of that move until you finish taking that move's damage. On your next attack you deal an extra 1d4 damage of the resisted move's type."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d6 at level 5, 1d8 at level 11, and 1d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d6 no nível 5, 1d8 no nível 11, and 1d10 no nível 17."
+    }
+  },
+  {
+    "name": "Mirror Move",
+    "type": {
+      "en": "Flying",
+      "pt": "Voador"
+    },
+    "movePower": {
+      "en": "Varies",
+      "pt": "Varies"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "50 feet",
+    "description": {
+      "en": "You perform the same move done by the creature immediately before you in initiative order if they are in range. You use your own ability scores for bonuses and MOVE saves if applicable.",
+      "pt": "You perform the same move done by the creature immediately before you in initiative order if they are in range. You use your own ability scores for bonuses and MOVE saves if applicable."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Mirror Shot",
+    "type": {
+      "en": "Steel",
+      "pt": "Aço"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "80 feet",
+    "description": {
+      "en": "You gather light on your mirror-like surface and fire it at the opponent. Make a ranged attack roll, doing 1d6 + MOVE steel damage on a successful hit.",
+      "pt": "You gather light on your mirror-like surface and fire it at the opponent. Faça uma jogada de ataque à distância, doing 1d6 + MOVE steel damage Em um acerto bem-sucedido."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Mist",
+    "type": {
+      "en": "Ice",
+      "pt": "Gelo"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self (30-foot sphere)",
+    "description": {
+      "en": "You emit a soft wafting, mist. The mist lies low to the ground, covering about your trainer's ankles and spreading out to a 30 foot radius sphere, centered on you. Each creature within the sphere has advantage on Constitution and Wisdom saving throws.",
+      "pt": "You emit a soft wafting, mist. The mist lies low to the ground, covering about your trainer's ankles and spreading out to a 30 foot radius sphere, centered on you. Each creature within the sphere has advantage on Constituição and Sabedoria teste de resistências."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Misty Terrain",
+    "type": {
+      "en": "Fairy",
+      "pt": "Fada"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "1 minute (Concentration)",
+    "range": "60 feet",
+    "description": {
+      "en": "You change the ground around you into an aura of protection. Choose one point within range. The ground within a 30 foot radius sphere around that point becomes filled with a light pink mist. Every Pokémon within that mist cannot be affected by a status effect.",
+      "pt": "You change the ground around you into an aura of protection. Choose one point dentro do alcance. The ground within a 30 foot radius sphere around that point becomes filled with a light pink mist. Every Pokémon within that mist cannot be affected by a status effect."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Moonblast",
+    "type": {
+      "en": "Fairy",
+      "pt": "Fada"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You gather the light of the moon from wherever in the world it shines into a blast of energy. Make a ranged attack against an opponent, dealing 1d10 + MOVE fairy damage on a hit.",
+      "pt": "You gather the light of the moon from wherever in the world it shines into a blast of energy. Faça um ataque à distância against an opponent, dealing 1d10 + MOVE fairy damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Moonlight",
+    "type": {
+      "en": "Fairy",
+      "pt": "Fada"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You allow the light of the moon to heal your wounds. You heal 2d4 + MOVE health. If the moon is out, multiply the healing by 3/2. If the sun is strong in the sky, multiply the healing by 2/3. Round down for both cases.",
+      "pt": "You allow the light of the moon to heal your wounds. You heal 2d4 + MOVE health. If the moon is out, multiply the healing by 3/2. If the sun is strong in the sky, multiply the healing by 2/3. Round down for both cases."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d4 at level 5, 8d4 at level 11, and 10d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d4 no nível 5, 8d4 no nível 11, and 10d4 no nível 17."
+    }
+  },
+  {
+    "name": "Morning Sun",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You let the warmth of the sun heal your wounds. You heal 2d4 + MOVE health. If the sun is strong in the sky, multiply the healing by 3/2. If the sun is covered and weak, multiply the healing by 2/3. Round down for both cases.",
+      "pt": "You let the warmth of the sun heal your wounds. You heal 2d4 + MOVE health. If the sun is strong in the sky, multiply the healing by 3/2. If the sun is covered and weak, multiply the healing by 2/3. Round down for both cases."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d4 at level 5, 8d4 at level 11, and 10d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d4 no nível 5, 8d4 no nível 11, and 10d4 no nível 17."
+    }
+  },
+  {
+    "name": "Mud Bomb",
+    "type": {
+      "en": "Ground",
+      "pt": "Terra"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You lob a heavy glob of mud that explodes on impact. Make a ranged attack roll, dealing 1d8 + MOVE damage on a hit. On a natural roll of 18 or higher the mud gets in the target's eye. They are blinded until the end of your next turn.",
+      "pt": "You lob a heavy glob of mud that explodes on impact. Faça uma jogada de ataque à distância, dealing 1d8 + MOVE damage Em um acerto. On a natural roll of 18 or higher the mud gets in the target's eye. They are blinded until the end of your next turn."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Mud Shot",
+    "type": {
+      "en": "Ground",
+      "pt": "Terra"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "80 feet",
+    "description": {
+      "en": "You shoot a stream of thick mud at the opponent. Make a ranged attack roll, dealing 1d6 + MOVE damage on a hit. If this hits the opponent's movement speed is slowed by 10 feet until the start of your next turn.",
+      "pt": "You shoot a stream of thick mud at the opponent. Faça uma jogada de ataque à distância, dealing 1d6 + MOVE damage Em um acerto. If this hits the opponent's movement speed is slowed by 10 pés until the start of your next turn."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Mud Slap",
+    "type": {
+      "en": "Ground",
+      "pt": "Terra"
+    },
+    "movePower": {
+      "en": "Dexterity/Wisdom",
+      "pt": "Destreza/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You hurl mud at an enemy Pokémon. Make a ranged attack roll, doing 1d4 + MOVE ground damage on a hit.",
+      "pt": "You hurl mud at an enemy Pokémon. Faça uma jogada de ataque à distância, doing 1d4 + MOVE ground damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17."
+    }
+  },
+  {
+    "name": "Mud Sport",
+    "type": {
+      "en": "Ground",
+      "pt": "Terra"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "10 minutes",
+    "range": "Melee",
+    "description": {
+      "en": "You surround a creature with a coat of earth and mud. If that creature is willing, it is now immune to electric attacks for the duration. <div class='pageNumber auto'></div>",
+      "pt": "You surround a creature with a coat of earth and mud. If that creature is willing, it is now immune to electric attacks for the duração. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Muddy Water",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Wisdom",
+      "pt": "Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "Self (40-foot cone)",
+    "description": {
+      "en": "A wave off earth and water is expelled from you in a 40-foot cone. Each Pokémon in the area must make a Dexterity saving throw. On a failure they are knocked prone and take 1d6 water damage and 1d6 ground damage. On a success they are not knocked prone and take half of both the water and ground damage.",
+      "pt": "A wave off earth and water is expelled from you in a 40-foot cone. Each Pokémon in the area must make a Destreza teste de resistência. Em uma falha they are knocked prone and take 1d6 water damage and 1d6 ground damage. Em um sucesso they are not knocked prone and take half of both the water and ground damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Multi-Attack",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You strike out, imbuing your essence into your claws. Make a melee attack roll against an opponent, dealing 1d10 + MOVE damage on a hit. The damage type of this move is the same as your primary type.",
+      "pt": "You strike out, imbuing your essence into your claws. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d10 + MOVE damage Em um acerto. The damage type of this move is the same as your primary type."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Mystical Fire",
+    "type": {
+      "en": "Fire",
+      "pt": "Fogo"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You let loose a stream of red-purple fire. Make a ranged attack roll against an opponent, dealing 1d10 fire damage on a hit. If your attack hits, the target receives disadvantage on its next saving throw.",
+      "pt": "You let loose a stream of red-purple fire. Faça uma jogada de ataque à distância against an opponent, dealing 1d10 fire damage Em um acerto. If your attack hits, the target receives disadvantage on its next teste de resistência."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Nasty Plot",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You snicker to yourself as you come up with an ingenious plan, which you begin to execute. When you use Nasty Plot you may use the Help, Dash, Dodge, Hide, Use an Object or Disengage action as part of this move.",
+      "pt": "You snicker to yourself as you come up with an ingenious plan, which you begin to execute. When you use Nasty Plot you may use the Help, Dash, Dodge, Hide, Use an Object or Disengage ação as part of this move."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Natural Gift",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 8,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You give the enemy the gift of nature: pain and discomfort. Make a ranged attack roll against an opponent dealing 1d4 + MOVE Normal damage on a hit. If you are holding a berry you may consume it after you hit to deal extra damage on this move equal to twice your level. If you consume the berry in this way, you do not receive its other benefits.",
+      "pt": "You give the enemy the gift of nature: pain and discomfort. Faça uma jogada de ataque à distância against an opponent dealing 1d4 + MOVE Normal damage Em um acerto. If you are holding a berry you may consume it after you hit to deal extra damage on this move equal to twice your level. If you consume the berry in this way, you do not receive its other benefits."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Nature Power",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Varies",
+      "pt": "Varies"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Varies",
+    "description": {
+      "en": "You draw upon the power of your natural surroundings. When you use Nature Power a PP is detracted from this move and you execute a different one as determined by your surrounding environment (subject to DM discretion). In an urban environment Nature Power becomes Tri Attack, cave environment:Power Gem, earthen:Earth Power, swampy:Mud Bomb, graveyard:Shadow BAll, water:Hydro Pump, sky:Air Slash, snowy:Ice Beam, volcanic:Lava Plume, space:Psyshock, grassy:Energy ball, misty:Moonblast, electric:Thunderbolt, psychic:Psychic.",
+      "pt": "You draw upon the power of your natural surroundings. When you use Nature Power a PP is detracted from this move and you execute a different one as determined by your surrounding environment (subject to DM discretion). In an urban environment Nature Power becomes Tri Attack, cave environment:Power Gem, earthen:Earth Power, swampy:Mud Bomb, graveyard:Shadow BAll, water:Hydro Pump, sky:Air Slash, snowy:Ice Beam, volcanic:Lava Plume, space:Psyshock, grassy:Energy ball, misty:Moonblast, electric:Thunderbolt, psychic:Psychic."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Needle Arm",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You slam a target with a spiky arm. Make a melee attack roll dealing 1d6 + MOVE grass damage on a hit. On a natural roll of 17 or higher this move flinches the opponent.",
+      "pt": "You slam a target with a spiky arm. Faça uma jogada de ataque corpo a corpo dealing 1d6 + MOVE grass damage Em um acerto. On a natural roll of 17 or higher this move flinches the opponent."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Night Daze",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You send out a wave of blinding dark energy. Make a ranged attack roll against an opponent, dealing 1d12 + MOVE dark damage on a hit. If this move does damage the target must make a Constitution saving throw against your MOVE DC. On a failure they are blinded until the end of their next turn.",
+      "pt": "You send out a wave of blinding dark energy. Faça uma jogada de ataque à distância against an opponent, dealing 1d12 + MOVE dark damage Em um acerto. If this move does damage the target must make a Constituição teste de resistência contra a sua CD de MOVE. Em uma falha they are blinded until the end of their next turn."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17."
+    }
+  },
+  {
+    "name": "Night Shade",
+    "type": {
+      "en": "Ghost",
+      "pt": "Fantasma"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You cause the shadows to attack your opponent. Make a ranged attack roll dealing ghost damage equal to your level + MOVE on a hit.",
+      "pt": "You cause the shadows to attack your opponent. Faça uma jogada de ataque à distância dealing ghost damage equal to your level + MOVE Em um acerto."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Night Slash",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You slash your opponent, like a ninja in the night. Make a melee attack roll against your opponent, dealing 1d8 + MOVE dark damage on a hit. This move lands a critical hit on a natural roll of 19 or 20.",
+      "pt": "You slash your opponent, like a ninja in the night. Faça uma jogada de ataque corpo a corpo against your opponent, dealing 1d8 + MOVE dark damage Em um acerto. This move lands a critical hit on a natural roll of 19 or 20."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Nightmare",
+    "type": {
+      "en": "Ghost",
+      "pt": "Fantasma"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "60 feet",
+    "description": {
+      "en": "You inflict a terrible nightmare upon a foe, bringing their greatest fear to the forefront of their mind. Choose one sleeping creature within range to make a Wisdom saving throw. If they fail, they take 1d8 + MOVE ghost damage every time they try to remove the asleep condition (including when they make the Constitution save at the beginning of their turn as part of the asleep condition). Additionally, when they awaken they are frightened of you for 1 round.",
+      "pt": "You inflict a terrible nightmare upon a foe, bringing their greatest fear to the forefront of their mind. Choose one sleeping creature dentro do alcance to make a Sabedoria teste de resistência. If they fail, they take 1d8 + MOVE ghost damage every time they try to remove the asleep condition (including when they make the Constituição save at the beginning of their turn as part of the asleep condition). Additionally, when they awaken they are frightened of you for 1 round."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d12 at level 5, 2d8 at level 11, and 2d12 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 1d12 no nível 5, 2d8 no nível 11, and 2d12 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Noble Roar",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You roar, sounding your proud heritage. Your force of person is so great that this move always hits. Deal 1d4 + MOVE normal damage to the opponent.",
+      "pt": "You roar, sounding your proud heritage. Your force of person is so great that this move always hits. Deal 1d4 + MOVE normal damage to the opponent."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17."
+    }
+  },
+  {
+    "name": "Nuzzle",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You rub your cheeks against your opponent. Aww, so cute! Make a melee attack roll against an opponent, dealing 1d4 + MOVE damage. If this move hits, the opponent makes a Constitution saving throw against your MOVE DC with disadvantage. On a failure the target is paralyzed.",
+      "pt": "You rub your cheeks against your opponent. Aww, so cute! Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d4 + MOVE damage. If this move hits, the opponent makes a Constituição teste de resistência contra a sua CD de MOVE with disadvantage. Em uma falha the target is paralyzed."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17."
+    }
+  },
+  {
+    "name": "Octazooka",
+    "type": {
+      "en": "Water",
+      "pt": "Água"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You are the best octopus. You fire a globdule of inky water at your opponent. Make a ranged attack roll against your opponent dealing 1d10 + MOVE water damage on a hit. If you hit the target has disadvantage on attacks until the end of its next turn.",
+      "pt": "You are the best octopus. You fire a globdule of inky water at your opponent. Faça uma jogada de ataque à distância against your opponent dealing 1d10 + MOVE water damage Em um acerto. If you hit the target has disadvantage on attacks until the end of its next turn."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Odor Sleuth",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 bonus action",
+      "pt": "1 ação bônus"
+    },
+    "pp": 5,
+    "duration": "1 minute",
+    "range": "60 feet",
+    "description": {
+      "en": "You sniff out your opponent's scent. Target one Pokémon. You cannot have disadvantage against that Pokémon for the duration of this move. If that Pokémon was a ghost type all Pokémon can hit them with normal and fighting type moves for neutral damage for the duration of this move.",
+      "pt": "You sniff out your opponent's scent. Target one Pokémon. You cannot have disadvantage against that Pokémon for the duração of this move. If that Pokémon was a ghost type all Pokémon can hit them with normal and fighting type moves for neutral damage for the duração of this move."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Ominous Wind",
+    "type": {
+      "en": "Ghost",
+      "pt": "Fantasma"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "80 feet",
+    "description": {
+      "en": "You send a chilling, spectral wind through your opponents. Choose a point within range. Each creature within a 30 foot cube centered on that point must make a Constitution saving throw or take 3d6 ghost damage on a failed save or half as much on a successful save. If you roll maximum damage on any of the damage die for this attack any creatures who failed their saving throw also become frightened of you for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to being frightened by your Ominous Wind for 24 hours.",
+      "pt": "You send a chilling, spectral wind through your opponents. Choose a point dentro do alcance. Each creature within a 30 foot cube centered on that point must make a Constituição teste de resistência or take 3d6 ghost damage Em um teste de resistência falho or half as much Em um sucessoful save. If you roll maximum damage on any of the damage die for this attack any creatures who failed their teste de resistência also become frightened of you for 1 minute. A frightened creature can repeat the teste de resistência at the end of each of its turns, ending the effect on itself Em um sucesso. If a creature's teste de resistência is successful or the effect ends for it, the creature is immune to being frightened by your Ominous Wind for 24 hours."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d6 at level 5, 5d6 at level 11, and 6d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d6 no nível 5, 5d6 no nível 11, and 6d6 no nível 17."
+    }
+  },
+  {
+    "name": "Outrage",
+    "type": {
+      "en": "Dragon",
+      "pt": "Dragão"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You unless the dragon within, doing several heavy attacks without control. You may make a melee attack roll against every creature within your melee range, dealing 1d12 + MOVE dragon damage on a hit. For your next 2 turns you must try to use Outrage again as your action. For those turns Outrage does not consume PP. At the end of those 2 turns you become confused.",
+      "pt": "You unless the dragon within, doing several heavy attacks without control. You may Faça uma jogada de ataque corpo a corpo against every creature within your melee range, dealing 1d12 + MOVE dragon damage Em um acerto. For your next 2 turns you must try to use Outrage again as your ação. For those turns Outrage does not consume PP. At the end of those 2 turns you become confused."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Overheat",
+    "type": {
+      "en": "Fire",
+      "pt": "Fogo"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 2,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You concentrate your fire and heat into a single point of energy. You motion towards a point in space within 120 feet. Each creature within a 20 foot radius circle centered on the point makes a dexterity saving throw suffering 5d6 fire damage on a failure or half as much on a success. Your next move that uses intelligence, wisdom, or charisma as its MOVE deals less damage as you recover from expending so much energy. That move's damage is reduced by a number equal to this Pokémon's level.",
+      "pt": "You concentrate your fire and heat into a single point of energy. You motion towards a point in space within 120 pés. Each creature within a 20 foot radius circle centered on the point makes a Destreza teste de resistência suffering 5d6 fire damage Em uma falha or half as much Em um sucesso. Your next move that uses Inteligência, Sabedoria, or Charisma as its MOVE deals less damage as you recover from expending so much energy. That move's damage is reduced by a number equal to this Pokémon's level."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 8d6 at level 5, 11d6 at level 11, and 14d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 8d6 no nível 5, 11d6 no nível 11, and 14d6 no nível 17."
+    }
+  },
+  {
+    "name": "Pain Split",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You share your pain with another. Target one willing creature to make a Charisma saving throw against you MOVE DC. If they fail the save take the average of your health pools, rounded up. Each of you now has that much HP. If this would increase either creatures health above its maximum that creature's HP is instead increased to its maximum.",
+      "pt": "You share your pain with another. Target one willing creature to make a Charisma teste de resistência against you MOVE DC. If they fail the save take the average of your health pools, rounded up. Each of you now has that much HP. If this would increase either creatures health above its maximum that creature's HP is instead increased to its maximum."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Parabolic Charge",
+    "type": {
+      "en": "Electric",
+      "pt": "Elétrico"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "50 feet",
+    "description": {
+      "en": "You create a sustained arc of electric energy, connecting your energy to your opponent's. Make a ranged attack on a target, doing 1d8 + MOVE electric damage on a hit. Half of the damage dealt is restored to the user.",
+      "pt": "You create a sustained arc of electric energy, connecting your energy to your opponent's. Faça um ataque à distância on a target, doing 1d8 + MOVE electric damage Em um acerto. Half of the damage dealt is restored to the user."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Parting Shot",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You give the stink eye to your opponent, before getting out. One target in range that can see you makes a Wisdom saving throw. On a failure the target has disadvantage on its next attack roll or saving throw, your choice. You may then move up to your movement speed away from the target. Your target cannot make an opportunity attack against you during this movement.",
+      "pt": "You give the stink eye to your opponent, before getting out. One target in range that can see you makes a Sabedoria teste de resistência. Em uma falha the target has disadvantage on its next attack roll or teste de resistência, your choice. You may then move up to your movement speed away from the target. Your target cannot make an opportunity attack against you during this movement."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Pay Day",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Dexterity/Charisma",
+      "pt": "Destreza/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack using coins as a weapon. Make a melee attack roll against an opponent, dealing 1d6 + MOVE damage on a hit. When you are shopping you may use all the PP in this move to put ₽50 per PP to your purchase.",
+      "pt": "You attack using coins as a weapon. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d6 + MOVE damage Em um acerto. When you are shopping you may use all the PP in this move to put ₽50 per PP to your purchase."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Payback",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Strength/Charisma",
+      "pt": "Força/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack your opponent to get them back for what they did to you. Make a melee attack roll against your opponent, dealing 1d6 + MOVE dark damage. If you were attacked by the opponent during the last round, you have advantage on the attack roll.",
+      "pt": "You attack your opponent to get them back for what they did to you. Faça uma jogada de ataque corpo a corpo against your opponent, dealing 1d6 + MOVE dark damage. If you were attacked by the opponent during the last round, you have advantage on the attack roll."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Peck",
+    "type": {
+      "en": "Flying",
+      "pt": "Voador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You hammer down on an enemy with a peck attack. Make a melee attack roll on a target, doing 1d6 + MOVE on a successful hit.",
+      "pt": "You hammer down on an enemy with a peck attack. Faça uma jogada de ataque corpo a corpo on a target, doing 1d6 + MOVE Em um acerto bem-sucedido."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d10 at level 5, 2d6 at level 11, and 2d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d10 no nível 5, 2d6 no nível 11, and 2d10 no nível 17."
+    }
+  },
+  {
+    "name": "Perish Song",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 2,
+    "duration": "Instantaneous",
+    "range": "Self (100-foot sphere)",
+    "description": {
+      "en": "You sing a sad song, weaving a tale of woe. Every creature within range makes a Wisdom saving throw against your MOVE DC. If a target of this move fails the saving throw, at the end of your sixth turn after using this move that target takes 10d6 normal damage (this turn being your first turn). The target must still be in battle and in the range of this move at the end of that turn to take the damage.",
+      "pt": "You sing a sad song, weaving a tale of woe. Every creature dentro do alcance makes a Sabedoria teste de resistência contra a sua CD de MOVE. If a target of this move fails the teste de resistência, at the end of your sixth turn after using this move that target takes 10d6 normal damage (this turn being your first turn). The target must still be in battle and in the range of this move at the end of that turn to take the damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 12d8 at level 5, 14d10 at level 11, and 16d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 12d8 no nível 5, 14d10 no nível 11, and 16d12 no nível 17."
+    }
+  },
+  {
+    "name": "Petal Blizzard",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Dexterity/Wisdom",
+      "pt": "Destreza/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Instantaneous",
+    "range": "20 feet",
+    "description": {
+      "en": "You whip up a flurry of magical petals and hurley swirly them at your enemies. Choose up to four creatures within a 20 feet. Each target makes a dexterity saving throw taking 2d6 grass damage on a failure or half as much on a success.",
+      "pt": "You whip up a flurry of magical petals and hurley swirly them at your enemies. Choose up to four creatures within a 20 pés. Each target makes a Destreza teste de resistência taking 2d6 grass damage Em uma falha or half as much Em um sucesso."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d6 at level 5, 6d6 at level 11, and 8d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d6 no nível 5, 6d6 no nível 11, and 8d6 no nível 17."
+    }
+  },
+  {
+    "name": "Petal Dance",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Dexterity",
+      "pt": "Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "Varies",
+    "range": "Self (10-foot sphere)",
+    "description": {
+      "en": "You conjure a storm of petals which you keep swirling around you for 1d4 rounds. For the duration the petals move with you, forming a sphere with a 10 foot radius centered on yourself. If a creature is within the petals at the start of your turn or during the first time it enters the petals on your turn it must make a Dexterity saving throw, taking 2d8 grass damage on a failure or half as much on a success. At the start of your turn you must use your action to keep up the dance. If you do not do so the dance ends immediately. When the dance ends you become confused.",
+      "pt": "You conjure a storm of petals which you keep swirling around you for 1d4 rounds. For the duração the petals move with you, forming a sphere with a 10 foot radius centered on yourself. If a creature is within the petals at the start of your turn or during the first time it enters the petals on your turn it must make a Destreza teste de resistência, taking 2d8 grass damage Em uma falha or half as much Em um sucesso. At the start of your turn you must use your ação to keep up the dance. If you do not do so the dance ends immediately. When the dance ends you become confused."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d8 at level 5, 6d8 at level 11, and 8d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d8 no nível 5, 6d8 no nível 11, and 8d8 no nível 17."
+    }
+  },
+  {
+    "name": "Phantom Force",
+    "type": {
+      "en": "Ghost",
+      "pt": "Fantasma"
+    },
+    "movePower": {
+      "en": "Intelligence/Charisma",
+      "pt": "Inteligência/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You cackle as you disappear in the Ethereal plane and prepare to strike your opponent. When you activate Phantom Force you disappear into the Ethereal plane. You cannot be targeted by attacks while you are in the Ethereal plane. At the start of you next turn you return to an unoccupied space of your choice within 30 feet of the space you vanished from. When you reappear you may immediately use your action to make a diving melee attack, doing doing 3d6 ghost damage on a successful hit.",
+      "pt": "You cackle as you disappear in the Ethereal plane and prepare to strike your opponent. When you activate Phantom Force you disappear into the Ethereal plane. You cannot be targeted by attacks while you are in the Ethereal plane. At the start of you next turn you return to an unoccupied space of your choice within 30 pés of the space you vanished from. When you reappear you may immediately use your ação to make a diving melee attack, doing doing 3d6 ghost damage Em um acerto bem-sucedido."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 5d6 at level 5, 7d6 at level 11, and 9d6 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 5d6 no nível 5, 7d6 no nível 11, and 9d6 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Pin Missile",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "Dexterity",
+      "pt": "Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You fire a series of pins at your foe. Make a ranged attack roll, doing 1d6 + MOVE bug on a hit. After successfully hitting a target, roll a d4. On a result of 3 or 4, you may immediately hit again for an additional 1d6 normal damage. Continue this process until you fail to roll a 3 or 4 on the d4 roll.",
+      "pt": "You fire a series of pins at your foe. Faça uma jogada de ataque à distância, doing 1d6 + MOVE bug Em um acerto. After successfully hitting a target, roll a d4. On a result of 3 or 4, you may immediately hit again for an additional 1d6 normal damage. Continue this process until you fail to roll a 3 or 4 on the d4 roll."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 1d8 at level 5, 1d10 at level 11, and 1d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 1d8 no nível 5, 1d10 no nível 11, and 1d12 no nível 17."
+    }
+  },
+  {
+    "name": "Play Nice",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "1 round",
+    "range": "30 feet",
+    "description": {
+      "en": "You invite another Pokémon to play. Target one Pokémon. They must make a Charisma saving throw or be charmed for the duration.",
+      "pt": "You invite another Pokémon to play. Target one Pokémon. They must make a Charisma teste de resistência or be charmed for the duração."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Play Rough",
+    "type": {
+      "en": "Fairy",
+      "pt": "Fada"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You play around with the opponent with little regard for their well being. Make a melee attack roll against an opponent, dealing 1d12 + MOVE fairy damage on a hit.",
+      "pt": "You play around with the opponent with little regard for their well being. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d12 + MOVE fairy damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d12 at level 5, 3d12 at level 11, and 4d12 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d12 no nível 5, 3d12 no nível 11, and 4d12 no nível 17."
+    }
+  },
+  {
+    "name": "Pluck",
+    "type": {
+      "en": "Flying",
+      "pt": "Voador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack with your beak, aiming for what your target is holding. Make a melee attack roll dealing 1d6 + MOVE flying damage. If you hit and your target is holding a berry you may choose to immediately consume the berry yourself.",
+      "pt": "You attack with your beak, aiming for what your target is holding. Faça uma jogada de ataque corpo a corpo dealing 1d6 + MOVE flying damage. If you hit and your target is holding a berry you may choose to immediately consume the berry yourself."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Poison Fang",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 12,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You bite with a maw filled with corrosive poison. Make a melee attack roll, doing 1d6 + MOVE poison damage. On a natural roll of 17 or higher this move flinches any Pokémon it hits.",
+      "pt": "You bite with a maw filled with corrosive poison. Faça uma jogada de ataque corpo a corpo, doing 1d6 + MOVE poison damage. On a natural roll of 17 or higher this move flinches any Pokémon it hits."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Poison Gas",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "1 minute (Concentration)",
+    "range": "90 feet",
+    "description": {
+      "en": "You spew forth a purple cloud of stinking gas. You create a 15-foot-radius Sphere of nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the Duration. Each creature that is within the cloud at the start of its turn must make a Constitution saving throw against you MOVE DC. On a failed save, the creature spends its action that turn retching and reeling and becomes poisoned. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw. <div class='pageNumber auto'></div>",
+      "pt": "You spew forth a purple cloud of stinking gas. You create a 15-foot-radius Sphere of nauseating gas centered on a point dentro do alcance. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duração. Each creature that is within the cloud at the start of its turn must make a Constituição teste de resistência against you MOVE DC. Em um teste de resistência falho, the creature spends its ação that turn retching and reeling and becomes poisoned. Creatures that don't need to breathe or are immune to poison automatically succeed on this teste de resistência. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Poison Jab",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You coat your fists in poison before striking your opponent. Make a melee attack roll against an opponent, dealing 1d10 + MOVE poison damage on a hit. On a hit your target must make a DC 8 Constitution saving throw, becoming poisoned on a failure.",
+      "pt": "You coat your fists in poison before striking your opponent. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d10 + MOVE poison damage Em um acerto. Em um acerto your target must make a DC 8 Constituição teste de resistência, becoming poisoned Em uma falha."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Poison Powder",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "40 feet",
+    "description": {
+      "en": "You expel a poisonous powder from your body in an attempt to infect your opponents. Each creature within that a 15 foot cube originating from a point within range must make a Constitution saving throw, becoming poisoned on a failure.",
+      "pt": "You expel a poisonous powder from your body in an attempt to infect your opponents. Each creature within that a 15 foot cube originating from a point dentro do alcance must make a Constituição teste de resistência, becoming poisoned Em uma falha."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Poison Sting",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Dexterity",
+      "pt": "Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You poison your opponent with your stinger. Make a melee attack roll against your opponent, dealing 1d4 + MOVE poison damage on a hit. On a hit your opponent must make a DC 8 Constitution saving throw, becoming poisoned on a failure.",
+      "pt": "You poison your opponent with your stinger. Faça uma jogada de ataque corpo a corpo against your opponent, dealing 1d4 + MOVE poison damage Em um acerto. Em um acerto your opponent must make a DC 8 Constituição teste de resistência, becoming poisoned Em uma falha."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17."
+    }
+  },
+  {
+    "name": "Poison Tail",
+    "type": {
+      "en": "Poison",
+      "pt": "Veneno"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You attack with a poison coated tail. Make a melee attack roll against your opponent, dealing 1d4 + MOVE poison damage.  On a hit your opponent must make a DC 8 Constitution saving throw, becoming poisoned on a failure. You make choose to look away from your opponent when attacking with your tail. If you do you have disadvantage on your attack roll, but it you hit your target you land a critical hit on natural rolls of 15 or higher.",
+      "pt": "You attack with a poison coated tail. Faça uma jogada de ataque corpo a corpo against your opponent, dealing 1d4 + MOVE poison damage.  Em um acerto your opponent must make a DC 8 Constituição teste de resistência, becoming poisoned Em uma falha. You make choose to look away from your opponent when attacking with your tail. If you do you have disadvantage on your attack roll, but it you hit your target you land a critical hit on natural rolls of 15 or higher."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d4 at level 5, 3d4 at level 11, and 4d4 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d4 no nível 5, 3d4 no nível 11, and 4d4 no nível 17."
+    }
+  },
+  {
+    "name": "Pollen Puff",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "Wisdom/Charisma",
+      "pt": "Sabedoria/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You fire a bright ball of pollen at a creature. If the target is a ally it heals 1d8 + MOVE HP. If the target is an enemy, make a ranged attack roll. On a hit the puff deals 1d8 + MOVE bug damage.",
+      "pt": "You fire a bright ball of pollen at a creature. If the target is a ally it heals 1d8 + MOVE HP. If the target is an enemy, Faça uma jogada de ataque à distância. Em um acerto the puff deals 1d8 + MOVE bug damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d8 at level 5, 3d8 at level 11, and 4d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d8 no nível 5, 3d8 no nível 11, and 4d8 no nível 17."
+    }
+  },
+  {
+    "name": "Pound",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Strength/Charisma",
+      "pt": "Força/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You crush an opponent with a pound attack. Make a melee attack roll against a target, doing 1d6 + MOVE normal damage on a hit.",
+      "pt": "You crush an opponent with a pound attack. Faça uma jogada de ataque corpo a corpo against a target, doing 1d6 + MOVE normal damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 4d6 at level 11, and 6d6 at level 17. <div class='pageNumber auto'></div>",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 4d6 no nível 11, and 6d6 no nível 17. <div class='pageNumber auto'></div>"
+    }
+  },
+  {
+    "name": "Powder",
+    "type": {
+      "en": "Bug",
+      "pt": "Inseto"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "30 feet",
+    "description": {
+      "en": "You shower a Pokémon with a fine powder. If that Pokémon is a target of a fire type move or tries to use a fire type move they take 4d12 bug damage, after which the powder is removed.",
+      "pt": "You shower a Pokémon with a fine powder. If that Pokémon is a target of a fire type move or tries to use a fire type move they take 4d12 bug damage, after which the powder is removed."
+    },
+    "higherLevels": {
+      "en": "The damage for this move increases to 8d12 at level 11",
+      "pt": "The damage for this move aumenta para 8d12 no nível 11"
+    }
+  },
+  {
+    "name": "Powder Snow",
+    "type": {
+      "en": "Ice",
+      "pt": "Gelo"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 7,
+    "duration": "Instantaneous",
+    "range": "Self (15-foot cone)",
+    "description": {
+      "en": "You blow a flurry of fluffy snow at your opponent, chilling and battering them. Each creature in a 15-foot cone must make a Dexterity saving throw against you MOVE DC. A creature takes 2d8 ice damage on a failed save, or half as much damage on a successful one. If a creature fails the saving throw by 5 or more they become frozen.",
+      "pt": "You blow a flurry of fluffy snow at your opponent, chilling and battering them. Each creature in a 15-foot cone must make a Destreza teste de resistência against you MOVE DC. A creature takes 2d8 ice damage Em um teste de resistência falho, or half as much damage Em um sucessoful one. If a creature fails the teste de resistência by 5 or more they become frozen."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 3d8 at level 5, 4d8 at level 11, and 5d8 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 3d8 no nível 5, 4d8 no nível 11, and 5d8 no nível 17."
+    }
+  },
+  {
+    "name": "Power Gem",
+    "type": {
+      "en": "Rock",
+      "pt": "Pedra"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "120 feet",
+    "description": {
+      "en": "You fire a steam of glowing gems at your foes. Make a ranged attack against an opponent, dealing 1d10 + MOVE rock damage on a hit.",
+      "pt": "You fire a steam of glowing gems at your foes. Faça um ataque à distância against an opponent, dealing 1d10 + MOVE rock damage Em um acerto."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d10 at level 5, 3d10 at level 11, and 4d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d10 no nível 5, 3d10 no nível 11, and 4d10 no nível 17."
+    }
+  },
+  {
+    "name": "Power Split",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 1,
+    "duration": "30 seconds",
+    "range": "30 feet",
+    "description": {
+      "en": "You force another to share their power. Choose one target to make a Wisdom saving throw against your MOVE DC. On a failure your choice of your Strength, Dexterity, Intelligence, or Wisdom score is averaged with theirs. Both your and the target's score is now that new average. Your scores return to their previous values at the end of this move's duration.",
+      "pt": "You force another to share their power. Choose one target to make a Sabedoria teste de resistência contra a sua CD de MOVE. Em uma falha your choice of your Força, Destreza, Inteligência, or Sabedoria score is averaged with theirs. Both your and the target's score is now that new average. Your scores return to their previous values at the end of this move's duração."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Power Swap",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence",
+      "pt": "Inteligência"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "30 seconds (Concentration)",
+    "range": "60 feet",
+    "description": {
+      "en": "You take your opponent's power in exchange for your own. Choose one target to make an Intelligence saving throw. On a failure you gain advantage on attack rolls you make on each of your turns until this move's duration is up or it ends in any other way. If the target failed the saving throw they also gain advantage on attack rolls on each of their turns until this move's duration is up or it ends in any other way.",
+      "pt": "You take your opponent's power in exchange for your own. Choose one target to make an Inteligência teste de resistência. Em uma falha you gain advantage on attack rolls you make on each of your turns until this move's duração is up or it ends in any other way. If the target failed the teste de resistência they also gain advantage on attack rolls on each of their turns until this move's duração is up or it ends in any other way."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Power Trick",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 3,
+    "duration": "1 hour (Concentration)",
+    "range": "Self",
+    "description": {
+      "en": "You use your psychic powers to manipulate your own being. Choose two of your six character ability scores. For the duration, those ability scores' numbers are swapped. You may choose to end this swap as an action. <div class='pageNumber auto'></div>",
+      "pt": "You use your psychic powers to manipulate your own being. Choose two of your six character ability scores. For the duração, those ability scores' numbers are swapped. You may choose to end this swap as an ação. <div class='pageNumber auto'></div>"
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Power Trip",
+    "type": {
+      "en": "Dark",
+      "pt": "Sombrio"
+    },
+    "movePower": {
+      "en": "Strength/Charisma",
+      "pt": "Força/Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You know your opponent better than they know themselves and use this knowledge to attack. Make a melee attack roll against an opponent, dealing 1d6 + MOVE dark damage to your opponent. If your opponent vulnerable or resistant to this attack, this attack has advantage.",
+      "pt": "You know your opponent better than they know themselves and use this knowledge to attack. Faça uma jogada de ataque corpo a corpo against an opponent, dealing 1d6 + MOVE dark damage to your opponent. If your opponent vulnerable or resistant to this attack, this attack has advantage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Power Whip",
+    "type": {
+      "en": "Grass",
+      "pt": "Planta"
+    },
+    "movePower": {
+      "en": "Strength",
+      "pt": "Força"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You create thick vine and bring it down in a huge arc to decimate your opponent. Unfortunately such a powerful strike is difficult to control. Make an melee attack roll at disadvantage. On a hit you deal 2d10 grass damage.",
+      "pt": "You create thick vine and bring it down in a huge arc to decimate your opponent. Unfortunately such a powerful strike is difficult to control. Make an melee attack roll at disadvantage. Em um acerto you deal 2d10 grass damage."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 4d10 at level 5, 6d10 at level 11, and 8d10 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 4d10 no nível 5, 6d10 no nível 11, and 8d10 no nível 17."
+    }
+  },
+  {
+    "name": "Power-Up Punch",
+    "type": {
+      "en": "Fighting",
+      "pt": "Lutador"
+    },
+    "movePower": {
+      "en": "Strength/Dexterity",
+      "pt": "Força/Destreza"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You psych yourself up for battle as you punch an opponent. Make a melee attack dealing 1d6 + MOVE fighting damage on a hit. If you hit this attack you have a +1 to attack and damage for melee attacks for the next minute. This bonus from Power-Up Punch can stack up to a +3.",
+      "pt": "You psych yourself up for battle as you punch an opponent. Faça um ataque corpo a corpo dealing 1d6 + MOVE fighting damage Em um acerto. If you hit this attack you have a +1 to attack and damage for melee attacks for the next minute. This bonus from Power-Up Punch can stack up to a +3."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 2d6 no nível 5, 3d6 no nível 11, and 4d6 no nível 17."
+    }
+  },
+  {
+    "name": "Present",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "Charisma",
+      "pt": "Carisma"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 10,
+    "duration": "Instantaneous",
+    "range": "Melee",
+    "description": {
+      "en": "You give your target a surprise! Make a melee attack against a single target. On a hit roll 1d4. On a 4 your target takes 1d12 + MOVE normal damage, on a 3 your target takes 1d8 + MOVE normal damage, on a 2 your target takes 1d4 + MOVE normal damage, and on a 1 your target heals 1d6 + MOVE HP.",
+      "pt": "You give your target a surprise! Faça um ataque corpo a corpo against a single target. Em um acerto roll 1d4. On a 4 your target takes 1d12 + MOVE normal damage, on a 3 your target takes 1d8 + MOVE normal damage, on a 2 your target takes 1d4 + MOVE normal damage, and on a 1 your target heals 1d6 + MOVE HP."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Protect",
+    "type": {
+      "en": "Normal",
+      "pt": "Normal"
+    },
+    "movePower": {
+      "en": "None",
+      "pt": "Nenhum"
+    },
+    "moveTime": {
+      "en": "1 reaction",
+      "pt": "1 reação"
+    },
+    "pp": 4,
+    "duration": "Instantaneous",
+    "range": "Self",
+    "description": {
+      "en": "You conjure a shield of energy to defend yourself in a time of need. When you are hit by an attack you may use your reaction to use Protect. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack.",
+      "pt": "You conjure a shield of energy to defend yourself in a time of need. When you are hit by an attack you may use your reação to use Protect. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack."
+    },
+    "higherLevels": {
+      "en": "",
+      "pt": ""
+    }
+  },
+  {
+    "name": "Psybeam",
+    "type": {
+      "en": "Psychic",
+      "pt": "Psíquico"
+    },
+    "movePower": {
+      "en": "Intelligence/Wisdom",
+      "pt": "Inteligência/Sabedoria"
+    },
+    "moveTime": {
+      "en": "1 action",
+      "pt": "1 ação"
+    },
+    "pp": 5,
+    "duration": "Instantaneous",
+    "range": "80 feet",
+    "description": {
+      "en": "You send a beam of invisible, psychic energy at a target in range. The target must make a WIS saving throw against your Move DC, taking 2d6 psychic damage on a failed save or have as much on a successful one. If the target fails the save by 5 or more they also become confused.",
+      "pt": "You send a beam of invisible, psychic energy at a target in range. The target must make a WIS teste de resistência contra a sua CD de MOVE, taking 2d6 psychic damage Em um teste de resistência falho or have as much Em um sucessoful one. If the target fails the save by 5 or more they also become confused."
+    },
+    "higherLevels": {
+      "en": "The base damage of this attack increases to 3d6 at level 5, 4d6 at level 11, and 5d6 at level 17.",
+      "pt": "O dano base deste ataque aumenta para 3d6 no nível 5, 4d6 no nível 11, and 5d6 no nível 17."
+    }
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "regiao": "Kanto",
+  "versao": "Pokémon Yellow",
+  "segmento": "Pallet Town até Rota 4 (incluindo Rota 22)",
+  "configuracao_dado": "1d20",
+  "mapa": [
+    {
+      "tipo": "cidade",
+      "nome": "Pallet Town",
+      "conecta": ["Rota 1", "Rota 21"],
+      "encontros_agua": [
+        { "metodo": "Old Rod", "especie": "Magikarp", "niveis": "5", "faixa_d20": [1, 20] },
+        { "metodo": "Surf", "especie": "Tentacool", "niveis": "5-30", "faixa_d20": [1, 20] }
+      ]
+    },
+    {
+      "tipo": "rota",
+      "nome": "Rota 1",
+      "conecta": ["Pallet Town", "Viridian City"],
+      "tabela_grama": [
+        { "especie": "Pidgey", "niveis": "2-7", "faixa_d20": [1, 14] },
+        { "especie": "Rattata", "niveis": "2-4", "faixa_d20": [15, 20] }
+      ]
+    },
+    {
+      "tipo": "cidade",
+      "nome": "Viridian City",
+      "ginasio": { "lider": "Giovanni", "tipo": "Ground", "status": "Trancado" },
+      "encontros_agua": [
+        { "metodo": "Old Rod", "especie": "Magikarp", "niveis": "5", "faixa_d20": [1, 20] },
+        { "metodo": "Surf", "especie": "Poliwag", "niveis": "5-15", "faixa_d20": [1, 12] },
+        { "metodo": "Surf", "especie": "Poliwhirl", "niveis": "15-25", "faixa_d20": [13, 20] }
+      ]
+    },
+    {
+      "tipo": "rota",
+      "nome": "Rota 22",
+      "conecta": ["Viridian City", "Victory Road/Pokemon League"],
+      "tabela_grama": [
+        { "especie": "Nidoran (M)", "niveis": "2-4", "faixa_d20": [1, 7] },
+        { "especie": "Nidoran (F)", "niveis": "2-4", "faixa_d20": [8, 14] },
+        { "especie": "Mankey", "niveis": "2-5", "faixa_d20": [15, 18] },
+        { "especie": "Spearow", "niveis": "3-5", "faixa_d20": [19, 20] }
+      ],
+      "encontros_agua": [
+        { "metodo": "Old Rod", "especie": "Magikarp", "niveis": "5", "faixa_d20": [1, 20] },
+        { "metodo": "Surf", "especie": "Poliwag", "niveis": "5-15", "faixa_d20": [1, 12] },
+        { "metodo": "Surf", "especie": "Poliwhirl", "niveis": "15-25", "faixa_d20": [13, 20] }
+      ]
+    },
+    {
+      "tipo": "rota",
+      "nome": "Rota 2",
+      "conecta": ["Viridian City", "Pewter City"],
+      "tabela_grama": [
+        { "especie": "Pidgey", "niveis": "3-7", "faixa_d20": [1, 9] },
+        { "especie": "Rattata", "niveis": "2-5", "faixa_d20": [10, 16] },
+        { "especie": "Nidoran (F)", "niveis": "4-6", "faixa_d20": [17, 18] },
+        { "especie": "Nidoran (M)", "niveis": "4-6", "faixa_d20": [19, 20] }
+      ]
+    },
+    {
+      "tipo": "caverna",
+      "nome": "Viridian Forest",
+      "tabela_grama": [
+        { "especie": "Caterpie", "niveis": "3-6", "faixa_d20": [1, 5] },
+        { "especie": "Metapod", "niveis": "4-6", "faixa_d20": [6, 10] },
+        { "especie": "Pikachu", "niveis": "3-5", "faixa_d20": [11, 12] },
+        { "especie": "Pidgey", "niveis": "3-7", "faixa_d20": [13, 17] },
+        { "especie": "Pidgeotto", "niveis": "9", "faixa_d20": [18, 20] }
+      ]
+    },
+    {
+      "tipo": "cidade",
+      "nome": "Pewter City",
+      "ginasio": { "lider": "Brock", "tipo": "Rock", "insignia": "Boulder Badge" }
+    },
+    {
+      "tipo": "rota",
+      "nome": "Rota 3",
+      "conecta": ["Pewter City", "Mt. Moon"],
+      "tabela_grama": [
+        { "especie": "Spearow", "niveis": "5-8", "faixa_d20": [1, 9] },
+        { "especie": "Sandshrew", "niveis": "6-10", "faixa_d20": [10, 15] },
+        { "especie": "Mankey", "niveis": "5-7", "faixa_d20": [16, 18] },
+        { "especie": "Jigglypuff", "niveis": "3-7", "faixa_d20": [19, 20] }
+      ]
+    },
+    {
+      "tipo": "caverna",
+      "nome": "Mt. Moon (Piso Principal)",
+      "tabela_caverna": [
+        { "especie": "Zubat", "niveis": "7-12", "faixa_d20": [1, 10] },
+        { "especie": "Geodude", "niveis": "8-10", "faixa_d20": [11, 16] },
+        { "especie": "Paras", "niveis": "8", "faixa_d20": [17, 18] },
+        { "especie": "Clefairy", "niveis": "8-12", "faixa_d20": [19, 20] }
+      ]
+    },
+    {
+      "tipo": "rota",
+      "nome": "Rota 4",
+      "conecta": ["Mt. Moon", "Cerulean City"],
+      "tabela_grama": [
+        { "especie": "Rattata", "niveis": "8-12", "faixa_d20": [1, 7] },
+        { "especie": "Spearow", "niveis": "8-12", "faixa_d20": [8, 14] },
+        { "especie": "Sandshrew", "niveis": "6-12", "faixa_d20": [15, 20] }
+      ],
+      "encontros_agua": [
+        { "metodo": "Old Rod", "especie": "Magikarp", "niveis": "5", "faixa_d20": [1, 20] },
+        { "metodo": "Surf", "especie": "Goldeen", "niveis": "5-15", "faixa_d20": [1, 10] },
+        { "metodo": "Surf", "especie": "Seaking", "niveis": "15-25", "faixa_d20": [11, 20] }
+      ]
+    }
+  ]
+}
