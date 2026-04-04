@@ -4,13 +4,12 @@ import { TRAINER_PATHS, PATH_DESCRIPTIONS, TRAINER_SKILLS, SPEC_DESCRIPTIONS, SP
 
 export function renderWizard(sheet, container) {
   const steps = [
-    { n: 1, label: 'Caminho' },
-    { n: 2, label: 'Atributos' },
-    { n: 3, label: 'Perícias' },
-    { n: 4, label: 'Especialização' },
-    { n: 5, label: 'Equipamento' },
-    { n: 6, label: 'Pokémon Inicial' },
-    { n: 7, label: 'Revisão' }
+    { n: 1, label: 'Atributos' },
+    { n: 2, label: 'Perícias' },
+    { n: 3, label: 'Especialização' },
+    { n: 4, label: 'Equipamento' },
+    { n: 5, label: 'Pokémon Inicial' },
+    { n: 6, label: 'Revisão' }
   ];
 
   const progressHTML = steps.map(s => `
@@ -22,13 +21,13 @@ export function renderWizard(sheet, container) {
     <div class="wizard-container">
       <div class="wizard-header">
         <h2 class="page-title">Criação de Treinador</h2>
-        <p class="page-subtitle">Passo ${sheet.currentStep} de 7: ${steps[sheet.currentStep - 1].label}</p>
+        <p class="page-subtitle">Passo ${sheet.currentStep} de 6: ${steps[sheet.currentStep - 1].label}</p>
       </div>
       <div class="wizard-progress">${progressHTML}</div>
       <div id="wizard-step-content"></div>
       <div class="wizard-footer">
         <button class="btn btn-outline" id="btn-wiz-back" ${sheet.currentStep === 1 ? 'disabled' : ''}>Voltar</button>
-        <button class="btn btn-primary" id="btn-wiz-next">${sheet.currentStep === 7 ? 'Finalizar' : 'Próximo'}</button>
+        <button class="btn btn-primary" id="btn-wiz-next">${sheet.currentStep === 6 ? 'Finalizar' : 'Próximo'}</button>
       </div>
     </div>`;
 
@@ -40,77 +39,19 @@ export function renderWizard(sheet, container) {
 
 export function renderWizardStep(sheet, stepContent) {
   switch (sheet.currentStep) {
-    case 1: renderStep1(sheet, stepContent); break;
-    case 2: renderStep2(sheet, stepContent); break;
-    case 3: renderStep3(sheet, stepContent); break;
-    case 4: renderStep4(sheet, stepContent); break;
-    case 5: renderStep5(sheet, stepContent); break;
-    case 6: renderStep7(sheet, stepContent); break; // Starter Pokemon
-    case 7: renderStep6(sheet, stepContent); break; // Review
+    case 1: renderStep2(sheet, stepContent); break; // Attributes
+    case 2: renderStep3(sheet, stepContent); break; // Skills
+    case 3: renderStep4(sheet, stepContent); break; // Specialization
+    case 4: renderStep5(sheet, stepContent); break; // Equipment
+    case 5: renderStep7(sheet, stepContent); break; // Starter Pokemon
+    case 6: renderStep6(sheet, stepContent); break; // Review
   }
 }
 
 function renderStep1(sheet, el) {
-  const currentPath = sheet.path || 'Ace Trainer';
-  const desc = PATH_DESCRIPTIONS[currentPath];
-
-  el.innerHTML = `
-    <div class="editor-section">
-      <div class="form-group" style="margin-bottom:20px">
-        <label class="form-label">Nome do Treinador</label>
-        <input type="text" id="wiz-name" class="form-input" value="${sheet.name}" placeholder="Ex: Ash Ketchum">
-      </div>
-      
-      <div class="wizard-layout">
-        <!-- Mobile selection: select dropdown -->
-        <div class="mobile-only" style="margin-bottom: 20px">
-          <label class="form-label">Escolha seu Caminho</label>
-          <select id="wiz-path-select" class="form-select">
-            ${TRAINER_PATHS.map(p => `<option value="${p}" ${currentPath === p ? 'selected' : ''}>${p}</option>`).join('')}
-          </select>
-        </div>
-
-        <!-- Desktop selection: list -->
-        <div class="spec-selection-list desktop-only">
-          ${TRAINER_PATHS.map(p => `
-            <div class="spec-item ${currentPath === p ? 'active' : ''}" data-path="${p}">
-              ${p}
-            </div>`).join('')}
-        </div>
-
-        <div class="spec-detail">
-          <h3 style="color:var(--gold); margin-bottom:10px">${currentPath}</h3>
-          <div class="option-info-card">
-            <div class="option-info-summary" style="margin-bottom:12px">${desc.summary}</div>
-            <div class="option-info-bonus"><span class="option-info-label">Bônus de Classe:</span> ${desc.bonus}</div>
-          </div>
-          <div style="margin-top:20px">
-            <h4 class="form-label" style="margin-bottom:10px">Habilidades de Nível 1</h4>
-            <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5">
-              ${desc.features.filter(f => f.level <= 1).map(f => `<strong>${f.name}:</strong> ${f.description}`).join('<br><br>') || 'Nenhuma habilidade passiva no nível 1.'}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-
-  const nameInput = document.getElementById('wiz-name');
-  nameInput.onchange = () => updateWizField('name', nameInput.value);
-
-  const pathSelect = document.getElementById('wiz-path-select');
-  if (pathSelect) {
-    pathSelect.onchange = () => {
-      updateWizField('path', pathSelect.value);
-      window.dispatchEvent(new CustomEvent('render-sheets'));
-    };
-  }
-
-  el.querySelectorAll('.spec-item').forEach(item => {
-    item.onclick = () => {
-      updateWizField('path', item.dataset.path);
-      window.dispatchEvent(new CustomEvent('render-sheets'));
-    };
-  });
+  // This step is removed as per requirements (Trainer Path chosen at level 2)
+  sheet.currentStep = 1;
+  renderStep2(sheet, el);
 }
 
 function renderStep2(sheet, el) {
@@ -119,6 +60,10 @@ function renderStep2(sheet, el) {
 
   el.innerHTML = `
     <div class="editor-section">
+      <div class="form-group" style="margin-bottom:20px">
+        <label class="form-label">Nome do Treinador</label>
+        <input type="text" id="wiz-name" class="form-input" value="${sheet.name}" placeholder="Ex: Ash Ketchum">
+      </div>
       <p style="margin-bottom:20px; font-size:0.9rem; color:var(--text-secondary)">
         Defina seus atributos iniciais. O valor base é 10. Você pode ajustá-los livremente.
       </p>
@@ -145,6 +90,9 @@ function renderStep2(sheet, el) {
          </div>
       </div>
     </div>`;
+
+  const nameInput = document.getElementById('wiz-name');
+  nameInput.onchange = () => updateWizField('name', nameInput.value);
 
   el.querySelectorAll('.btn-attr-minus').forEach(btn => {
     btn.onclick = () => updateAttr(btn.dataset.attr, -1);
@@ -311,8 +259,8 @@ function renderStep6(sheet, el) {
             <div class="summary-value">${sheet.name}</div>
           </div>
           <div class="summary-section">
-            <div class="summary-label">Nível e Caminho</div>
-            <div class="summary-value">Nível ${sheet.level} — ${sheet.path}</div>
+            <div class="summary-label">Nível e Classe</div>
+            <div class="summary-value">Nível ${sheet.level} — Pokémon Trainer</div>
           </div>
           <div class="summary-section">
             <div class="summary-label">Especialização</div>
@@ -343,7 +291,7 @@ function renderStep6(sheet, el) {
         </div>
       </div>
       <div style="margin-top:20px; padding:15px; background:rgba(242,201,76,0.05); border:1px solid var(--gold-dim); border-radius:var(--r-md); font-size:0.9rem">
-        Tudo pronto! Clique em <strong>Finalizar</strong> para criar sua ficha e começar sua jornada.
+        Tudo pronto! Clique em <strong>Finalizar</strong> para criar sua ficha e começar sua jornada. O seu <strong>Trainer Path</strong> será escolhido ao atingir o nível 2.
       </div>
     </div>`;
 }
@@ -480,20 +428,20 @@ export function wizardNext() {
   const sheet = state.sheets[state.editingSheet];
   if (!sheet) return;
 
-  if (sheet.currentStep === 3 && sheet.skills.length < 2) {
+  if (sheet.currentStep === 2 && sheet.skills.length < 2) {
     showToast('Selecione 2 perícias para continuar!', 'error');
     return;
   }
-  if (sheet.currentStep === 4 && !sheet.specialization) {
+  if (sheet.currentStep === 3 && !sheet.specialization) {
     showToast('Selecione uma especialização!', 'error');
     return;
   }
-  if (sheet.currentStep === 6 && sheet.pokemon.length === 0) {
+  if (sheet.currentStep === 5 && sheet.pokemon.length === 0) {
     showToast('Escolha seu Pokémon inicial!', 'error');
     return;
   }
 
-  if (sheet.currentStep < 7) {
+  if (sheet.currentStep < 6) {
     sheet.currentStep++;
   } else {
     finalizeWizard(sheet);

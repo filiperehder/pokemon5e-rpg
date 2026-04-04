@@ -1,6 +1,6 @@
 import { state } from '../core/state.js';
 import { getTypeColor, typeBadgeHTML, spriteURL, showToast, formatMod } from '../core/utils.js';
-import { TRAINER_PATHS, SPEC_DESCRIPTIONS, POKESLOTS_BY_LEVEL, TRAINER_SKILLS, TM_MAP, PATH_DESCRIPTIONS, SPEC_ATTR_BONUS } from '../core/constants.js';
+import { TRAINER_PATHS, SPEC_DESCRIPTIONS, POKESLOTS_BY_LEVEL, TRAINER_SKILLS, TM_MAP, PATH_DESCRIPTIONS, SPEC_ATTR_BONUS, TRAINER_PROGRESSION } from '../core/constants.js';
 import { calculateStats, calculateAC, calculateHP } from '../core/pokemon-stats.js';
 
 export function loadSheets() {
@@ -88,7 +88,7 @@ export function newSheet() {
     id: Date.now(),
     name: 'Novo Treinador',
     level: 1,
-    path: 'Ace Trainer',
+    path: 'Treinador',
     specialization: '',
     attributes: { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 },
     skills: [],
@@ -124,12 +124,16 @@ export function renderSheetEditor(renderWizard) {
   if (!sheet) { closeSheetEditor(); return; }
 
   // Check if wizard is active
-  if (sheet.currentStep && sheet.currentStep <= 7) {
+  if (sheet.currentStep && sheet.currentStep <= 6) {
     if (renderWizard) renderWizard(sheet, view);
     return;
   }
 
-  const pokeslots = POKESLOTS_BY_LEVEL[sheet.level] || 3;
+  const progression = TRAINER_PROGRESSION[sheet.level] || TRAINER_PROGRESSION[1];
+  const pokeslots = progression.slots;
+  const profBonus = progression.prof;
+  const maxCR = progression.maxCR;
+
   const pathOptions = TRAINER_PATHS.map(p =>
     `<option value="${p}" ${sheet.path === p ? 'selected' : ''}>${p}</option>`).join('');
 
@@ -138,19 +142,77 @@ export function renderSheetEditor(renderWizard) {
     return p ? filledSlotHTML(p, i, sheet) : emptySlotHTML(i);
   }).join('');
 
-  const specOptions = Object.keys(SPEC_DESCRIPTIONS).map(s =>
-    `<option value="${s}" ${sheet.specialization === s ? 'selected' : ''}>${s}</option>`).join('');
-
-  const profBonus = Math.floor((sheet.level - 1) / 4) + 2;
   const conMod = Math.floor((sheet.attributes.con - 10) / 2);
   const maxHP = 6 + conMod + (sheet.level - 1) * (4 + conMod);
+
+  const specInfo = SPEC_DESCRIPTIONS[sheet.specialization];
+  const specHTML = sheet.specialization ? `
+    <div class="editor-section">
+      <div class="editor-section-title">Especialização</div>
+      <div style="padding:10px; background:rgba(242,201,76,0.05); border:1px solid var(--gold-dim); border-radius:var(--r-md)">
+        <div style="font-weight:700; color:var(--gold); margin-bottom:5px">${sheet.specialization}</div>
+        <div style="font-size:0.75rem; line-height:1.4; color:var(--text-secondary)">
+          ${specInfo ? `<strong>Bônus:</strong> ${specInfo.bonus || 'Nenhum'}<br><br><strong>Efeito:</strong> ${specInfo.effect}` : 'Descrição não encontrada.'}
+        </div>
+      </div>
+    </div>` : '';
+
+  // Calculate Cumulative Features
+  const cumulativeClassFeatures = [];
+  for (let l = 1; l <= sheet.level; l++) {
+    const levelFeatures = TRAINER_PROGRESSION[l]?.features || [];
+    cumulativeClassFeatures.push(...levelFeatures);
+  }
+  const uniqueClassFeatures = [...new Set(cumulativeClassFeatures)];
+
+  const pathFeatures = PATH_DESCRIPTIONS[sheet.path]?.features || [];
+  const activePathFeatures = pathFeatures.filter(f => f.level <= sheet.level);
+  const pathBaseInfo = PATH_DESCRIPTIONS[sheet.path];
+
+  const featuresHTML = `
+    <div class="editor-section" style="grid-column: 1 / -1">
+      <div class="editor-section-title">Habilidades do Treinador (Nível ${sheet.level})</div>
+      <div style="display:flex; flex-direction:column; gap:15px">
+        <div>
+          <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Geral / Evolução</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px">
+            ${uniqueClassFeatures.map(f => `<span class="badge" style="background:rgba(242,201,76,0.1); color:var(--gold); border:1px solid var(--gold-dim); font-size:0.7rem">${f}</span>`).join('')}
+          </div>
+        </div>
+        
+        ${sheet.level >= 2 && pathBaseInfo ? `
+        <div>
+          <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px">Caminho: ${sheet.path}</div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <!-- Bônus Inicial do Caminho -->
+            <div style="padding:10px; background:rgba(212,175,55,0.08); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
+              <div style="font-weight:700; font-size:0.85rem; color:var(--gold); margin-bottom:4px">Bônus Inicial <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível 2</span></div>
+              <div style="font-size:0.75rem; color:var(--text-primary); margin-bottom:4px; font-style:italic">${pathBaseInfo.summary}</div>
+              <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4"><strong>Efeito:</strong> ${pathBaseInfo.bonus}</div>
+            </div>
+            
+            ${activePathFeatures.map(f => `
+              <div style="padding:10px; background:rgba(255,255,255,0.03); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
+                <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary); margin-bottom:4px">${f.name} <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível ${f.level}</span></div>
+                <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4">${f.description}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>` : ''}
+      </div>
+    </div>`;
+
+  const isLevel1 = sheet.level < 2;
+  const pathContent = isLevel1 
+    ? `<div class="form-input" style="background:var(--bg-card); border-color:transparent; padding-left:0; color:var(--text-muted)">Pokémon Trainer <span style="font-size:0.7rem; display:block">(Caminho disponível no nível 2)</span></div>`
+    : `<select id="ed-path" class="form-select">${pathOptions}</select>`;
 
   view.innerHTML = `
     <div class="sheet-editor-header">
       <button class="sheet-back-btn" id="btn-close-editor">← Voltar</button>
       <div style="flex:1">
         <h2 class="page-title" style="margin:0">${sheet.name}</h2>
-        <div class="page-subtitle">Nível ${sheet.level} · ${sheet.path}</div>
+        <div class="page-subtitle">Nível ${sheet.level} · ${sheet.path} ${sheet.specialization ? `· ${sheet.specialization}` : ''}</div>
       </div>
       <button class="btn btn-primary" id="btn-save-sheet">Salvar Ficha</button>
     </div>
@@ -158,7 +220,10 @@ export function renderSheetEditor(renderWizard) {
     <div class="sheet-editor-layout">
       <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
         <div class="editor-section">
-          <div class="editor-section-title">Status do Treinador</div>
+          <div class="editor-section-title" style="display:flex; justify-content:space-between; align-items:center">
+            Status do Treinador
+            <button class="btn btn-sm btn-outline" id="btn-open-attr-edit" style="padding:2px 8px; font-size:0.65rem">Editar Base</button>
+          </div>
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:15px">
             <div class="attr-box" style="padding:10px">
               <div class="attr-name" style="margin:0; font-size:0.6rem">HP Máximo</div>
@@ -168,18 +233,31 @@ export function renderSheetEditor(renderWizard) {
               <div class="attr-name" style="margin:0; font-size:0.6rem">Proficiência</div>
               <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">+${profBonus}</div>
             </div>
-            <div class="attr-box" style="padding:10px; grid-column: 1 / -1">
-              <div class="attr-name" style="margin:0; font-size:0.6rem">Teste de Resistência (CAR)</div>
-              <div style="font-size:1.1rem; font-weight:700; color:var(--gold)">+${profBonus + Math.floor((sheet.attributes.cha - 10) / 2)}</div>
+            <div class="attr-box" style="padding:10px">
+              <div class="attr-name" style="margin:0; font-size:0.6rem">Max CR</div>
+              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxCR}</div>
+            </div>
+            <div class="attr-box" style="padding:10px">
+              <div class="attr-name" style="margin:0; font-size:0.6rem">Slots Time</div>
+              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${pokeslots}</div>
             </div>
           </div>
           <div class="attr-grid" style="grid-template-columns: repeat(3, 1fr); gap:8px">
-            ${Object.entries(sheet.attributes).map(([k, v]) => {
-    const mod = Math.floor((v - 10) / 2);
+            ${Object.entries(sheet.attributes).map(([k, base]) => {
+    // Check for specialization bonus
+    let bonus = 0;
+    const specBonus = SPEC_ATTR_BONUS[sheet.specialization];
+    if (typeof specBonus === 'string' && specBonus === k) bonus = 1;
+    else if (Array.isArray(specBonus) && sheet.specAttrBonus === k) bonus = 1;
+
+    const total = base + bonus;
+    const mod = Math.floor((total - 10) / 2);
     return `
                 <div class="attr-box" style="padding:8px">
                   <div class="attr-name" style="font-size:0.55rem; margin-bottom:2px">${k.toUpperCase()}</div>
-                  <div style="font-size:0.9rem; font-weight:700">${v}</div>
+                  <div style="font-size:0.9rem; font-weight:700">
+                    ${base}${bonus > 0 ? `<span style="color:var(--gold); font-size:0.7rem; vertical-align:top; margin-left:2px">+${bonus}</span>` : ''}
+                  </div>
                   <div class="attr-mod" style="font-size:0.7rem">${mod >= 0 ? '+' : ''}${mod}</div>
                 </div>`;
   }).join('')}
@@ -201,6 +279,8 @@ export function renderSheetEditor(renderWizard) {
   }).join('')}
           </div>
         </div>
+
+        ${specHTML}
 
         <div class="editor-section">
           <div class="editor-section-title">Equipamento e Dinheiro</div>
@@ -234,22 +314,96 @@ export function renderSheetEditor(renderWizard) {
                 <button class="level-btn-main" id="btn-trainer-lvl-plus">+</button>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="grid-column: 1 / -1">
               <label class="form-label">Caminho</label>
-              <select id="ed-path" class="form-select">${pathOptions}</select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Especialização</label>
-              <select id="ed-spec" class="form-select">${specOptions}</select>
+              ${pathContent}
             </div>
           </div>
         </div>
+
+        ${featuresHTML}
       </div>
     </div>`;
 
   document.getElementById('btn-close-editor').onclick = closeSheetEditor;
   document.getElementById('btn-save-sheet').onclick = saveSheetEditor;
-  document.getElementById('ed-level').onchange = (e) => updateSheetLevel(e.target.value);
+  document.getElementById('btn-open-attr-edit').onclick = openEditAttributesModal;
+
+  // Sincronizar nome e path dinamicamente com atualização imediata da UI
+  const nameInput = document.getElementById('ed-name');
+  if (nameInput) {
+    nameInput.oninput = (e) => {
+      sheet.name = e.target.value;
+      saveSheets();
+      // Atualiza apenas o título/subtítulo sem perder o foco do input
+      const title = document.querySelector('#sheet-editor-view .page-title');
+      if (title) title.textContent = sheet.name;
+    };
+  }
+
+  const pathSelect = document.getElementById('ed-path');
+  if (pathSelect) {
+    pathSelect.onchange = (e) => {
+      sheet.path = e.target.value;
+      saveSheets();
+      // Re-renderiza a ficha inteira para atualizar as descrições das habilidades
+      renderSheetEditor(renderWizard);
+    };
+  }
+}
+
+export function openEditAttributesModal() {
+  const sheet = state.sheets[state.editingSheet];
+  if (!sheet) return;
+
+  const modal = document.getElementById('edit-attributes-modal');
+  const list = document.getElementById('attr-edit-list');
+  const labels = { str: 'Força', dex: 'Destreza', con: 'Constituição', int: 'Inteligência', wis: 'Sabedoria', cha: 'Carisma' };
+
+  list.innerHTML = Object.entries(sheet.attributes).map(([k, v]) => `
+    <div class="attr-edit-row">
+      <label class="form-label" style="margin:0">${labels[k]}</label>
+      <div class="attr-edit-controls">
+        <button class="btn btn-sm btn-outline btn-attr-mod" data-attr="${k}" data-delta="-1" style="width:32px; height:32px; padding:0">-</button>
+        <input type="number" id="attr-input-${k}" class="form-input" value="${v}" style="width:60px; text-align:center; margin:0">
+        <button class="btn btn-sm btn-outline btn-attr-mod" data-attr="${k}" data-delta="1" style="width:32px; height:32px; padding:0">+</button>
+      </div>
+    </div>
+  `).join('');
+
+  list.querySelectorAll('.btn-attr-mod').forEach(btn => {
+    btn.onclick = () => {
+      const input = document.getElementById(`attr-input-${btn.dataset.attr}`);
+      const val = parseInt(input.value) || 0;
+      input.value = Math.max(1, val + parseInt(btn.dataset.delta));
+    };
+  });
+
+  document.getElementById('btn-close-attr-modal').onclick = closeEditAttributesModal;
+  document.getElementById('btn-cancel-attr').onclick = closeEditAttributesModal;
+  document.getElementById('btn-save-attr').onclick = saveTrainerAttributes;
+
+  modal.classList.add('open');
+}
+
+export function closeEditAttributesModal() {
+  document.getElementById('edit-attributes-modal').classList.remove('open');
+}
+
+export function saveTrainerAttributes() {
+  const sheet = state.sheets[state.editingSheet];
+  if (!sheet) return;
+
+  const attrs = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  attrs.forEach(a => {
+    const input = document.getElementById(`attr-input-${a}`);
+    if (input) sheet.attributes[a] = parseInt(input.value) || 10;
+  });
+
+  saveSheets();
+  closeEditAttributesModal();
+  showToast('Atributos atualizados!');
+  window.dispatchEvent(new CustomEvent('render-sheets'));
 }
 
 export function getSkillAttr(skillId) {
@@ -416,17 +570,9 @@ export function saveSheetEditor() {
   const sheet = state.sheets[state.editingSheet];
   if (!sheet) return;
   const newName = document.getElementById('ed-name')?.value || 'Treinador';
-  const newLevel = parseInt(document.getElementById('ed-level')?.value) || 1;
-  const newPath = document.getElementById('ed-path')?.value || 'Ace Trainer';
-  const newSpec = document.getElementById('ed-spec')?.value || '';
-
-  if (sheet.specialization !== newSpec) {
-    sheet.specialization = newSpec;
-    applySpecBonuses(sheet);
-  }
+  const newPath = document.getElementById('ed-path')?.value || sheet.path;
 
   sheet.name = newName;
-  sheet.level = newLevel;
   sheet.path = newPath;
 
   saveSheets();
@@ -513,7 +659,7 @@ export function newSheetAndAddPokemon() {
     id: Date.now(),
     name: 'Novo Treinador',
     level: 1,
-    path: 'Ace Trainer',
+    path: 'Treinador',
     specialization: '',
     attributes: { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 },
     skills: [],

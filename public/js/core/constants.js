@@ -1,3 +1,26 @@
+export const TRAINER_PROGRESSION = {
+  1: { prof: 2, slots: 3, maxCR: '1/2', features: ['Starter Pokémon', 'Specialization'] },
+  2: { prof: 2, slots: 3, maxCR: '1', features: ['Trainer Path', 'Control Upgrade'] },
+  3: { prof: 2, slots: 3, maxCR: '3', features: ['Control Upgrade'] },
+  4: { prof: 2, slots: 3, maxCR: '5', features: ['Ability Score Improvement', 'Control Upgrade'] },
+  5: { prof: 3, slots: 4, maxCR: '5', features: ['Trainer Path Feature', 'Pokéslot'] },
+  6: { prof: 3, slots: 4, maxCR: '6', features: ['Trainer Orders', 'Control Upgrade'] },
+  7: { prof: 3, slots: 4, maxCR: '6', features: ['Specialization'] },
+  8: { prof: 3, slots: 4, maxCR: '8', features: ['Ability Score Improvement', 'Control Upgrade'] },
+  9: { prof: 4, slots: 4, maxCR: '8', features: ['Trainer Path Feature'] },
+  10: { prof: 4, slots: 5, maxCR: '9', features: ['Pokéslot', 'Control Upgrade'] },
+  11: { prof: 4, slots: 5, maxCR: '9', features: ['Trainer\'s Resolve'] },
+  12: { prof: 4, slots: 5, maxCR: '11', features: ['Ability Score Improvement', 'Control Upgrade'] },
+  13: { prof: 5, slots: 5, maxCR: '11', features: ['Pokémon Tracker'] },
+  14: { prof: 5, slots: 5, maxCR: '12', features: ['Control Upgrade'] },
+  15: { prof: 5, slots: 6, maxCR: '12', features: ['Trainer Path Feature', 'Pokéslot'] },
+  16: { prof: 5, slots: 6, maxCR: '12', features: ['Ability Score Improvement'] },
+  17: { prof: 6, slots: 6, maxCR: '13', features: ['Control Upgrade'] },
+  18: { prof: 6, slots: 6, maxCR: '13', features: ['Specialization'] },
+  19: { prof: 6, slots: 6, maxCR: '13', features: ['Ability Score Improvement'] },
+  20: { prof: 6, slots: 6, maxCR: '15', features: ['Control Upgrade', 'Master Trainer'] }
+};
+
 export const TM_MAP = {
   1:'Work Up',2:'Dragon Claw',3:'Psyshock',4:'Calm Mind',5:'Roar',
   6:'Toxic',7:'Hail',8:'Bulk Up',9:'Venoshock',10:'Hidden Power',

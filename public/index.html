@@ -354,6 +354,22 @@
 <!-- ── Toast Container ─────────────────────────────────────────── -->
 <div id="toast-container" class="toast-container"></div>
 
-<script type="module" src="js/main.js"></script>
-</body>
+<!-- Modal: Editar Atributos do Treinador -->
+<div class="modal" id="edit-attributes-modal">
+    <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-header">
+            <h3 class="modal-title">Editar Atributos Base</h3>
+            <button class="modal-close" id="btn-close-attr-modal">✕</button>
+        </div>
+        <div id="attr-edit-list" style="padding: 20px 0;">
+            <!-- Conteúdo gerado via JS -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" id="btn-cancel-attr">Cancelar</button>
+            <button class="btn btn-primary" id="btn-save-attr">Salvar Alterações</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="js/main.js"></script></body>
 </html>
