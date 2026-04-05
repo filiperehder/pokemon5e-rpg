@@ -38,7 +38,7 @@ async function init() {
 
     setupEvents();
 
-    const initialPage = getPageFromHash() || 'pokedex';
+    const initialPage = getPageFromHash() || 'fichas';
     navigateTo(initialPage, {
       renderPokedex,
       renderMoves,

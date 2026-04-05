@@ -129,83 +129,202 @@ export function renderSheetEditor(renderWizard) {
     return;
   }
 
+  const activeTab = state.activeSheetTab || 'resumo';
+
   const progression = TRAINER_PROGRESSION[sheet.level] || TRAINER_PROGRESSION[1];
   const pokeslots = progression.slots;
   const profBonus = progression.prof;
   const maxCR = progression.maxCR;
 
-  const pathOptions = TRAINER_PATHS.map(p =>
-    `<option value="${p}" ${sheet.path === p ? 'selected' : ''}>${p}</option>`).join('');
-
-  const pokemonSlotsHTML = Array.from({ length: pokeslots }, (_, i) => {
-    const p = sheet.pokemon?.[i];
-    return p ? filledSlotHTML(p, i, sheet) : emptySlotHTML(i);
-  }).join('');
-
   const conMod = Math.floor((sheet.attributes.con - 10) / 2);
   const maxHP = 6 + conMod + (sheet.level - 1) * (4 + conMod);
 
-  const specInfo = SPEC_DESCRIPTIONS[sheet.specialization];
-  const specHTML = sheet.specialization ? `
-    <div class="editor-section">
-      <div class="editor-section-title">Especialização</div>
-      <div style="padding:10px; background:rgba(242,201,76,0.05); border:1px solid var(--gold-dim); border-radius:var(--r-md)">
-        <div style="font-weight:700; color:var(--gold); margin-bottom:5px">${sheet.specialization}</div>
-        <div style="font-size:0.75rem; line-height:1.4; color:var(--text-secondary)">
-          ${specInfo ? `<strong>Bônus:</strong> ${specInfo.bonus || 'Nenhum'}<br><br><strong>Efeito:</strong> ${specInfo.effect}` : 'Descrição não encontrada.'}
-        </div>
-      </div>
-    </div>` : '';
+  // --- Content Generators ---
 
-  // Calculate Cumulative Features
-  const cumulativeClassFeatures = [];
-  for (let l = 1; l <= sheet.level; l++) {
-    const levelFeatures = TRAINER_PROGRESSION[l]?.features || [];
-    cumulativeClassFeatures.push(...levelFeatures);
-  }
-  const uniqueClassFeatures = [...new Set(cumulativeClassFeatures)];
+  const renderResumo = () => {
+    const pathOptions = TRAINER_PATHS.map(p =>
+      `<option value="${p}" ${sheet.path === p ? 'selected' : ''}>${p}</option>`).join('');
+    const isLevel1 = sheet.level < 2;
+    const pathContent = isLevel1 
+      ? `<div class="form-input" style="background:var(--bg-card); border-color:transparent; padding-left:0; color:var(--text-muted)">Pokémon Trainer <span style="font-size:0.7rem; display:block">(Caminho disponível no nível 2)</span></div>`
+      : `<select id="ed-path" class="form-select">${pathOptions}</select>`;
 
-  const pathFeatures = PATH_DESCRIPTIONS[sheet.path]?.features || [];
-  const activePathFeatures = pathFeatures.filter(f => f.level <= sheet.level);
-  const pathBaseInfo = PATH_DESCRIPTIONS[sheet.path];
-
-  const featuresHTML = `
-    <div class="editor-section" style="grid-column: 1 / -1">
-      <div class="editor-section-title">Habilidades do Treinador (Nível ${sheet.level})</div>
-      <div style="display:flex; flex-direction:column; gap:15px">
-        <div>
-          <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Geral / Evolução</div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px">
-            ${uniqueClassFeatures.map(f => `<span class="badge" style="background:rgba(242,201,76,0.1); color:var(--gold); border:1px solid var(--gold-dim); font-size:0.7rem">${f}</span>`).join('')}
+    const specInfo = SPEC_DESCRIPTIONS[sheet.specialization];
+    const specHTML = sheet.specialization ? `
+      <div class="editor-section">
+        <div class="editor-section-title">Especialização</div>
+        <div style="padding:10px; background:rgba(242,201,76,0.05); border:1px solid var(--gold-dim); border-radius:var(--r-md)">
+          <div style="font-weight:700; color:var(--gold); margin-bottom:5px">${sheet.specialization}</div>
+          <div style="font-size:0.75rem; line-height:1.4; color:var(--text-secondary)">
+            ${specInfo ? `<strong>Bônus:</strong> ${specInfo.bonus || 'Nenhum'}<br><br><strong>Efeito:</strong> ${specInfo.effect}` : 'Descrição não encontrada.'}
           </div>
         </div>
-        
-        ${sheet.level >= 2 && pathBaseInfo ? `
-        <div>
-          <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px">Caminho: ${sheet.path}</div>
-          <div style="display:flex; flex-direction:column; gap:10px">
-            <!-- Bônus Inicial do Caminho -->
-            <div style="padding:10px; background:rgba(212,175,55,0.08); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
-              <div style="font-weight:700; font-size:0.85rem; color:var(--gold); margin-bottom:4px">Bônus Inicial <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível 2</span></div>
-              <div style="font-size:0.75rem; color:var(--text-primary); margin-bottom:4px; font-style:italic">${pathBaseInfo.summary}</div>
-              <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4"><strong>Efeito:</strong> ${pathBaseInfo.bonus}</div>
+      </div>` : '';
+
+    // Calculate Cumulative Features
+    const cumulativeClassFeatures = [];
+    for (let l = 1; l <= sheet.level; l++) {
+      const levelFeatures = TRAINER_PROGRESSION[l]?.features || [];
+      cumulativeClassFeatures.push(...levelFeatures);
+    }
+    const uniqueClassFeatures = [...new Set(cumulativeClassFeatures)];
+
+    const pathFeatures = PATH_DESCRIPTIONS[sheet.path]?.features || [];
+    const activePathFeatures = pathFeatures.filter(f => f.level <= sheet.level);
+    const pathBaseInfo = PATH_DESCRIPTIONS[sheet.path];
+
+    const featuresHTML = `
+      <div class="editor-section">
+        <div class="editor-section-title">Habilidades do Treinador</div>
+        <div style="display:flex; flex-direction:column; gap:15px">
+          <div>
+            <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Geral / Evolução</div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px">
+              ${uniqueClassFeatures.map(f => `<span class="badge" style="background:rgba(242,201,76,0.1); color:var(--gold); border:1px solid var(--gold-dim); font-size:0.7rem">${f}</span>`).join('')}
             </div>
-            
-            ${activePathFeatures.map(f => `
-              <div style="padding:10px; background:rgba(255,255,255,0.03); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
-                <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary); margin-bottom:4px">${f.name} <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível ${f.level}</span></div>
-                <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4">${f.description}</div>
-              </div>
-            `).join('')}
           </div>
-        </div>` : ''}
-      </div>
-    </div>`;
+          
+          ${sheet.level >= 2 && pathBaseInfo ? `
+          <div>
+            <div style="font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px">Caminho: ${sheet.path}</div>
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <div style="padding:10px; background:rgba(212,175,55,0.08); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
+                <div style="font-weight:700; font-size:0.85rem; color:var(--gold); margin-bottom:4px">Bônus Inicial <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível 2</span></div>
+                <div style="font-size:0.75rem; color:var(--text-primary); margin-bottom:4px; font-style:italic">${pathBaseInfo.summary}</div>
+                <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4"><strong>Efeito:</strong> ${pathBaseInfo.bonus}</div>
+              </div>
+              ${activePathFeatures.map(f => `
+                <div style="padding:10px; background:rgba(255,255,255,0.03); border-radius:var(--r-sm); border-left:3px solid var(--gold)">
+                  <div style="font-weight:700; font-size:0.85rem; color:var(--text-primary); margin-bottom:4px">${f.name} <span style="color:var(--text-muted); font-weight:400; font-size:0.75rem">· Nível ${f.level}</span></div>
+                  <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.4">${f.description}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>` : ''}
+        </div>
+      </div>`;
 
-  const isLevel1 = sheet.level < 2;
-  const pathContent = isLevel1 
-    ? `<div class="form-input" style="background:var(--bg-card); border-color:transparent; padding-left:0; color:var(--text-muted)">Pokémon Trainer <span style="font-size:0.7rem; display:block">(Caminho disponível no nível 2)</span></div>`
-    : `<select id="ed-path" class="form-select">${pathOptions}</select>`;
+    return `
+      <div class="sheet-editor-layout">
+        <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
+          <div class="editor-section">
+            <div class="editor-section-title" style="display:flex; justify-content:space-between; align-items:center">
+              Status Base
+              <button class="btn btn-sm btn-outline" id="btn-open-attr-edit" style="padding:2px 8px; font-size:0.65rem">Editar</button>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:15px">
+              <div class="attr-box" style="padding:10px">
+                <div class="attr-name" style="margin:0; font-size:0.6rem">HP Máximo</div>
+                <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxHP}</div>
+              </div>
+              <div class="attr-box" style="padding:10px">
+                <div class="attr-name" style="margin:0; font-size:0.6rem">Proficiência</div>
+                <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">+${profBonus}</div>
+              </div>
+              <div class="attr-box" style="padding:10px">
+                <div class="attr-name" style="margin:0; font-size:0.6rem">Max CR</div>
+                <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxCR}</div>
+              </div>
+              <div class="attr-box" style="padding:10px">
+                <div class="attr-name" style="margin:0; font-size:0.6rem">Slots Time</div>
+                <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${pokeslots}</div>
+              </div>
+            </div>
+            <div class="attr-grid" style="grid-template-columns: repeat(3, 1fr); gap:8px">
+              ${Object.entries(sheet.attributes).map(([k, base]) => {
+                let bonus = 0;
+                const specBonus = SPEC_ATTR_BONUS[sheet.specialization];
+                if (typeof specBonus === 'string' && specBonus === k) bonus = 1;
+                else if (Array.isArray(specBonus) && sheet.specAttrBonus === k) bonus = 1;
+                const total = base + bonus;
+                const mod = Math.floor((total - 10) / 2);
+                return `
+                  <div class="attr-box" style="padding:8px">
+                    <div class="attr-name" style="font-size:0.55rem; margin-bottom:2px">${k.toUpperCase()}</div>
+                    <div style="font-size:0.9rem; font-weight:700">
+                      ${base}${bonus > 0 ? `<span style="color:var(--gold); font-size:0.7rem; vertical-align:top; margin-left:2px">+${bonus}</span>` : ''}
+                    </div>
+                    <div class="attr-mod" style="font-size:0.7rem">${mod >= 0 ? '+' : ''}${mod}</div>
+                  </div>`;
+              }).join('')}
+            </div>
+          </div>
+
+          <div class="editor-section">
+            <div class="editor-section-title">Perícias</div>
+            <div style="display:flex; flex-direction:column; gap:4px">
+              ${TRAINER_SKILLS.map(s => {
+                const isProf = (sheet.skills || []).includes(s.id) || (sheet.specSkills && sheet.specSkills.includes(s.id));
+                if (!isProf) return '';
+                const attr = getSkillAttr(s.id);
+                const attrScore = sheet.attributes[attr] || 10;
+                return `<div style="font-size:0.85rem; display:flex; justify-content:space-between">
+                    <span>${s.pt}</span>
+                    <span style="color:var(--gold)">+${profBonus + Math.floor((attrScore - 10) / 2)}</span>
+                  </div>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
+          <div class="editor-section">
+            <div class="editor-section-title">Configurações</div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Nome</label>
+                <input type="text" id="ed-name" class="form-input" value="${sheet.name}">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nível</label>
+                <div class="level-control-main">
+                  <button class="level-btn-main" id="btn-trainer-lvl-minus">-</button>
+                  <span class="level-display-main">Nível ${sheet.level}</span>
+                  <button class="level-btn-main" id="btn-trainer-lvl-plus">+</button>
+                </div>
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1">
+                <label class="form-label">Caminho</label>
+                ${pathContent}
+              </div>
+            </div>
+          </div>
+          ${specHTML}
+          ${featuresHTML}
+          <div class="editor-section">
+            <div class="editor-section-title">Equipamento e Dinheiro</div>
+            <div style="font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:10px">₽ ${sheet.money}</div>
+            <textarea id="ed-equipment" class="form-input" style="width:100%; min-height:100px; font-size:0.8rem">${(sheet.equipment || []).join('\n')}</textarea>
+          </div>
+        </div>
+      </div>`;
+  };
+
+  const renderTime = () => {
+    const pokemonSlotsHTML = Array.from({ length: pokeslots }, (_, i) => {
+      const p = sheet.pokemon?.[i];
+      return p ? filledSlotHTML(p, i, sheet) : emptySlotHTML(i);
+    }).join('');
+
+    return `
+      <div class="editor-section">
+        <div class="editor-section-title">Time Pokémon (${sheet.pokemon.length}/${pokeslots})</div>
+        <div class="pokemon-slots" id="pokemon-slots-container">
+          ${pokemonSlotsHTML}
+        </div>
+      </div>`;
+  };
+
+  const renderNotas = () => {
+    return `
+      <div class="editor-section">
+        <div class="editor-section-title">Notas da Campanha</div>
+        <textarea id="ed-notes" class="form-input" placeholder="Anote aqui suas aventuras, missões e lembretes..." 
+                  style="width:100%; min-height:400px; line-height:1.6; font-size:0.9rem">${sheet.notes || ''}</textarea>
+      </div>`;
+  };
+
+  // --- Main Template ---
 
   view.innerHTML = `
     <div class="sheet-editor-header">
@@ -217,138 +336,66 @@ export function renderSheetEditor(renderWizard) {
       <button class="btn btn-primary" id="btn-save-sheet">Salvar Ficha</button>
     </div>
 
-    <div class="sheet-editor-layout">
-      <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
-        <div class="editor-section">
-          <div class="editor-section-title" style="display:flex; justify-content:space-between; align-items:center">
-            Status do Treinador
-            <button class="btn btn-sm btn-outline" id="btn-open-attr-edit" style="padding:2px 8px; font-size:0.65rem">Editar Base</button>
-          </div>
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:15px">
-            <div class="attr-box" style="padding:10px">
-              <div class="attr-name" style="margin:0; font-size:0.6rem">HP Máximo</div>
-              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxHP}</div>
-            </div>
-            <div class="attr-box" style="padding:10px">
-              <div class="attr-name" style="margin:0; font-size:0.6rem">Proficiência</div>
-              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">+${profBonus}</div>
-            </div>
-            <div class="attr-box" style="padding:10px">
-              <div class="attr-name" style="margin:0; font-size:0.6rem">Max CR</div>
-              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${maxCR}</div>
-            </div>
-            <div class="attr-box" style="padding:10px">
-              <div class="attr-name" style="margin:0; font-size:0.6rem">Slots Time</div>
-              <div style="font-size:1.2rem; font-weight:700; color:var(--gold)">${pokeslots}</div>
-            </div>
-          </div>
-          <div class="attr-grid" style="grid-template-columns: repeat(3, 1fr); gap:8px">
-            ${Object.entries(sheet.attributes).map(([k, base]) => {
-    // Check for specialization bonus
-    let bonus = 0;
-    const specBonus = SPEC_ATTR_BONUS[sheet.specialization];
-    if (typeof specBonus === 'string' && specBonus === k) bonus = 1;
-    else if (Array.isArray(specBonus) && sheet.specAttrBonus === k) bonus = 1;
+    <div class="sheet-tabs">
+      <div class="sheet-tab ${activeTab === 'resumo' ? 'active' : ''}" data-tab="resumo">Resumo</div>
+      <div class="sheet-tab ${activeTab === 'time' ? 'active' : ''}" data-tab="time">Time</div>
+      <div class="sheet-tab ${activeTab === 'notas' ? 'active' : ''}" data-tab="notas">Notas</div>
+    </div>
 
-    const total = base + bonus;
-    const mod = Math.floor((total - 10) / 2);
-    return `
-                <div class="attr-box" style="padding:8px">
-                  <div class="attr-name" style="font-size:0.55rem; margin-bottom:2px">${k.toUpperCase()}</div>
-                  <div style="font-size:0.9rem; font-weight:700">
-                    ${base}${bonus > 0 ? `<span style="color:var(--gold); font-size:0.7rem; vertical-align:top; margin-left:2px">+${bonus}</span>` : ''}
-                  </div>
-                  <div class="attr-mod" style="font-size:0.7rem">${mod >= 0 ? '+' : ''}${mod}</div>
-                </div>`;
-  }).join('')}
-          </div>
-        </div>
-
-        <div class="editor-section">
-          <div class="editor-section-title">Perícias Proficientes</div>
-          <div style="display:flex; flex-direction:column; gap:4px">
-            ${TRAINER_SKILLS.map(s => {
-    const isProf = (sheet.skills || []).includes(s.id) || (sheet.specSkills && sheet.specSkills.includes(s.id));
-    if (!isProf) return '';
-    const attr = getSkillAttr(s.id);
-    const attrScore = sheet.attributes[attr] || 10;
-    return `<div style="font-size:0.85rem; display:flex; justify-content:space-between">
-                <span>${s.pt}</span>
-                <span style="color:var(--gold)">+${profBonus + Math.floor((attrScore - 10) / 2)}</span>
-              </div>`;
-  }).join('')}
-          </div>
-        </div>
-
-        ${specHTML}
-
-        <div class="editor-section">
-          <div class="editor-section-title">Equipamento e Dinheiro</div>
-          <div style="font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:10px">₽ ${sheet.money}</div>
-          <div style="font-size:0.75rem; color:var(--text-secondary); max-height:150px; overflow-y:auto">
-            ${(sheet.equipment || []).join('<br>')}
-          </div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:var(--gap-lg)">
-        <div class="editor-section">
-          <div class="editor-section-title">Time Pokémon (${sheet.pokemon.length}/${pokeslots})</div>
-          <div class="pokemon-slots-grid" id="pokemon-slots-container">
-            ${pokemonSlotsHTML}
-          </div>
-        </div>
-
-        <div class="editor-section">
-          <div class="editor-section-title">Configurações Básicas</div>
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">Nome</label>
-              <input type="text" id="ed-name" class="form-input" value="${sheet.name}">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Nível</label>
-              <div class="level-control-main">
-                <button class="level-btn-main" id="btn-trainer-lvl-minus">-</button>
-                <span class="level-display-main">Nível ${sheet.level}</span>
-                <button class="level-btn-main" id="btn-trainer-lvl-plus">+</button>
-              </div>
-            </div>
-            <div class="form-group" style="grid-column: 1 / -1">
-              <label class="form-label">Caminho</label>
-              ${pathContent}
-            </div>
-          </div>
-        </div>
-
-        ${featuresHTML}
-      </div>
+    <div class="sheet-tab-container">
+      ${activeTab === 'resumo' ? renderResumo() : ''}
+      ${activeTab === 'time' ? renderTime() : ''}
+      ${activeTab === 'notas' ? renderNotas() : ''}
     </div>`;
+
+  // --- Event Listeners ---
 
   document.getElementById('btn-close-editor').onclick = closeSheetEditor;
   document.getElementById('btn-save-sheet').onclick = saveSheetEditor;
-  document.getElementById('btn-open-attr-edit').onclick = openEditAttributesModal;
 
-  // Sincronizar nome e path dinamicamente com atualização imediata da UI
-  const nameInput = document.getElementById('ed-name');
-  if (nameInput) {
-    nameInput.oninput = (e) => {
-      sheet.name = e.target.value;
-      saveSheets();
-      // Atualiza apenas o título/subtítulo sem perder o foco do input
-      const title = document.querySelector('#sheet-editor-view .page-title');
-      if (title) title.textContent = sheet.name;
-    };
-  }
-
-  const pathSelect = document.getElementById('ed-path');
-  if (pathSelect) {
-    pathSelect.onchange = (e) => {
-      sheet.path = e.target.value;
-      saveSheets();
-      // Re-renderiza a ficha inteira para atualizar as descrições das habilidades
+  // Tab switching
+  view.querySelectorAll('.sheet-tab').forEach(tab => {
+    tab.onclick = () => {
+      state.activeSheetTab = tab.dataset.tab;
       renderSheetEditor(renderWizard);
     };
+  });
+
+  if (activeTab === 'resumo') {
+    document.getElementById('btn-open-attr-edit').onclick = openEditAttributesModal;
+    
+    const nameInput = document.getElementById('ed-name');
+    if (nameInput) {
+      nameInput.oninput = (e) => {
+        sheet.name = e.target.value;
+        const title = document.querySelector('#sheet-editor-view .page-title');
+        if (title) title.textContent = sheet.name;
+      };
+    }
+
+    const pathSelect = document.getElementById('ed-path');
+    if (pathSelect) {
+      pathSelect.onchange = (e) => {
+        sheet.path = e.target.value;
+        renderSheetEditor(renderWizard);
+      };
+    }
+
+    const equipInput = document.getElementById('ed-equipment');
+    if (equipInput) {
+      equipInput.oninput = (e) => {
+        sheet.equipment = e.target.value.split('\n').filter(line => line.trim() !== '');
+      };
+    }
+  }
+
+  if (activeTab === 'notas') {
+    const notesInput = document.getElementById('ed-notes');
+    if (notesInput) {
+      notesInput.oninput = (e) => {
+        sheet.notes = e.target.value;
+      };
+    }
   }
 }
 

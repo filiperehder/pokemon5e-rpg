@@ -27,29 +27,51 @@
       <span>Companheiro de Aventura</span>
     </div>
     <ul class="sidebar-nav">
-      <li class="nav-item" data-page="pokedex">
-        <span class="nav-icon">🎴</span>
-        <span>Pokédex</span>
-      </li>
-      <li class="nav-item" data-page="regras">
-        <span class="nav-icon">📖</span>
-        <span>Regras</span>
-      </li>
-      <li class="nav-item" data-page="fichas">
+      <li class="nav-item active" data-page="fichas">
         <span class="nav-icon">📋</span>
         <span>Fichas</span>
       </li>
-      <li class="nav-item" data-page="movimentos">
-        <span class="nav-icon">⚡</span>
-        <span>Movimentos</span>
+      
+      <!-- Menu Geral -->
+      <li class="nav-group">
+        <div class="nav-group-header">
+          <span class="nav-icon">🛠️</span>
+          <span>Geral</span>
+          <span class="nav-arrow">▼</span>
+        </div>
+        <ul class="nav-group-items">
+          <li class="nav-item" data-page="pokedex">
+            <span class="nav-icon">🎴</span>
+            <span>Pokédex</span>
+          </li>
+          <li class="nav-item" data-page="regras">
+            <span class="nav-icon">📖</span>
+            <span>Regras</span>
+          </li>
+          <li class="nav-item" data-page="movimentos">
+            <span class="nav-icon">⚡</span>
+            <span>Movimentos</span>
+          </li>
+        </ul>
       </li>
-      <li class="nav-item" data-page="encontros">
-        <span class="nav-icon">🎲</span>
-        <span>Encontros</span>
-      </li>
-      <li class="nav-item" data-page="mapa">
-        <span class="nav-icon">🗺️</span>
-        <span>Mapa</span>
+
+      <!-- Menu Mestre -->
+      <li class="nav-group">
+        <div class="nav-group-header">
+          <span class="nav-icon">👑</span>
+          <span>Mestre</span>
+          <span class="nav-arrow">▼</span>
+        </div>
+        <ul class="nav-group-items">
+          <li class="nav-item" data-page="encontros">
+            <span class="nav-icon">🎲</span>
+            <span>Encontros</span>
+          </li>
+          <li class="nav-item" data-page="mapa">
+            <span class="nav-icon">🗺️</span>
+            <span>Mapa</span>
+          </li>
+        </ul>
       </li>
     </ul>
     <div class="sidebar-footer">
@@ -283,31 +305,37 @@
 
   <!-- Bottom Nav (Mobile) -->
   <nav class="bottom-nav">
-    <div class="bottom-nav-item" data-page="pokedex">
-      <span class="nav-icon">🎴</span>
-      <span>Pokédex</span>
-    </div>
-    <div class="bottom-nav-item" data-page="regras">
-      <span class="nav-icon">📖</span>
-      <span>Regras</span>
-    </div>
     <div class="bottom-nav-item" data-page="fichas">
       <span class="nav-icon">📋</span>
       <span>Fichas</span>
     </div>
-    <div class="bottom-nav-item" data-page="movimentos">
-      <span class="nav-icon">⚡</span>
-      <span>Movimentos</span>
+    <div class="bottom-nav-item" data-group="geral">
+      <span class="nav-icon">🛠️</span>
+      <span>Geral</span>
     </div>
-    <div class="bottom-nav-item" data-page="encontros">
-      <span class="nav-icon">🎲</span>
-      <span>Encontros</span>
-    </div>
-    <div class="bottom-nav-item" data-page="mapa">
-      <span class="nav-icon">🗺️</span>
-      <span>Mapa</span>
+    <div class="bottom-nav-item" data-group="mestre">
+      <span class="nav-icon">👑</span>
+      <span>Mestre</span>
     </div>
   </nav>
+
+  <!-- Mobile Menu Overlays -->
+  <div id="mobile-menu-geral" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">Geral <button class="btn-close" onclick="closeMobileMenu()">✕</button></div>
+      <div class="mobile-menu-item" data-page="pokedex">🎴 Pokédex</div>
+      <div class="mobile-menu-item" data-page="regras">📖 Regras</div>
+      <div class="mobile-menu-item" data-page="movimentos">⚡ Movimentos</div>
+    </div>
+  </div>
+
+  <div id="mobile-menu-mestre" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">Mestre <button class="btn-close" onclick="closeMobileMenu()">✕</button></div>
+      <div class="mobile-menu-item" data-page="encontros">🎲 Encontros</div>
+      <div class="mobile-menu-item" data-page="mapa">🗺️ Mapa</div>
+    </div>
+  </div>
 
 </div><!-- /.app-wrapper -->
 
