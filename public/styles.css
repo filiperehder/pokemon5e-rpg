@@ -2833,3 +2833,23 @@ ul, ol { list-style: none; }
     font-size: 0.65rem;
   }
 }
+
+/* ── Trainer Pokedex Styles ────────────────────────────────── */
+.pokedex-card-unknown {
+  background: rgba(255,255,255,0.02) !important;
+  border-color: var(--border) !important;
+  opacity: 0.6;
+  cursor: default !important;
+}
+.pokedex-card-unknown .pokemon-card-name {
+  color: var(--text-muted);
+  font-style: italic;
+}
+.pokedex-card-unknown img {
+  filter: brightness(0) grayscale(1) opacity(0.3) !important;
+}
+.pokedex-card-unknown .type-badge {
+  background: var(--bg-elevated) !important;
+  color: transparent !important;
+  border-color: var(--border) !important;
+}

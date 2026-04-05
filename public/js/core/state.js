@@ -5,6 +5,7 @@ export const state = {
   moveMap: {},
   activePage: 'fichas',
   activeSheetTab: 'resumo',
+  pokedexOnlyRegistered: false,
   selectedPokemon: null,
   selectedMove: null,
   pokedexFilters: { search: '', type: '', cr: '', size: '' },

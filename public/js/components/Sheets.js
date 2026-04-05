@@ -1,8 +1,14 @@
 import { state } from '../core/state.js';
-import { getTypeColor, typeBadgeHTML, spriteURL, showToast, formatMod } from '../core/utils.js';
+import { getTypeColor, typeBadgeHTML, spriteURL, showToast, formatMod, padNum } from '../core/utils.js';
 import { TRAINER_PATHS, SPEC_DESCRIPTIONS, POKESLOTS_BY_LEVEL, TRAINER_SKILLS, TM_MAP, PATH_DESCRIPTIONS, SPEC_ATTR_BONUS, TRAINER_PROGRESSION } from '../core/constants.js';
 import { calculateStats, calculateAC, calculateHP } from '../core/pokemon-stats.js';
 import { getItemSuggestions } from '../core/data-service.js';
+import { openPokemonDetail } from './Pokedex.js';
+
+window.openPokemonDetailFromPokedex = (num) => {
+  const p = state.allPokemon.find(pk => pk.number === num);
+  if (p) openPokemonDetail(p);
+};
 
 export function loadSheets() {
   try {
@@ -24,6 +30,10 @@ export function loadSheets() {
         migrated = true;
       }
       if (!sheet.items) sheet.items = [];
+      if (!sheet.pokedex) {
+        sheet.pokedex = [];
+        migrated = true;
+      }
     });
     if (migrated) saveSheets();
 
@@ -122,6 +132,7 @@ export function newSheet() {
     ],
     money: 1000,
     pokemon: [],
+    pokedex: [],
     currentStep: 1
   };
   state.sheets.push(sheet);
@@ -361,6 +372,72 @@ export function renderSheetEditor(renderWizard) {
       </div>`;
   };
 
+  const renderPokedexTab = () => {
+    const pokedex = sheet.pokedex || [];
+    const pokemonList = state.allPokemon;
+    const onlyRegistered = state.pokedexOnlyRegistered;
+
+    // Filter list if requested
+    const displayList = onlyRegistered 
+      ? pokemonList.filter(p => pokedex.includes(p.number))
+      : pokemonList;
+
+    return `
+      <div class="editor-section">
+        <div class="editor-section-title">Minha Pokédex (${pokedex.length}/${pokemonList.length})</div>
+        
+        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:20px; align-items:center">
+          <div style="flex:1; min-width:200px; display:flex; gap:10px">
+            <input type="text" id="pokedex-reg-input" class="form-input" placeholder="Número ou nome do Pokémon visto..." list="all-pokemon-list" style="flex:1">
+            <datalist id="all-pokemon-list">
+              ${pokemonList.map(p => `<option value="${p.name}">`).join('')}
+            </datalist>
+            <button class="btn btn-primary" id="btn-reg-pokedex">Registrar</button>
+          </div>
+          
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.85rem; color:var(--text-secondary)">
+            <input type="checkbox" id="chk-pokedex-filter" ${onlyRegistered ? 'checked' : ''}>
+            Mostrar apenas registrados
+          </label>
+        </div>
+
+        <div class="pokemon-slots-grid" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));">
+          ${displayList.length === 0 && onlyRegistered 
+            ? '<div style="grid-column:1/-1; text-align:center; padding:40px; color:var(--text-muted)">Nenhum Pokémon registrado ainda.</div>' 
+            : displayList.map(p => trainerPokedexCardHTML(p, pokedex.includes(p.number))).join('')}
+        </div>
+      </div>`;
+  };
+
+  const trainerPokedexCardHTML = (p, isRegistered) => {
+    if (isRegistered) {
+      const typeColor = getTypeColor(p.types[0]?.pt || '');
+      return `
+        <div class="pokemon-card" style="border-color:${typeColor}33; cursor:pointer" onclick="openPokemonDetailFromPokedex(${p.number})">
+          <div class="pokemon-card-num">#${padNum(p.number)}</div>
+          <div class="pokemon-card-sprite">
+            <img src="${spriteURL(p.number)}" alt="${p.name}" loading="lazy">
+          </div>
+          <div class="pokemon-card-name">${p.name}</div>
+          <div class="pokemon-card-types">
+            ${p.types.map(t => typeBadgeHTML(t)).join('')}
+          </div>
+        </div>`;
+    } else {
+      return `
+        <div class="pokemon-card pokedex-card-unknown">
+          <div class="pokemon-card-num">#${padNum(p.number)}</div>
+          <div class="pokemon-card-sprite">
+            <img src="${spriteURL(p.number)}" alt="???" loading="lazy" style="filter: brightness(0) opacity(0.3)">
+          </div>
+          <div class="pokemon-card-name">Desconhecido</div>
+          <div class="pokemon-card-types" style="visibility:hidden">
+            <span class="type-badge">???</span>
+          </div>
+        </div>`;
+    }
+  };
+
   const renderTime = () => {
     const pokemonSlotsHTML = Array.from({ length: pokeslots }, (_, i) => {
       const p = sheet.pokemon?.[i];
@@ -400,6 +477,7 @@ export function renderSheetEditor(renderWizard) {
     <div class="sheet-tabs">
       <div class="sheet-tab ${activeTab === 'resumo' ? 'active' : ''}" data-tab="resumo">Resumo</div>
       <div class="sheet-tab ${activeTab === 'itens' ? 'active' : ''}" data-tab="itens">Itens</div>
+      <div class="sheet-tab ${activeTab === 'pokedex' ? 'active' : ''}" data-tab="pokedex">Pokédex</div>
       <div class="sheet-tab ${activeTab === 'time' ? 'active' : ''}" data-tab="time">Time</div>
       <div class="sheet-tab ${activeTab === 'notas' ? 'active' : ''}" data-tab="notas">Notas</div>
     </div>
@@ -407,6 +485,7 @@ export function renderSheetEditor(renderWizard) {
     <div class="sheet-tab-container">
       ${activeTab === 'resumo' ? renderResumo() : ''}
       ${activeTab === 'itens' ? renderItens() : ''}
+      ${activeTab === 'pokedex' ? renderPokedexTab() : ''}
       ${activeTab === 'time' ? renderTime() : ''}
       ${activeTab === 'notas' ? renderNotas() : ''}
     </div>`;
@@ -492,6 +571,47 @@ export function renderSheetEditor(renderWizard) {
         }
       };
     });
+  }
+
+  if (activeTab === 'pokedex') {
+    const regBtn = document.getElementById('btn-reg-pokedex');
+    const input = document.getElementById('pokedex-reg-input');
+
+    if (regBtn && input) {
+      regBtn.onclick = () => {
+        const val = input.value.trim();
+        if (!val) return;
+
+        let p = null;
+        if (!isNaN(val)) {
+          p = state.allPokemon.find(pk => pk.number === parseInt(val));
+        } else {
+          p = state.allPokemon.find(pk => pk.name.toLowerCase() === val.toLowerCase());
+        }
+
+        if (p) {
+          if (!sheet.pokedex.includes(p.number)) {
+            sheet.pokedex.push(p.number);
+            sheet.pokedex.sort((a, b) => a - b);
+            saveSheets();
+            renderSheetEditor(renderWizard);
+            showToast(`${p.name} registrado na Pokédex!`);
+          } else {
+            showToast(`${p.name} já está registrado.`);
+          }
+        } else {
+          showToast('Pokémon não encontrado.');
+        }
+      };
+    }
+
+    const filterChk = document.getElementById('chk-pokedex-filter');
+    if (filterChk) {
+      filterChk.onchange = (e) => {
+        state.pokedexOnlyRegistered = e.target.checked;
+        renderSheetEditor(renderWizard);
+      };
+    }
   }
 
   if (activeTab === 'notas') {
@@ -829,6 +949,7 @@ export function newSheetAndAddPokemon() {
       level: p.level,
       selectedMoves: p.moves.starting ? p.moves.starting.slice(0, 4) : []
     }],
+    pokedex: [],
     currentStep: 1
   };
   state.sheets.push(sheet);
