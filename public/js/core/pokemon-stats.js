@@ -68,17 +68,28 @@ export function calculateAC(baseAC, level, dexMod, otherBonuses = 0) {
   return ac + otherBonuses;
 }
 
-export function calculateHP(baseHP, level, conMod, hpIncreases = []) {
-  // If we have custom increases (rolled or average), use them
-  if (hpIncreases.length > 0) {
-    let hp = baseHP + (level - 1) * conMod;
-    hpIncreases.forEach(inc => hp += inc);
-    return hp;
+export function calculateHP(baseHP, level, conMod, hpIncreases = [], baseCON = 10) {
+  const originalConMod = Math.floor((baseCON - 10) / 2);
+  const hitDieMax = baseHP - originalConMod;
+  
+  // Level 1 HP adjusted for current CON mod
+  let hp = hitDieMax + conMod;
+  
+  // Add increases for higher levels
+  if (level > 1) {
+    if (hpIncreases.length > 0) {
+      // Use provided increases
+      hpIncreases.forEach(inc => hp += inc);
+      // conMod is usually already included in the increases if rolled, 
+      // but if the CON mod changes later (nature/ASI), we need to adjust!
+      // This is complex. Let's assume increases are just the DIE rolls.
+      hp += (level - 1) * conMod;
+    } else {
+      // Default: use 5e average (Die/2 + 1)
+      const avgIncrease = Math.floor(hitDieMax / 2) + 1;
+      hp += (level - 1) * (avgIncrease + conMod);
+    }
   }
   
-  // Default: use 0 as default increase if not specified? 
-  // D&D 5e usually uses hit die average if not rolled. 
-  // Let's assume user will input the rolled values or we provide a default.
-  // Actually, the prompt says "adicionar nova vida", suggesting we should provide a way to add it.
-  return baseHP; 
+  return Math.max(1, hp);
 }

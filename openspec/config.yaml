@@ -1,0 +1,23 @@
+schema: spec-driven
+
+# Project context
+# This is shown to AI when creating artifacts.
+context: |
+  Domain: Pokémon 5e RPG Companion App (Tabletop RPG)
+  This application automates and references rules for the "Pokémon in 5th Edition" tabletop RPG adaptation by Erudite Factotum.
+  
+  Key Domain Concepts:
+  - Pokémon Attributes: Follows standard D&D 5e Attributes, but localized to PT-BR (FOR/Força, DES/Destreza, CON/Constituição, INT/Inteligência, SAB/Sabedoria, CAR/Carisma). Stat modifiers are calculated via standard 5e rules: Math.floor((val - 10) / 2).
+  - Pokémon Mechanics: Features Natures (buff one stat, debuff another), AC evolution scaling, HP calculation, and Ability Score Improvements (ASI).
+  - Trainer Progression: Includes Trainer Paths (e.g., Ace Trainer, Hobbyist) and Specializations (e.g., Bug Maniac), scaling up to level 20 with specific features and Pokéslots limits.
+  - Game Systems: Includes a Pokédex (Generation 1, 164 Pokémon), Move list (624 moves), Encounter Generator, Map exploration, and full interactive Trainer/Pokémon sheets (Fichas).
+  
+  Tech Stack & Architecture:
+  - Frontend: Native Vanilla JavaScript organized entirely as ES Modules (`public/js/core/` for logic/state/constants, `public/js/components/` for UI rendering like Pokedex, Moves, Sheets). 
+  - Central State: Maintained in `public/js/core/state.js` using a simple exported object mapping selected entities and active views.
+  - UI: Built as a Single Page Application (SPA) driven by Vanilla JS DOM manipulation (no frameworks). Uses CSS Custom Properties for theming. Features modals, slide panels, and tab-based navigation inside `index.html`.
+  - Backend: Extremely lightweight Node.js script (`server.js`) strictly for serving static files. Data comes from static JSON and local storage.
+  
+  Conventions:
+  - Language: The code uses English for variable names and internal logic, but the entire user interface, data labels, and rules text are strictly in Brazilian Portuguese (pt-BR).
+  - Code Style: Functional utility methods (e.g., `calculateStats`, `calculateAC`) paired with modular DOM manipulation.

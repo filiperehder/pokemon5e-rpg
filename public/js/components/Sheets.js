@@ -426,7 +426,7 @@ export function filledSlotHTML(pokemonSlot, slotIdx, sheet) {
   // Calculate current stats based on level, nature, ASI
   const { modifiers } = calculateStats(p.stats, currentLevel, pokemonSlot.nature || 'Hardy', pokemonSlot.asi || {}, pokemonSlot.evolutionBonus || {});
   const ac = calculateAC(p.armorClass, currentLevel, modifiers.DES);
-  const hp = pokemonSlot.hpMax || calculateHP(p.hitPoints, currentLevel, modifiers.CON, pokemonSlot.hpIncreases || []);
+  const hp = pokemonSlot.hpMax || calculateHP(p.hitPoints, currentLevel, modifiers.CON, pokemonSlot.hpIncreases || [], p.stats.CON);
 
   const available = getAvailableMoves(p, currentLevel);
   const selected = pokemonSlot.selectedMoves || [];
@@ -640,7 +640,7 @@ export function addPokemonToSheet(sheetIdx) {
     name: p.name,
     level: p.level || 1,
     nature: 'Hardy',
-    hpMax: p.hitPoints,
+    hpMax: null,
     hpIncreases: [],
     asi: {},
     evolutionBonus: {},

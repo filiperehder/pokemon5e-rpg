@@ -361,7 +361,7 @@ export function selectStarter(number) {
     name: p.name,
     level: p.level || 1,
     nature: 'Hardy',
-    hpMax: p.hitPoints,
+    hpMax: null,
     hpIncreases: [],
     asi: {},
     evolutionBonus: {},

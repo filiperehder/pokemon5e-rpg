@@ -226,7 +226,7 @@ function handlePick(pokemon) {
     name: pokemon.name,
     level: pokemon.level || 1,
     nature: 'Hardy',
-    hpMax: pokemon.hitPoints,
+    hpMax: null,
     hpIncreases: [],
     asi: {},
     evolutionBonus: {},
