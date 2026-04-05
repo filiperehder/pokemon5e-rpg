@@ -43,3 +43,39 @@ export function populateFilters() {
     });
   }
 }
+
+export function getItemSuggestions() {
+  const itemsChapter = state.allRules.find(c => c.id === 'items');
+  if (!itemsChapter) return [];
+
+  const itemNames = new Set();
+  
+  // Rules items are usually in markdown-like tables in sections or subsections
+  // We'll look for strings that look like | Name | ... or are in the content
+  const processText = (text) => {
+    if (!text) return;
+    // Match common table patterns in this project's rules.json
+    // e.g. | Pokéball | ... | ... |
+    const lines = text.split('\n');
+    lines.forEach(line => {
+      if (line.includes('|') && !line.includes('---')) {
+        const parts = line.split('|').map(p => p.trim()).filter(Boolean);
+        if (parts.length >= 2) {
+          // The first column is usually the item name
+          // Validate it's not a header like "Item"
+          const candidate = parts[0];
+          if (candidate && candidate !== 'Item' && candidate !== 'TM' && candidate !== 'Berries') {
+            itemNames.add(candidate);
+          }
+        }
+      }
+    });
+  };
+
+  itemsChapter.sections.forEach(s => {
+    processText(s.content);
+    if (s.subsections) s.subsections.forEach(ss => processText(s.content || ss.content));
+  });
+
+  return Array.from(itemNames).sort();
+}

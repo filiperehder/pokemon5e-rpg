@@ -2,10 +2,31 @@ import { state } from '../core/state.js';
 import { getTypeColor, typeBadgeHTML, spriteURL, showToast, formatMod } from '../core/utils.js';
 import { TRAINER_PATHS, SPEC_DESCRIPTIONS, POKESLOTS_BY_LEVEL, TRAINER_SKILLS, TM_MAP, PATH_DESCRIPTIONS, SPEC_ATTR_BONUS, TRAINER_PROGRESSION } from '../core/constants.js';
 import { calculateStats, calculateAC, calculateHP } from '../core/pokemon-stats.js';
+import { getItemSuggestions } from '../core/data-service.js';
 
 export function loadSheets() {
   try {
     state.sheets = JSON.parse(localStorage.getItem('pokemon5e_sheets') || '[]');
+    
+    // Migration: equipment (strings) -> items (objects)
+    let migrated = false;
+    state.sheets.forEach(sheet => {
+      if (!sheet.items && sheet.equipment) {
+        sheet.items = sheet.equipment.map(str => {
+          // Simple parser for "5 Pokéballs" or "Potion"
+          const match = str.match(/^(\d+)\s+(.+)$/);
+          if (match) {
+            return { name: match[2], qty: parseInt(match[1]) };
+          }
+          return { name: str, qty: 1 };
+        });
+        delete sheet.equipment;
+        migrated = true;
+      }
+      if (!sheet.items) sheet.items = [];
+    });
+    if (migrated) saveSheets();
+
   } catch { state.sheets = []; }
 }
 
@@ -94,7 +115,11 @@ export function newSheet() {
     skills: [],
     specSkills: [],
     specAttrBonus: null,
-    equipment: ['5 Pokéballs', '1 Potion', 'Pokédex'],
+    items: [
+      { name: 'Pokéballs', qty: 5 },
+      { name: 'Potion', qty: 1 },
+      { name: 'Pokédex', qty: 1 }
+    ],
     money: 1000,
     pokemon: [],
     currentStep: 1
@@ -291,10 +316,46 @@ export function renderSheetEditor(renderWizard) {
           </div>
           ${specHTML}
           ${featuresHTML}
-          <div class="editor-section">
-            <div class="editor-section-title">Equipamento e Dinheiro</div>
-            <div style="font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:10px">₽ ${sheet.money}</div>
-            <textarea id="ed-equipment" class="form-input" style="width:100%; min-height:100px; font-size:0.8rem">${(sheet.equipment || []).join('\n')}</textarea>
+        </div>
+      </div>`;
+  };
+
+  const renderItens = () => {
+    const suggestions = getItemSuggestions();
+    const items = sheet.items || [];
+
+    return `
+      <div class="editor-section">
+        <div class="editor-section-title">Gerenciar Inventário</div>
+        
+        <div style="display:flex; gap:10px; margin-bottom:20px">
+          <input type="text" id="item-search-input" class="form-input" placeholder="Buscar ou digitar novo item..." list="item-suggestions" style="flex:1">
+          <datalist id="item-suggestions">
+            ${suggestions.map(s => `<option value="${s}">`).join('')}
+          </datalist>
+          <button class="btn btn-primary" id="btn-add-item">Adicionar</button>
+        </div>
+
+        <div class="inventory-list">
+          ${items.length === 0 ? '<div style="text-align:center; padding:20px; color:var(--text-muted)">Nenhum item no inventário</div>' : ''}
+          ${items.map((item, idx) => `
+            <div class="inventory-row" style="display:flex; align-items:center; gap:15px; padding:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-md); margin-bottom:8px">
+              <div style="flex:1; font-weight:600">${item.name}</div>
+              <div class="level-control-mini" style="margin:0">
+                <button class="level-btn btn-item-qty" data-idx="${idx}" data-delta="-1">-</button>
+                <span style="min-width:30px; text-align:center; font-family:var(--font-heading); font-weight:700">${item.qty}</span>
+                <button class="level-btn btn-item-qty" data-idx="${idx}" data-delta="1">+</button>
+              </div>
+              <button class="btn btn-sm btn-outline btn-icon btn-remove-item" data-idx="${idx}" style="color:var(--danger); border-color:rgba(255,71,87,0.3)">✕</button>
+            </div>
+          `).join('')}
+        </div>
+
+        <div style="margin-top:20px; padding:15px; background:rgba(212,175,55,0.05); border-radius:var(--r-md); border:1px dashed var(--gold-dim)">
+          <div style="font-size:0.75rem; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px">Dinheiro Disponível</div>
+          <div style="display:flex; align-items:center; gap:10px">
+            <span style="font-size:1.2rem; font-weight:700; color:var(--gold)">₽</span>
+            <input type="number" id="ed-money" class="form-input" value="${sheet.money}" style="max-width:120px; font-weight:700">
           </div>
         </div>
       </div>`;
@@ -338,12 +399,14 @@ export function renderSheetEditor(renderWizard) {
 
     <div class="sheet-tabs">
       <div class="sheet-tab ${activeTab === 'resumo' ? 'active' : ''}" data-tab="resumo">Resumo</div>
+      <div class="sheet-tab ${activeTab === 'itens' ? 'active' : ''}" data-tab="itens">Itens</div>
       <div class="sheet-tab ${activeTab === 'time' ? 'active' : ''}" data-tab="time">Time</div>
       <div class="sheet-tab ${activeTab === 'notas' ? 'active' : ''}" data-tab="notas">Notas</div>
     </div>
 
     <div class="sheet-tab-container">
       ${activeTab === 'resumo' ? renderResumo() : ''}
+      ${activeTab === 'itens' ? renderItens() : ''}
       ${activeTab === 'time' ? renderTime() : ''}
       ${activeTab === 'notas' ? renderNotas() : ''}
     </div>`;
@@ -380,13 +443,55 @@ export function renderSheetEditor(renderWizard) {
         renderSheetEditor(renderWizard);
       };
     }
+  }
 
-    const equipInput = document.getElementById('ed-equipment');
-    if (equipInput) {
-      equipInput.oninput = (e) => {
-        sheet.equipment = e.target.value.split('\n').filter(line => line.trim() !== '');
+  if (activeTab === 'itens') {
+    const addBtn = document.getElementById('btn-add-item');
+    const input = document.getElementById('item-search-input');
+    const moneyInput = document.getElementById('ed-money');
+
+    if (addBtn && input) {
+      addBtn.onclick = () => {
+        const name = input.value.trim();
+        if (!name) return;
+        const existing = sheet.items.find(i => i.name.toLowerCase() === name.toLowerCase());
+        if (existing) {
+          existing.qty++;
+        } else {
+          sheet.items.push({ name, qty: 1 });
+        }
+        saveSheets();
+        renderSheetEditor(renderWizard);
       };
     }
+
+    if (moneyInput) {
+      moneyInput.oninput = (e) => {
+        sheet.money = parseInt(e.target.value) || 0;
+        saveSheets();
+      };
+    }
+
+    view.querySelectorAll('.btn-item-qty').forEach(btn => {
+      btn.onclick = () => {
+        const idx = parseInt(btn.dataset.idx);
+        const delta = parseInt(btn.dataset.delta);
+        sheet.items[idx].qty = Math.max(1, sheet.items[idx].qty + delta);
+        saveSheets();
+        renderSheetEditor(renderWizard);
+      };
+    });
+
+    view.querySelectorAll('.btn-remove-item').forEach(btn => {
+      btn.onclick = () => {
+        const idx = parseInt(btn.dataset.idx);
+        if (confirm(`Remover "${sheet.items[idx].name}" do inventário?`)) {
+          sheet.items.splice(idx, 1);
+          saveSheets();
+          renderSheetEditor(renderWizard);
+        }
+      };
+    });
   }
 
   if (activeTab === 'notas') {
@@ -712,7 +817,11 @@ export function newSheetAndAddPokemon() {
     skills: [],
     specSkills: [],
     specAttrBonus: null,
-    equipment: ['5 Pokéballs', '1 Potion', 'Pokédex'],
+    items: [
+      { name: 'Pokéballs', qty: 5 },
+      { name: 'Potion', qty: 1 },
+      { name: 'Pokédex', qty: 1 }
+    ],
     money: 1000,
     pokemon: [{
       number: p.number,
