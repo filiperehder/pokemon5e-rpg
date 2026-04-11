@@ -235,47 +235,89 @@
     ══════════════════════════════════════════════════════════════ -->
     <section id="page-encontros" class="page">
       <div class="page-header">
-        <h1 class="page-title">Gerador de Encontros</h1>
-        <p class="page-subtitle">Gere NPCs Pokémon com movimentos aleatórios para seus combates</p>
+        <h1 class="page-title">Mestre Pokémon</h1>
+        <p class="page-subtitle">Ferramentas de geração para combates e encontros</p>
       </div>
 
-      <div class="encounter-layout">
-        <div class="encounter-controls editor-section">
-          <div class="editor-section-title">Configurar NPC</div>
-          
-          <div class="form-group">
-            <label class="form-label">Pokémon</label>
-            <div class="select-search-wrap" style="position:relative">
-              <input type="text" id="encounter-poke-search" class="form-input" placeholder="Buscar Pokémon...">
-              <div id="encounter-poke-results" class="select-results hidden"></div>
+      <div class="sheet-tabs" style="margin-bottom: 25px;">
+        <div class="sheet-tab active" data-encounter-tab="single">Pokémon Único</div>
+        <div class="sheet-tab" data-encounter-tab="trainer">Treinador NPC</div>
+      </div>
+
+      <div id="encounter-tab-single" class="encounter-tab-content">
+        <div class="encounter-layout">
+          <div class="encounter-controls editor-section">
+            <div class="editor-section-title">Configurar Pokémon</div>
+
+            <div class="form-group">
+              <label class="form-label">Pokémon</label>
+              <div class="select-search-wrap" style="position:relative">
+                <input type="text" id="encounter-poke-search" class="form-input" placeholder="Buscar Pokémon...">
+                <div id="encounter-poke-results" class="select-results hidden"></div>
+              </div>
             </div>
+
+            <div class="form-group">
+              <label class="form-label">Nível</label>
+              <div class="level-control-main">
+                <button class="level-btn-main" id="btn-encounter-lvl-minus">-</button>
+                <span class="level-display-main" id="encounter-lvl-display">Nível 1</span>
+                <button class="level-btn-main" id="btn-encounter-lvl-plus">+</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="btn-generate-encounter" style="margin-top:20px; width:100%">
+              🎲 Gerar Pokémon Aleatório
+            </button>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Nível</label>
-            <div class="level-control-main">
-              <button class="level-btn-main" id="btn-encounter-lvl-minus">-</button>
-              <span class="level-display-main" id="encounter-lvl-display">Nível 1</span>
-              <button class="level-btn-main" id="btn-encounter-lvl-plus">+</button>
+          <div id="encounter-result-area" class="encounter-result">
+            <!-- Rendered by JS -->
+            <div class="empty-state">
+              <div class="empty-state-icon">🎲</div>
+              <div class="empty-state-title">Aguardando geração</div>
+              <div class="empty-state-text">Selecione um Pokémon e nível para gerar um NPC</div>
             </div>
           </div>
-
-          <button class="btn btn-primary btn-block" id="btn-generate-encounter" style="margin-top:20px; width:100%">
-            🎲 Gerar NPC Aleatório
-          </button>
         </div>
+      </div>
 
-        <div id="encounter-result-area" class="encounter-result">
-          <!-- Rendered by JS -->
-          <div class="empty-state">
-            <div class="empty-state-icon">🎲</div>
-            <div class="empty-state-title">Aguardando geração</div>
-            <div class="empty-state-text">Selecione um Pokémon e nível para gerar um NPC</div>
+      <div id="encounter-tab-trainer" class="encounter-tab-content hidden">
+        <div class="encounter-layout">
+          <div class="encounter-controls editor-section">
+            <div class="editor-section-title">Configurar Treinador</div>
+
+            <div class="form-group">
+              <label class="form-label">Nível do Treinador</label>
+              <div class="level-control-main">
+                <button class="level-btn-main" id="btn-npc-lvl-minus">-</button>
+                <span class="level-display-main" id="npc-lvl-display">Nível 1</span>
+                <button class="level-btn-main" id="btn-npc-lvl-plus">+</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="btn-generate-npc" style="margin-top:20px; width:100%">
+              🎲 Gerar Time de NPC
+            </button>
+
+            <div id="npc-generation-info" style="margin-top:15px; font-size:0.75rem; color:var(--text-muted); line-height:1.4">
+              <strong>Regras de Geração:</strong><br>
+              • Pokémon no time: <span id="npc-info-count">1</span><br>
+              • Soma de níveis: <span id="npc-info-levels">1</span><br>
+              • CR Máximo: <span id="npc-info-cr">1</span>
+            </div>
+          </div>
+
+          <div id="npc-result-area" class="encounter-result">
+            <div class="empty-state">
+              <div class="empty-state-icon">⚔️</div>
+              <div class="empty-state-title">Aguardando geração</div>
+              <div class="empty-state-text">Selecione o nível do NPC para gerar seu time de combate</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- ══════════════════════════════════════════════════════════
          PAGE: MAPA
     ══════════════════════════════════════════════════════════════ -->

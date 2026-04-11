@@ -2853,3 +2853,54 @@ ul, ol { list-style: none; }
   color: transparent !important;
   border-color: var(--border) !important;
 }
+
+/* ── NPC Team Generator ───────────────────────────────────────── */
+.npc-team-results {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--gap-lg);
+  margin-top: var(--gap-lg);
+  animation: pageFadeIn var(--t-base) ease-out;
+}
+
+.npc-team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.npc-team-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+
+.npc-team-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+}
+
+.npc-team-info {
+  flex: 1;
+}
+
+.npc-team-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.npc-team-meta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.hidden {
+  display: none !important;
+}

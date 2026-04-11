@@ -19,7 +19,8 @@ export const state = {
   encounter: {
     selectedPokemon: null,
     level: 1,
-    generatedResult: null
+    generatedResult: null,
+    generatedNpcTeam: null
   },
 
   mapData: null,
