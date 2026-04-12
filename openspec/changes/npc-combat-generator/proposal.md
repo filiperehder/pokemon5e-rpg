@@ -5,7 +5,11 @@ Mestres de jogo (DMs) precisam de uma forma rápida e eficiente de gerar NPCs de
 ## What Changes
 
 - Adição de um Gerador de NPCs na aba do Mestre (Master Tab).
-- Implementação de lógica de geração automática de treinadores baseada no nível escolhido.
+- Implementação de lógica de geração automática de treinadores baseada no nível escolhido e na dificuldade (Fácil, Médio, Difícil).
+- Filtro de CR por dificuldade:
+  - **Fácil**: Prioriza Pokémon com CR mais baixo (até 1/3 do Max CR).
+  - **Médio**: Distribuição equilibrada em torno da metade do Max CR.
+  - **Difícil**: Prioriza Pokémon com CR entre a metade e o Max CR permitido.
 - Distribuição de níveis entre os Pokémon do NPC baseada em uma tabela de progressão específica (ex: Nível 2 tem 3 níveis totais, Nível 20 tem 100).
 - Quantidade de Pokémon no time baseada em faixas de nível (1-4: 3, 5-9: 4, 10-14: 5, 15-20: 6).
 - Garantia de que o CR Máximo do NPC respeite o limite de CR por nível do sistema.

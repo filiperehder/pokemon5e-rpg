@@ -46,7 +46,11 @@ O sistema atual possui uma aba de Mestre (Wizard) que oferece ferramentas de aux
     - 10-14: 5
     - 15-20: 6
   - A lógica distribuirá os `total_levels` entre os `num_pokemon`, garantindo que cada um tenha no mínimo nível 1.
-- **Seleção de Pokémon**: A seleção será aleatória dentro do dataset `pokemon.json`, filtrando por `CR <= maxCR` (conforme tabela de Trainer Progression do sistema).
+- **Seleção de Pokémon**: A seleção será aleatória dentro do dataset `pokemon.json`, filtrando por CR de acordo com a dificuldade escolhida:
+  - **Fácil**: CR <= (Max CR * 0.33)
+  - **Médio**: (Max CR * 0.33) < CR <= (Max CR * 0.66)
+  - **Difícil**: (Max CR * 0.5) <= CR <= Max CR
+  - *Nota*: Se não houver Pokémon no intervalo específico, o sistema utilizará o Max CR total como fallback.
 
 ## Risks / Trade-offs
 

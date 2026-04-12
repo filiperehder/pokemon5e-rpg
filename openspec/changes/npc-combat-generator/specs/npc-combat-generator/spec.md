@@ -52,9 +52,19 @@ O Challenge Rating (CR) de cada Pokémon individual no time do NPC SHALL respeit
 - **WHEN** um Pokémon é selecionado para o time de um NPC nível 3
 - **THEN** o sistema SHALL garantir que o CR desse Pokémon seja menor ou igual a 3.
 
-### Requirement: Visualização na Aba do Mestre
-O sistema SHALL exibir os Pokémon gerados na Aba do Mestre, permitindo visualizar seus blocos de estatísticas de combate (Pokémon Stat Blocks) existentes.
+### Requirement: Seleção de Dificuldade
+O sistema SHALL permitir a seleção de uma dificuldade para a geração do NPC (Fácil, Médio, Difícil).
 
-#### Scenario: Visualização de stats de combate
-- **WHEN** o Mestre clica em um Pokémon gerado na lista do NPC
-- **THEN** o sistema SHALL exibir o "Pokémon Stat Block" completo com as estatísticas calculadas para o seu nível.
+#### Scenario: Seleção de dificuldade Difícil
+- **WHEN** o Mestre seleciona o nível 5 e a dificuldade "Difícil"
+- **THEN** o sistema SHALL priorizar Pokémon com CR entre 2.5 e 5 (metade ao Max CR permitido).
+
+### Requirement: Filtro de CR por Dificuldade
+O Challenge Rating (CR) dos Pokémon gerados SHALL ser filtrado de acordo com a dificuldade escolhida:
+- **Fácil**: Pokémon com CR <= 1/3 do Max CR permitido.
+- **Médio**: Pokémon com CR entre 1/3 e 2/3 do Max CR permitido.
+- **Difícil**: Pokémon com CR entre 1/2 e o Max CR permitido.
+
+#### Scenario: Validação de CR Fácil para nível 10
+- **WHEN** um NPC de nível 10 (Max CR 9) é gerado na dificuldade "Fácil"
+- **THEN** o sistema SHALL selecionar Pokémon com CR <= 3.

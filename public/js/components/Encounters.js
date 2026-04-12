@@ -130,7 +130,8 @@ export function setupEncounterEvents() {
       updateNpcInfo();
     };
     btnGenerateNpc.onclick = () => {
-      state.encounter.generatedNpcTeam = generateNpcTeam(npcLevel);
+      const difficulty = document.getElementById('npc-difficulty')?.value || 'medium';
+      state.encounter.generatedNpcTeam = generateNpcTeam(npcLevel, difficulty);
       renderEncounters();
     };
   }

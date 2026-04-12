@@ -74,17 +74,33 @@ export function distributeLevels(numPokemon, totalLevels) {
 /**
  * Generates a team of Pokémon for an NPC.
  * @param {number} npcLevel 
+ * @param {string} difficulty - 'easy', 'medium', 'hard'
  * @returns {Object[]}
  */
-export function generateNpcTeam(npcLevel) {
+export function generateNpcTeam(npcLevel, difficulty = 'medium') {
   const { numPokemon, totalLevels, maxCR } = calculateNpcTeamStats(npcLevel);
   const levels = distributeLevels(numPokemon, totalLevels);
   
-  // Filter pokemon by CR <= maxCR
-  const pool = state.allPokemon.filter(p => {
+  // Filter pokemon by CR and difficulty
+  let pool = state.allPokemon.filter(p => {
     const crValue = parseCR(p.cr);
+    
+    if (difficulty === 'easy') {
+      return crValue <= Math.max(0.5, maxCR * 0.33);
+    } else if (difficulty === 'medium') {
+      const min = maxCR * 0.33;
+      const max = maxCR * 0.75;
+      return crValue >= min && crValue <= max;
+    } else if (difficulty === 'hard') {
+      return crValue >= maxCR * 0.5 && crValue <= maxCR;
+    }
     return crValue <= maxCR;
   });
+
+  // Fallback if no pokemon match the difficulty range
+  if (pool.length === 0) {
+    pool = state.allPokemon.filter(p => parseCR(p.cr) <= maxCR);
+  }
 
   if (pool.length === 0) return [];
 
